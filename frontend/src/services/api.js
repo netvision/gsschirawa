@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 // Get API base URL from environment variable or use relative path
-const apiBaseURL = import.meta.env.VITE_API_URL || '/api'
+const apiBaseURL = import.meta.env.VITE_API_URL || 'http://localhost:5002'
 
 const api = axios.create({
-  baseURL: `${apiBaseURL}/api`,
+  baseURL: apiBaseURL,
   headers: {
     'Content-Type': 'application/json'
   }
