@@ -36,7 +36,7 @@
             </p>
             
             <div class="flex flex-wrap gap-4 pt-4">
-              <RouterLink to="/courses" class="btn bg-white text-primary-600 hover:bg-primary-50 shadow-lg hover:shadow-xl transition-all">
+              <RouterLink to="/courses" class="btn bg-white text-primary-600 hover:bg-primary-50 shadow-lg hover:shadow-xl transition-all inline-flex items-center">
                 <span>{{ $t('home.exploreButton') }}</span>
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
@@ -48,30 +48,59 @@
             </div>
           </div>
           
+          <!-- Image Carousel -->
           <div class="hidden lg:block">
             <div class="relative">
-              <div class="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl"></div>
-              <div class="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl">
-                    <div class="text-4xl mb-2">📚</div>
-                    <div class="text-3xl font-bold text-primary-600">8+</div>
-                    <div class="text-sm text-gray-600 font-semibold">Programs</div>
-                  </div>
-                  <div class="text-center p-6 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl">
-                    <div class="text-4xl mb-2">👩‍🎓</div>
+              <!-- Carousel Container -->
+              <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                <div class="aspect-[4/3] bg-white/10 backdrop-blur-sm">
+                  <transition name="slide-fade" mode="out-in">
+                    <img 
+                      :key="currentSlide"
+                      :src="heroImages[currentSlide]" 
+                      :alt="`College Image ${currentSlide + 1}`"
+                      class="w-full h-full object-cover"
+                    />
+                  </transition>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button 
+                  @click="prevSlide"
+                  class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary-600 p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                >
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </button>
+                <button 
+                  @click="nextSlide"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary-600 p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                >
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                
+                <!-- Dots Indicator -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  <button
+                    v-for="(image, index) in heroImages"
+                    :key="index"
+                    @click="currentSlide = index"
+                    class="w-2 h-2 rounded-full transition-all"
+                    :class="currentSlide === index ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/75'"
+                  ></button>
+                </div>
+              </div>
+              
+              <!-- Floating Stats Badge -->
+              <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-2xl p-6 animate-float">
+                <div class="flex items-center gap-4">
+                  <div class="text-5xl">🎓</div>
+                  <div>
                     <div class="text-3xl font-bold text-primary-600">7100+</div>
-                    <div class="text-sm text-gray-600 font-semibold">Alumni</div>
-                  </div>
-                  <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl">
-                    <div class="text-4xl mb-2">🏆</div>
-                    <div class="text-3xl font-bold text-primary-600">37+</div>
-                    <div class="text-sm text-gray-600 font-semibold">Years</div>
-                  </div>
-                  <div class="text-center p-6 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl">
-                    <div class="text-4xl mb-2">⭐</div>
-                    <div class="text-3xl font-bold text-primary-600">B++</div>
-                    <div class="text-sm text-gray-600 font-semibold">NAAC Grade</div>
+                    <div class="text-sm text-gray-600 font-semibold">Students Educated</div>
                   </div>
                 </div>
               </div>
@@ -409,12 +438,43 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import api, { getAssetUrl } from '../services/api'
 
 const courses = ref([])
 const notices = ref([])
 const testimonials = ref([])
+const currentSlide = ref(0)
+let slideInterval = null
+
+// Hero carousel images - add your college images here
+const heroImages = ref([
+  '/original-images/building-1.jpg',
+  '/original-images/campus-2.jpg',
+  '/original-images/students-3.jpg',
+  '/original-images/lab-4.jpg',
+  '/original-images/library-5.jpg'
+])
+
+const nextSlide = () => {
+  currentSlide.value = (currentSlide.value + 1) % heroImages.value.length
+}
+
+const prevSlide = () => {
+  currentSlide.value = currentSlide.value === 0 ? heroImages.value.length - 1 : currentSlide.value - 1
+}
+
+const startAutoSlide = () => {
+  slideInterval = setInterval(() => {
+    nextSlide()
+  }, 5000) // Change slide every 5 seconds
+}
+
+const stopAutoSlide = () => {
+  if (slideInterval) {
+    clearInterval(slideInterval)
+  }
+}
 
 onMounted(async () => {
   try {
@@ -426,9 +486,16 @@ onMounted(async () => {
     courses.value = coursesRes.data.data || []
     notices.value = noticesRes.data.data || []
     testimonials.value = testimonialsRes.data.data || []
+    
+    // Start carousel auto-play
+    startAutoSlide()
   } catch (error) {
     console.error('Error loading data:', error)
   }
+})
+
+onUnmounted(() => {
+  stopAutoSlide()
 })
 </script>
 
@@ -479,5 +546,33 @@ onMounted(async () => {
 
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.slide-fade-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
 }
 </style>
