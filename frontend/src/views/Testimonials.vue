@@ -96,9 +96,10 @@ const loading = ref(true)
 onMounted(async () => {
   try {
     const response = await api.getTestimonials()
-    testimonials.value = response.data.data
+    testimonials.value = response.data.data || []
   } catch (error) {
     console.error('Error loading testimonials:', error)
+    testimonials.value = []
   } finally {
     loading.value = false
   }

@@ -201,24 +201,28 @@ const loading = ref(true)
 const filterLevel = ref('')
 
 const filteredCourses = computed(() => {
+  if (!courses.value || !Array.isArray(courses.value)) return []
   if (!filterLevel.value) return courses.value
   return courses.value.filter(course => course.level === filterLevel.value)
 })
 
 const ugCourses = computed(() => {
+  if (!filteredCourses.value || !Array.isArray(filteredCourses.value)) return []
   return filteredCourses.value.filter(course => course.level === 'Undergraduate')
 })
 
 const pgCourses = computed(() => {
+  if (!filteredCourses.value || !Array.isArray(filteredCourses.value)) return []
   return filteredCourses.value.filter(course => course.level === 'Postgraduate')
 })
 
 onMounted(async () => {
   try {
     const response = await api.getCourses({ isActive: true })
-    courses.value = response.data.data
+    courses.value = response.data.data || []
   } catch (error) {
     console.error('Error loading courses:', error)
+    courses.value = []
   } finally {
     loading.value = false
   }

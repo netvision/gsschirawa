@@ -118,6 +118,7 @@ const selectedImage = ref(null)
 const categories = ['Campus', 'Events', 'Cultural', 'Sports', 'Academic', 'Other']
 
 const filteredImages = computed(() => {
+  if (!images.value || !Array.isArray(images.value)) return []
   if (!selectedCategory.value) return images.value
   return images.value.filter(img => img.category === selectedCategory.value)
 })
@@ -135,9 +136,10 @@ const closeLightbox = () => {
 onMounted(async () => {
   try {
     const response = await api.getGallery()
-    images.value = response.data.data
+    images.value = response.data.data || []
   } catch (error) {
     console.error('Error loading gallery:', error)
+    images.value = []
   } finally {
     loading.value = false
   }
