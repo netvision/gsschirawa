@@ -104,12 +104,53 @@
       </div>
     </section>
 
+    <!-- Founder's Message -->
+    <section class="py-16 bg-white">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="text-sm font-semibold text-primary-600 mb-2">{{ $t('home.founderLabel') }}</div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Shri Narottam Satyanarayan Sekhsaria Ji
+            </h2>
+            <div class="prose prose-lg text-gray-600 space-y-4">
+              <p class="italic text-lg leading-relaxed">
+                "ज्ञान ही जीवन की सबसे बड़ी संपत्ति है। शिक्षा वह प्रकाश है जो समाज को अज्ञान के 
+                अंधकार से निकालकर प्रगति के पथ पर अग्रसर करती है।"
+              </p>
+              <p>
+                The establishment of Ginni Devi Satyanarayan Sekhsaria Girls P.G. College aimed not only to provide 
+                quality education to young women but also to instill confidence, empowerment, and moral values in them.
+              </p>
+              <p>
+                Our dream was to create an institution that would shine the light of educated women throughout society, 
+                setting an example of strength that would inspire every woman in the future.
+              </p>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="relative">
+              <img 
+                src="/founder.png" 
+                alt="Shri Narottam Satyanarayan Sekhsaria Ji" 
+                class="rounded-2xl shadow-2xl w-full object-cover"
+              />
+              <div class="absolute -bottom-6 -right-6 bg-primary-600 text-white px-8 py-4 rounded-xl shadow-lg">
+                <p class="text-4xl font-bold">1987</p>
+                <p class="text-sm">{{ $t('home.establishedYear') }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Why Choose Us -->
-    <section class="py-16">
+    <section class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
       <div class="container-custom">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose GSS College?
+            {{ $t('home.whyChooseTitle') }}
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             Excellence in education, empowerment through knowledge
@@ -117,56 +158,53 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="card text-center">
-            <div class="text-5xl mb-4">🎓</div>
-            <h3 class="text-xl font-semibold mb-3">Quality Education</h3>
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
+            <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <img src="/original-images/USP.png" alt="Quality Education" class="w-12 h-12 object-contain" />
+            </div>
+            <h3 class="text-xl font-semibold mb-3">गुणवत्तापूर्ण शिक्षा</h3>
             <p class="text-gray-600">
-              Comprehensive curriculum designed to meet modern educational standards
-              and prepare students for successful careers.
+              1980 के दशक से महिलाओं के लिए अच्छी गुणवत्ता वाली उच्च शिक्षा का अभाव था जिसे हमने दूर किया।
             </p>
           </div>
 
-          <div class="card text-center">
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
             <div class="text-5xl mb-4">👩‍🏫</div>
-            <h3 class="text-xl font-semibold mb-3">Expert Faculty</h3>
+            <h3 class="text-xl font-semibold mb-3">टीम वर्क और सहयोग</h3>
             <p class="text-gray-600">
-              Dedicated and experienced teachers committed to student success
-              and holistic development.
+              अनुभवी और समर्पित शिक्षक जो छात्राओं की सफलता और समग्र विकास के लिए प्रतिबद्ध हैं।
             </p>
           </div>
 
-          <div class="card text-center">
-            <div class="text-5xl mb-4">🏛️</div>
-            <h3 class="text-xl font-semibold mb-3">Modern Infrastructure</h3>
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
+            <div class="text-5xl mb-4">🌱</div>
+            <h3 class="text-xl font-semibold mb-3">व्यक्तिगत विकास</h3>
             <p class="text-gray-600">
-              Well-equipped classrooms, library, and laboratories providing
-              excellent learning environment.
+              छात्राओं के सर्वांगीण विकास के लिए उपयुक्त वातावरण और प्रशिक्षण प्रदान करना।
             </p>
           </div>
 
-          <div class="card text-center">
-            <div class="text-5xl mb-4">🎭</div>
-            <h3 class="text-xl font-semibold mb-3">Extra-Curricular Activities</h3>
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
+            <div class="text-5xl mb-4">🛡️</div>
+            <h3 class="text-xl font-semibold mb-3">छात्राओं की सुरक्षा</h3>
             <p class="text-gray-600">
-              NSS, Drama clubs, sports, and cultural events for overall personality development.
+              सुरक्षित और सहयोगी वातावरण जो छात्राओं की सुरक्षा को सर्वोच्च प्राथमिकता देता है।
             </p>
           </div>
 
-          <div class="card text-center">
-            <div class="text-5xl mb-4">💰</div>
-            <h3 class="text-xl font-semibold mb-3">Affordable Fees</h3>
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
+            <div class="text-5xl mb-4">👩‍🎓</div>
+            <h3 class="text-xl font-semibold mb-3">महिला शिक्षा</h3>
             <p class="text-gray-600">
-              Quality education at reasonable costs with scholarships
-              available for deserving students.
+              महिला सशक्तिकरण और उच्च शिक्षा के माध्यम से समाज में बदलाव लाने के लिए प्रतिबद्ध।
             </p>
           </div>
 
-          <div class="card text-center">
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
             <div class="text-5xl mb-4">🌟</div>
             <h3 class="text-xl font-semibold mb-3">NAAC Accredited</h3>
             <p class="text-gray-600">
-              B++ Grade accreditation recognizing our commitment to
-              educational excellence and quality.
+              B++ Grade accreditation recognizing our commitment to educational excellence and quality.
             </p>
           </div>
         </div>
@@ -236,48 +274,46 @@
     </section>
 
     <!-- Testimonials Preview -->
-    <section v-if="testimonials.length > 0" class="py-16">
+    <section v-if="testimonials.length > 0" class="py-16 bg-white">
       <div class="container-custom">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {{ $t('home.testimonialsTitle') }}
           </h2>
-          <p class="text-xl text-gray-600">
-            Hear from our successful alumni
+          <p class="text-xl text-gray-600 font-hindi">
+            हमारी बेटियां
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
             v-for="testimonial in testimonials.slice(0, 3)"
             :key="testimonial._id"
-            class="card"
+            class="bg-gradient-to-br from-primary-50 to-white rounded-xl p-8 shadow-lg hover:shadow-xl transition"
           >
-            <div class="flex items-center gap-4 mb-4">
+            <div class="flex flex-col items-center text-center mb-4">
               <img
                 v-if="testimonial.image"
                 :src="testimonial.image"
                 :alt="testimonial.name"
-                class="w-16 h-16 rounded-full object-cover"
+                class="w-24 h-24 rounded-full object-cover mb-4 border-4 border-white shadow-lg"
               />
-              <div v-else class="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center text-2xl">
+              <div v-else class="w-24 h-24 rounded-full bg-primary-100 flex items-center justify-center text-4xl mb-4 border-4 border-white shadow-lg">
                 👩‍🎓
               </div>
-              <div>
-                <h4 class="font-semibold">{{ testimonial.name }}</h4>
-                <p class="text-sm text-gray-600">{{ testimonial.course }}</p>
-                <p class="text-xs text-gray-500">Batch: {{ testimonial.batch }}</p>
-              </div>
+              <h4 class="font-semibold text-lg">{{ testimonial.name }}</h4>
+              <p class="text-sm text-primary-600 font-medium">{{ testimonial.course }}</p>
+              <p class="text-xs text-gray-500">Batch: {{ testimonial.batch }}</p>
             </div>
-            <p class="text-gray-600 italic">"{{ testimonial.message }}"</p>
-            <div class="flex gap-1 mt-3">
-              <span v-for="i in testimonial.rating" :key="i" class="text-yellow-500">⭐</span>
+            <p class="text-gray-600 italic text-center">"{{ testimonial.message }}"</p>
+            <div class="flex gap-1 mt-4 justify-center">
+              <span v-for="i in testimonial.rating" :key="i" class="text-yellow-500 text-xl">⭐</span>
             </div>
           </div>
         </div>
 
         <div class="text-center mt-8">
-          <RouterLink to="/testimonials" class="btn btn-outline">
+          <RouterLink to="/testimonials" class="btn btn-primary">
             Read More Testimonials
           </RouterLink>
         </div>
