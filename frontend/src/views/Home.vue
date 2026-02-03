@@ -162,7 +162,7 @@
             {{ $t('home.whyChooseTitle') }}
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Excellence in education, empowerment through knowledge
+            {{ $t('home.whyChooseSubtitle') }}
           </p>
         </div>
 
@@ -171,49 +171,49 @@
             <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <img src="/original-images/USP.png" alt="Quality Education" class="w-12 h-12 object-contain" />
             </div>
-            <h3 class="text-xl font-semibold mb-3">गुणवत्तापूर्ण शिक्षा</h3>
+            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason1Title') }}</h3>
             <p class="text-gray-600">
-              1980 के दशक से महिलाओं के लिए अच्छी गुणवत्ता वाली उच्च शिक्षा का अभाव था जिसे हमने दूर किया।
+              {{ $t('home.whyReason1Text') }}
             </p>
           </div>
 
           <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
             <div class="text-5xl mb-4">👩‍🏫</div>
-            <h3 class="text-xl font-semibold mb-3">टीम वर्क और सहयोग</h3>
+            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason2Title') }}</h3>
             <p class="text-gray-600">
-              अनुभवी और समर्पित शिक्षक जो छात्राओं की सफलता और समग्र विकास के लिए प्रतिबद्ध हैं।
+              {{ $t('home.whyReason2Text') }}
             </p>
           </div>
 
           <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
             <div class="text-5xl mb-4">🌱</div>
-            <h3 class="text-xl font-semibold mb-3">व्यक्तिगत विकास</h3>
+            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason3Title') }}</h3>
             <p class="text-gray-600">
-              छात्राओं के सर्वांगीण विकास के लिए उपयुक्त वातावरण और प्रशिक्षण प्रदान करना।
+              {{ $t('home.whyReason3Text') }}
             </p>
           </div>
 
           <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
             <div class="text-5xl mb-4">🛡️</div>
-            <h3 class="text-xl font-semibold mb-3">छात्राओं की सुरक्षा</h3>
+            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason4Title') }}</h3>
             <p class="text-gray-600">
-              सुरक्षित और सहयोगी वातावरण जो छात्राओं की सुरक्षा को सर्वोच्च प्राथमिकता देता है।
+              {{ $t('home.whyReason4Text') }}
             </p>
           </div>
 
           <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
             <div class="text-5xl mb-4">👩‍🎓</div>
-            <h3 class="text-xl font-semibold mb-3">महिला शिक्षा</h3>
+            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason5Title') }}</h3>
             <p class="text-gray-600">
-              महिला सशक्तिकरण और उच्च शिक्षा के माध्यम से समाज में बदलाव लाने के लिए प्रतिबद्ध।
+              {{ $t('home.whyReason5Text') }}
             </p>
           </div>
 
           <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
             <div class="text-5xl mb-4">🌟</div>
-            <h3 class="text-xl font-semibold mb-3">NAAC Accredited</h3>
+            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason6Title') }}</h3>
             <p class="text-gray-600">
-              B++ Grade accreditation recognizing our commitment to educational excellence and quality.
+              {{ $t('home.whyReason6Text') }}
             </p>
           </div>
         </div>
