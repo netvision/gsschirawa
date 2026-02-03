@@ -323,7 +323,7 @@
             <div class="space-y-4">
               <div v-for="event in events" :key="event._id" class="border rounded-lg p-4 hover:shadow-md transition-shadow">
                 <div class="flex gap-4">
-                  <img v-if="event.image" :src="`/api${event.image}`" alt="" class="w-24 h-24 object-cover rounded" />
+                  <img v-if="event.image" :src="getAssetUrl(event.image)" alt="" class="w-24 h-24 object-cover rounded" />
                   <div class="flex-1">
                     <div class="flex items-center gap-3 mb-2">
                       <h4 class="text-lg font-semibold">{{ event.title }}</h4>
@@ -485,7 +485,7 @@
             <!-- Gallery Grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               <div v-for="image in galleryImages" :key="image._id" class="relative group">
-                <img :src="`/api${image.image}`" :alt="image.title" class="w-full h-48 object-cover rounded-lg" />
+                <img :src="getAssetUrl(image.image)" :alt="image.title" class="w-full h-48 object-cover rounded-lg" />
                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all rounded-lg flex items-center justify-center">
                   <div class="opacity-0 group-hover:opacity-100 transition-opacity space-y-2">
                     <p class="text-white text-sm font-semibold text-center px-2">{{ image.title }}</p>
@@ -567,7 +567,7 @@
             <div class="space-y-4">
               <div v-for="testimonial in testimonials" :key="testimonial._id" class="border rounded-lg p-4 hover:shadow-md transition-shadow">
                 <div class="flex gap-4">
-                  <img v-if="testimonial.image" :src="`/api${testimonial.image}`" alt="" class="w-16 h-16 object-cover rounded-full" />
+                  <img v-if="testimonial.image" :src="getAssetUrl(testimonial.image)" alt="" class="w-16 h-16 object-cover rounded-full" />
                   <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-2xl" v-else>👤</div>
                   <div class="flex-1">
                     <div class="flex items-center gap-3 mb-2">
@@ -652,7 +652,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import api from '../../services/api'
+import api, { getAssetUrl } from '../../services/api'
 
 const router = useRouter()
 

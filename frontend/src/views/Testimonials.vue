@@ -24,7 +24,7 @@
             <div class="flex items-center gap-4 mb-4">
               <div v-if="testimonial.image" class="flex-shrink-0">
                 <img
-                  :src="testimonial.image"
+                  :src="getAssetUrl(testimonial.image)"
                   :alt="testimonial.name"
                   class="w-20 h-20 rounded-full object-cover border-4 border-primary-100"
                 />
@@ -87,7 +87,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import api from '../services/api'
+import api, { getAssetUrl } from '../services/api'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
 
 const testimonials = ref([])

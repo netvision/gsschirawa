@@ -48,7 +48,7 @@
           >
             <div class="relative aspect-square">
               <img
-                :src="image.image"
+                :src="getAssetUrl(image.image)"
                 :alt="image.title"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 loading="lazy"
@@ -89,7 +89,7 @@
         </button>
         <div class="max-w-5xl max-h-full" @click.stop>
           <img
-            :src="selectedImage.image"
+            :src="getAssetUrl(selectedImage.image)"
             :alt="selectedImage.title"
             class="max-w-full max-h-[80vh] object-contain mx-auto"
           />
@@ -107,7 +107,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import api from '../services/api'
+import api, { getAssetUrl } from '../services/api'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
 
 const images = ref([])

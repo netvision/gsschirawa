@@ -294,7 +294,7 @@
             <div class="flex flex-col items-center text-center mb-4">
               <img
                 v-if="testimonial.image"
-                :src="testimonial.image"
+                :src="getAssetUrl(testimonial.image)"
                 :alt="testimonial.name"
                 class="w-24 h-24 rounded-full object-cover mb-4 border-4 border-white shadow-lg"
               />
@@ -344,7 +344,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import api from '../services/api'
+import api, { getAssetUrl } from '../services/api'
 
 const courses = ref([])
 const notices = ref([])

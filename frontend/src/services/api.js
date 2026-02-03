@@ -3,6 +3,14 @@ import axios from 'axios'
 // Get API base URL from environment variable or use relative path
 const apiBaseURL = import.meta.env.VITE_API_URL || 'http://localhost:5002'
 
+// Asset URL helper (uploads, images)
+const assetBaseURL = apiBaseURL
+const getAssetUrl = (path) => {
+  if (!path) return ''
+  if (path.startsWith('http://') || path.startsWith('https://')) return path
+  return `${assetBaseURL}${path}`
+}
+
 const api = axios.create({
   baseURL: `${apiBaseURL}/api`,
   headers: {
@@ -35,6 +43,8 @@ api.interceptors.response.use(
     return Promise.reject(error)
   }
 )
+
+export { assetBaseURL, getAssetUrl }
 
 export default {
   // Courses
