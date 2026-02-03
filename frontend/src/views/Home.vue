@@ -104,30 +104,6 @@
       </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="bg-gray-50 py-16">
-      <div class="container-custom">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="text-center">
-            <div class="text-4xl font-bold text-primary-600 mb-2">37+</div>
-            <div class="text-gray-600">{{ $t('home.statsYears') }}</div>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-primary-600 mb-2">7100+</div>
-            <div class="text-gray-600">{{ $t('home.statsStudents') }}</div>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-primary-600 mb-2">50+</div>
-            <div class="text-gray-600">{{ $t('home.statsFaculty') }}</div>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-primary-600 mb-2">{{ courses.length }}+</div>
-            <div class="text-gray-600">{{ $t('home.statsCourses') }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Founder's Message and Notices Section -->
     <section class="py-16 bg-gradient-to-br from-gray-50 to-primary-50">
       <div class="container-custom">
