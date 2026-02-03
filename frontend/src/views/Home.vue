@@ -63,12 +63,15 @@
       </div>
     </section>
 
-    <!-- Founder's Message -->
+    <!-- Founder's Message and Notices Section -->
     <section class="py-16 bg-white">
       <div class="container-custom">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="order-2 lg:order-1">
-            <div class="text-sm font-semibold text-primary-600 mb-2">{{ $t('home.founderLabel') }}</div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <!-- Main Content - Founder's Message (2 columns on large screens) -->
+          <div class="lg:col-span-2">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div class="text-sm font-semibold text-primary-600 mb-2">{{ $t('home.founderLabel') }}</div>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Shri Narottam Satyanarayan Sekhsaria Ji
             </h2>
@@ -93,60 +96,59 @@
                 I am proud that the students of Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College are establishing new milestones not only in education but also in sports, arts, science, crafts, painting, music, and other fields, actively contributing to the upliftment and development of society. I am fully confident that they will soar even higher in the future. My best wishes are always with every student studying here."
               </p>
             </div>
-          </div>
-          <div class="order-1 lg:order-2">
-            <div class="relative">
-              <img 
-                src="/founder.png" 
-                alt="Shri Narottam Satyanarayan Sekhsaria Ji" 
-                class="rounded-2xl shadow-2xl w-full object-cover"
-              />
-              <div class="absolute -bottom-6 -right-6 bg-primary-600 text-white px-8 py-4 rounded-xl shadow-lg">
-                <p class="text-4xl font-bold">1987</p>
-                <p class="text-sm">{{ $t('home.establishedYear') }}</p>
+              <div>
+                <div class="relative">
+                  <img 
+                    src="/founder.png" 
+                    alt="Shri Narottam Satyanarayan Sekhsaria Ji" 
+                    class="rounded-2xl shadow-2xl w-full object-cover"
+                  />
+                  <div class="absolute -bottom-6 -right-6 bg-primary-600 text-white px-8 py-4 rounded-xl shadow-lg">
+                    <p class="text-4xl font-bold">1987</p>
+                    <p class="text-sm">{{ $t('home.establishedYear') }}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Important Notices -->
-    <section v-if="notices.length > 0" class="py-12 bg-yellow-50">
-      <div class="container-custom">
-        <div class="lg:max-w-md lg:ml-auto">
-          <div class="flex items-center gap-4 mb-6">
-            <h2 class="text-2xl font-bold text-gray-900">📢 {{ $t('home.noticesTitle') }}</h2>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
-            <div
-              v-for="notice in notices.slice(0, 3)"
-              :key="notice._id"
-              class="bg-white p-6 rounded-lg shadow-md border-l-4"
-              :class="{
-                'border-red-500': notice.priority === 'Urgent',
-                'border-orange-500': notice.priority === 'High',
-                'border-blue-500': notice.priority === 'Medium',
-                'border-gray-500': notice.priority === 'Low'
-              }"
-            >
-              <div class="flex items-start justify-between mb-2">
-                <span
-                  class="text-xs font-semibold px-2 py-1 rounded"
+          <!-- Sidebar - Notices (1 column on large screens) -->
+          <div v-if="notices.length > 0" class="lg:col-span-1">
+            <div class="sticky top-24">
+              <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-2xl font-bold text-gray-900">📢 {{ $t('home.noticesTitle') }}</h2>
+              </div>
+              <div class="space-y-4">
+                <div
+                  v-for="notice in notices.slice(0, 5)"
+                  :key="notice._id"
+                  class="bg-white p-4 rounded-lg shadow-md border-l-4"
                   :class="{
-                    'bg-red-100 text-red-700': notice.priority === 'Urgent',
-                    'bg-orange-100 text-orange-700': notice.priority === 'High',
-                    'bg-blue-100 text-blue-700': notice.priority === 'Medium',
-                    'bg-gray-100 text-gray-700': notice.priority === 'Low'
+                    'border-red-500': notice.priority === 'Urgent',
+                    'border-orange-500': notice.priority === 'High',
+                    'border-blue-500': notice.priority === 'Medium',
+                    'border-gray-500': notice.priority === 'Low'
                   }"
                 >
-                  {{ notice.priority }}
-                </span>
-              </div>
-              <h3 class="font-semibold text-lg mb-2">{{ notice.title }}</h3>
-              <p class="text-gray-600 text-sm mb-3">{{ notice.content.substring(0, 100) }}...</p>
-              <div class="text-xs text-gray-500">
-                {{ new Date(notice.createdAt).toLocaleDateString() }}
+                  <div class="flex items-start justify-between mb-2">
+                    <span
+                      class="text-xs font-semibold px-2 py-1 rounded"
+                      :class="{
+                        'bg-red-100 text-red-700': notice.priority === 'Urgent',
+                        'bg-orange-100 text-orange-700': notice.priority === 'High',
+                        'bg-blue-100 text-blue-700': notice.priority === 'Medium',
+                        'bg-gray-100 text-gray-700': notice.priority === 'Low'
+                      }"
+                    >
+                      {{ notice.priority }}
+                    </span>
+                  </div>
+                  <h3 class="font-semibold text-base mb-2">{{ notice.title }}</h3>
+                  <p class="text-gray-600 text-sm mb-2">{{ notice.content.substring(0, 80) }}...</p>
+                  <div class="text-xs text-gray-500">
+                    {{ new Date(notice.createdAt).toLocaleDateString() }}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
