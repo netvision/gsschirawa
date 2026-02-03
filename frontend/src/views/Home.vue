@@ -6,43 +6,37 @@
       <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600"></div>
       <div class="absolute inset-0 bg-pattern-dots opacity-20"></div>
       
-      <div class="relative z-10 container-custom py-20 lg:py-28">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="text-white space-y-6 animate-fadeIn">
+      <div class="relative z-10 container-custom py-12 lg:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div class="text-white space-y-4 animate-fadeIn">
             <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
-              <span class="text-yellow-300">⭐</span>
-              <span>NAAC Accredited 'B++' Grade</span>
+              <span class="text-yellow-300">👩‍🎓</span>
+              <span>Women's Higher Education Since 1987</span>
             </div>
             
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
               {{ $t('college.fullName') }}
             </h1>
             
-            <div class="flex items-center gap-2 text-xl text-primary-100">
+            <div class="flex items-center gap-2 text-lg text-primary-100">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
               </svg>
               <span>Chirawa, Jhunjhunu, Rajasthan</span>
             </div>
             
-            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p class="text-lg font-hindi text-yellow-300 font-semibold">
-                {{ $t('nav.motto') }}
-              </p>
-            </div>
-            
-            <p class="text-lg leading-relaxed text-primary-50">
+            <p class="text-base leading-relaxed text-primary-50 max-w-xl">
               {{ $t('home.heroSubtitle') }}
             </p>
             
-            <div class="flex flex-wrap gap-4 pt-4">
-              <RouterLink to="/courses" class="btn bg-white text-primary-600 hover:bg-primary-50 shadow-lg hover:shadow-xl transition-all inline-flex items-center">
+            <div class="flex flex-wrap gap-3 pt-2">
+              <RouterLink to="/courses" class="btn bg-white text-primary-600 hover:bg-primary-50 shadow-lg hover:shadow-xl transition-all inline-flex items-center text-sm">
                 <span>{{ $t('home.exploreButton') }}</span>
-                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                 </svg>
               </RouterLink>
-              <RouterLink to="/contact" class="btn btn-outline border-2 border-white text-white hover:bg-white hover:text-primary-600 transition-all">
+              <RouterLink to="/contact" class="btn btn-outline border-2 border-white text-white hover:bg-white hover:text-primary-600 transition-all text-sm">
                 {{ $t('home.contactButton') }}
               </RouterLink>
             </div>
@@ -67,40 +61,40 @@
                 <!-- Navigation Arrows -->
                 <button 
                   @click="prevSlide"
-                  class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary-600 p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                  class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary-600 p-2 rounded-full shadow-lg transition-all hover:scale-110"
                 >
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                   </svg>
                 </button>
                 <button 
                   @click="nextSlide"
-                  class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary-600 p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary-600 p-2 rounded-full shadow-lg transition-all hover:scale-110"
                 >
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                   </svg>
                 </button>
                 
                 <!-- Dots Indicator -->
-                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
                   <button
                     v-for="(image, index) in heroImages"
                     :key="index"
                     @click="currentSlide = index"
-                    class="w-2 h-2 rounded-full transition-all"
-                    :class="currentSlide === index ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/75'"
+                    class="transition-all"
+                    :class="currentSlide === index ? 'w-8 h-2 rounded-full bg-white' : 'w-2 h-2 rounded-full bg-white/50 hover:bg-white/75'"
                   ></button>
                 </div>
               </div>
               
               <!-- Floating Stats Badge -->
-              <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-2xl p-6 animate-float">
-                <div class="flex items-center gap-4">
-                  <div class="text-5xl">🎓</div>
+              <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-2xl p-5 animate-float">
+                <div class="flex items-center gap-3">
+                  <div class="text-4xl">🎓</div>
                   <div>
-                    <div class="text-3xl font-bold text-primary-600">7100+</div>
-                    <div class="text-sm text-gray-600 font-semibold">Students Educated</div>
+                    <div class="text-2xl font-bold text-primary-600">7100+</div>
+                    <div class="text-xs text-gray-600 font-semibold">Students Educated</div>
                   </div>
                 </div>
               </div>
