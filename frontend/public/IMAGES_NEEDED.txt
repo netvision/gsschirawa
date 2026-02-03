@@ -1,0 +1,45 @@
+REQUIRED IMAGES FOR GSS COLLEGE PORTAL
+======================================
+
+Please add the following image files to this folder (frontend/public/):
+
+1. logo.png
+   - College logo for header/footer
+   - Recommended size: 200x60 pixels or similar
+   - Transparent background preferred
+
+2. hero-image.jpg
+   - Main banner image for homepage
+   - Recommended size: 1920x600 pixels
+   - Should show college building/campus
+
+3. about-college.jpg
+   - Image for About page
+   - Recommended size: 800x600 pixels
+   - Campus or building photo
+
+4. favicon.png
+   - Browser tab icon
+   - Size: 32x32 pixels or 64x64 pixels
+   - Simple, recognizable icon
+
+TEMPORARY SOLUTION:
+-------------------
+Until you add your own images, the website will use:
+- Text/placeholder for logo
+- Gradient background for hero section
+- Default styling for other areas
+
+HOW TO ADD IMAGES:
+------------------
+1. Prepare your images with the names above
+2. Copy them to this folder: frontend\public\
+3. Refresh your browser
+
+The website will automatically use your images!
+
+For best results:
+- Use JPG for photos (smaller file size)
+- Use PNG for logos with transparency
+- Optimize images before uploading (use TinyPNG.com or similar)
+- Keep file sizes under 500KB each
