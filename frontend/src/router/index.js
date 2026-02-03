@@ -6,37 +6,37 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta: { title: 'Home - GSS College Chirawa' }
+    meta: { title: "Home - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
     path: '/about',
     name: 'About',
     component: () => import('../views/About.vue'),
-    meta: { title: 'About Us - GSS College Chirawa' }
+    meta: { title: "About Us - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
     path: '/courses',
     name: 'Courses',
     component: () => import('../views/Courses.vue'),
-    meta: { title: 'Courses - GSS College Chirawa' }
+    meta: { title: "Courses - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
     path: '/gallery',
     name: 'Gallery',
     component: () => import('../views/Gallery.vue'),
-    meta: { title: 'Gallery - GSS College Chirawa' }
+    meta: { title: "Gallery - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
     path: '/testimonials',
     name: 'Testimonials',
     component: () => import('../views/Testimonials.vue'),
-    meta: { title: 'Testimonials - GSS College Chirawa' }
+    meta: { title: "Testimonials - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
     path: '/contact',
     name: 'Contact',
     component: () => import('../views/Contact.vue'),
-    meta: { title: 'Contact Us - GSS College Chirawa' }
+    meta: { title: "Contact Us - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
     path: '/admin',
@@ -67,7 +67,7 @@ const router = createRouter({
 // Navigation guard for auth
 router.beforeEach((to, from, next) => {
   // Update page title
-  document.title = to.meta.title || 'GSS College Chirawa'
+  document.title = to.meta.title || "Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College"
 
   // Check if route requires authentication
   if (to.meta.requiresAuth) {

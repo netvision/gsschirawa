@@ -119,8 +119,8 @@
                   <div>
                     <h3 class="font-semibold text-lg mb-2">Address</h3>
                     <p class="text-gray-600">
-                      Ginni Devi Satyanarayan Sekhsaria<br />
-                      Girls P.G. College<br />
+                      Ginnidevi Satyanarayan Sekhsaria<br />
+                      Girls' (PG) College<br />
                       Chirawa, Jhunjhunu<br />
                       Rajasthan – 333026
                     </p>

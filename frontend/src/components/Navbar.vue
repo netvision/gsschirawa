@@ -40,7 +40,7 @@
           />
           <div>
             <h1 class="text-xl font-bold text-gray-900 leading-tight">
-              GSS College, Chirawa
+              {{ $t('college.fullName') }}
             </h1>
             <p class="text-sm text-primary-600">NAAC Accredited 'B++' Grade</p>
           </div>

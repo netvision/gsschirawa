@@ -9,7 +9,7 @@
               ⭐ NAAC Accredited 'B++' Grade
             </div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Ginni Devi Satyanarayan Sekhsaria Girls P.G. College
+              {{ $t('college.fullName') }}
             </h1>
             <p class="text-xl mb-4 text-primary-100">Chirawa, Jhunjhunu, Rajasthan</p>
             <p class="text-lg mb-8 font-hindi text-yellow-300">
@@ -119,7 +119,7 @@
                 अंधकार से निकालकर प्रगति के पथ पर अग्रसर करती है।"
               </p>
               <p>
-                The establishment of Ginni Devi Satyanarayan Sekhsaria Girls P.G. College aimed not only to provide 
+                The establishment of Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College aimed not only to provide 
                 quality education to young women but also to instill confidence, empowerment, and moral values in them.
               </p>
               <p>

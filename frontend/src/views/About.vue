@@ -16,7 +16,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-3xl font-bold text-gray-900 mb-6">
-              Ginni Devi Satyanarayan Sekhsaria Girls P.G. College, Chirawa
+              Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College, Chirawa
             </h2>
             <p class="text-lg text-gray-700 mb-4 leading-relaxed">
               Established in 1987, GSS College has been at the forefront of providing
