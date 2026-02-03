@@ -1,0 +1,27 @@
+# Run these commands on your VPS to debug the nginx issue
+
+# Test 1: Check nginx configuration
+sudo cat /etc/nginx/sites-available/gssapi.netserve.in
+
+# Test 2: Check if nginx is running
+sudo systemctl status nginx
+
+# Test 3: Look at nginx error logs
+sudo tail -50 /var/log/nginx/error.log
+
+# Test 4: Look at nginx access logs
+sudo tail -50 /var/log/nginx/access.log
+
+# Test 5: Test from VPS itself
+curl -v http://localhost:5002/api/courses
+curl -v http://gssapi.netserve.in/api/courses
+
+# Test 6: Check if PM2 backend is still running
+pm2 status
+
+# Test 7: Check backend logs
+pm2 logs gsscollege-api --lines 20
+
+# If nothing is working, restart everything:
+sudo systemctl restart nginx
+pm2 restart gsscollege-api

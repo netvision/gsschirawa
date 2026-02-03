@@ -107,38 +107,40 @@
     <!-- Important Notices -->
     <section v-if="notices.length > 0" class="py-12 bg-yellow-50">
       <div class="container-custom">
-        <div class="flex items-center gap-4 mb-6">
-          <h2 class="text-2xl font-bold text-gray-900">📢 {{ $t('home.noticesTitle') }}</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            v-for="notice in notices.slice(0, 3)"
-            :key="notice._id"
-            class="bg-white p-6 rounded-lg shadow-md border-l-4"
-            :class="{
-              'border-red-500': notice.priority === 'Urgent',
-              'border-orange-500': notice.priority === 'High',
-              'border-blue-500': notice.priority === 'Medium',
-              'border-gray-500': notice.priority === 'Low'
-            }"
-          >
-            <div class="flex items-start justify-between mb-2">
-              <span
-                class="text-xs font-semibold px-2 py-1 rounded"
-                :class="{
-                  'bg-red-100 text-red-700': notice.priority === 'Urgent',
-                  'bg-orange-100 text-orange-700': notice.priority === 'High',
-                  'bg-blue-100 text-blue-700': notice.priority === 'Medium',
-                  'bg-gray-100 text-gray-700': notice.priority === 'Low'
-                }"
-              >
-                {{ notice.priority }}
-              </span>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">{{ notice.title }}</h3>
-            <p class="text-gray-600 text-sm mb-3">{{ notice.content.substring(0, 100) }}...</p>
-            <div class="text-xs text-gray-500">
-              {{ new Date(notice.createdAt).toLocaleDateString() }}
+        <div class="lg:max-w-md lg:ml-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">📢 {{ $t('home.noticesTitle') }}</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+            <div
+              v-for="notice in notices.slice(0, 3)"
+              :key="notice._id"
+              class="bg-white p-6 rounded-lg shadow-md border-l-4"
+              :class="{
+                'border-red-500': notice.priority === 'Urgent',
+                'border-orange-500': notice.priority === 'High',
+                'border-blue-500': notice.priority === 'Medium',
+                'border-gray-500': notice.priority === 'Low'
+              }"
+            >
+              <div class="flex items-start justify-between mb-2">
+                <span
+                  class="text-xs font-semibold px-2 py-1 rounded"
+                  :class="{
+                    'bg-red-100 text-red-700': notice.priority === 'Urgent',
+                    'bg-orange-100 text-orange-700': notice.priority === 'High',
+                    'bg-blue-100 text-blue-700': notice.priority === 'Medium',
+                    'bg-gray-100 text-gray-700': notice.priority === 'Low'
+                  }"
+                >
+                  {{ notice.priority }}
+                </span>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">{{ notice.title }}</h3>
+              <p class="text-gray-600 text-sm mb-3">{{ notice.content.substring(0, 100) }}...</p>
+              <div class="text-xs text-gray-500">
+                {{ new Date(notice.createdAt).toLocaleDateString() }}
+              </div>
             </div>
           </div>
         </div>
