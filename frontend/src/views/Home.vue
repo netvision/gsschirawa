@@ -44,11 +44,11 @@
       <div class="container-custom">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div class="text-center">
-            <div class="text-4xl font-bold text-primary-600 mb-2">35+</div>
+            <div class="text-4xl font-bold text-primary-600 mb-2">37+</div>
             <div class="text-gray-600">{{ $t('home.statsYears') }}</div>
           </div>
           <div class="text-center">
-            <div class="text-4xl font-bold text-primary-600 mb-2">2000+</div>
+            <div class="text-4xl font-bold text-primary-600 mb-2">7100+</div>
             <div class="text-gray-600">{{ $t('home.statsStudents') }}</div>
           </div>
           <div class="text-center">
