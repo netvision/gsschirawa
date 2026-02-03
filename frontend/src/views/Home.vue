@@ -64,49 +64,61 @@
     </section>
 
     <!-- Founder's Message and Notices Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-primary-50">
       <div class="container-custom">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <!-- Main Content - Founder's Message (2 columns on large screens) -->
           <div class="lg:col-span-2">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div class="text-sm font-semibold text-primary-600 mb-2">{{ $t('home.founderLabel') }}</div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Shri Narottam Satyanarayan Sekhsaria Ji
-                </h2>
-                <div class="prose prose-lg text-gray-600 space-y-4">
-                  <p v-if="$i18n.locale === 'hi'" class="text-base leading-relaxed font-hindi">
-                    "ज्ञान ही जीवन की सबसे बड़ी संपत्ति है। शिक्षा वह प्रकाश है जो समाज को अज्ञान के अंधकार से निकालकर प्रगति के पथ पर अग्रसर करती है। गिन्नीदेवी सत्यनारायण सेखसरिया गर्ल्स पी.जी. कॉलेज की स्थापना का उद्देश्य न केवल युवा महिलाओं को गुणवत्तापूर्ण शिक्षा प्रदान करना है बल्कि उनमें आत्मविश्वास, सशक्तिकरण और नैतिक मूल्यों का संचार करना भी है।
-                  </p>
-                  <p v-if="$i18n.locale === 'hi'" class="text-base leading-relaxed font-hindi">
-                    हमारा सपना था कि चिड़ावा में एक ऐसा संस्थान हो जो शिक्षित नारी की आभा को चारों ओर प्रकाशित करके समाज मे शक्ति का ऐसा एक उदाहरण स्थापित करे जो भविष्य में हर नारी के लिए एक प्रेरणास्त्रोत बने और हमारी बेटियाँ हर क्षेत्र में उत्कृष्टता हासिल करें, इस सपने को हमने इस कॉलेज की नींव रख जीवंत किया है और शिक्षा के साथ-साथ संस्कारों को जोड़कर हमने इस कॉलेज को एक ऐसा मंच बनाने का प्रयास किया है जहाँ छात्राएँ अपनी व्यक्तिगत व शैक्षिक क्षमता का सर्वोत्तम प्रदर्शन कर सकें।
-                  </p>
-                  <p v-if="$i18n.locale === 'hi'" class="text-base leading-relaxed font-hindi">
-                    मुझे गर्व है कि श्री गिन्नीदेवी सत्यनारायण सेखसरिया गर्ल्स पी.जी. कॉलेज की छात्राएँ शिक्षा के साथ – साथ खेल, कला, विज्ञान, क्राफ्ट, पेंटिंग, संगीत इत्यादि में भी निपुण होकर समाज उत्थान और विकास की तस्वीर को सजग बनाने के क्षेत्र में नए कीर्तिमान स्थापित कर रही है और पूर्ण विश्वास है कि भविष्य में ओर ऊँची उड़ान भरेंगी। मेरी शुभकामनाएँ हमेशा यहाँ अध्ययन करने वाली प्रत्येक छात्रा के साथ हैं।"
-                  </p>
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div class="grid grid-cols-1 lg:grid-cols-5 gap-0">
+                <!-- Left Content -->
+                <div class="lg:col-span-3 p-8 lg:p-12">
+                  <div class="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    {{ $t('home.founderLabel') }}
+                  </div>
+                  <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                    Shri Narottam Satyanarayan Sekhsaria Ji
+                  </h2>
+                  <div class="h-1 w-24 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full mb-6"></div>
                   
-                  <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed">
-                    "Knowledge is the greatest wealth of life. Education is the light that removes society from the darkness of ignorance and leads it on the path of progress. The establishment of Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College aims not only to provide quality education to young women but also to instill confidence, empowerment, and moral values in them.
-                  </p>
-                  <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed">
-                    Our dream was to establish such an institution in Chirawa that would illuminate the radiance of educated women all around, setting an example of strength in society that would become a source of inspiration for every woman in the future, and that our daughters would achieve excellence in every field. We have brought this dream to life by laying the foundation of this college, and by combining education with values, we have endeavored to make this college a platform where students can demonstrate their personal and academic abilities to the fullest.
-                  </p>
-                  <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed">
-                    I am proud that the students of Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College are establishing new milestones not only in education but also in sports, arts, science, crafts, painting, music, and other fields, actively contributing to the upliftment and development of society. I am fully confident that they will soar even higher in the future. My best wishes are always with every student studying here."
-                  </p>
+                  <div class="prose prose-lg text-gray-700 space-y-4 max-h-96 overflow-y-auto pr-4 custom-scrollbar">
+                    <p v-if="$i18n.locale === 'hi'" class="text-base leading-relaxed font-hindi italic border-l-4 border-primary-500 pl-4 py-2 bg-primary-50">
+                      "ज्ञान ही जीवन की सबसे बड़ी संपत्ति है। शिक्षा वह प्रकाश है जो समाज को अज्ञान के अंधकार से निकालकर प्रगति के पथ पर अग्रसर करती है। गिन्नीदेवी सत्यनारायण सेखसरिया गर्ल्स पी.जी. कॉलेज की स्थापना का उद्देश्य न केवल युवा महिलाओं को गुणवत्तापूर्ण शिक्षा प्रदान करना है बल्कि उनमें आत्मविश्वास, सशक्तिकरण और नैतिक मूल्यों का संचार करना भी है।"
+                    </p>
+                    <p v-if="$i18n.locale === 'hi'" class="text-base leading-relaxed font-hindi">
+                      हमारा सपना था कि चिड़ावा में एक ऐसा संस्थान हो जो शिक्षित नारी की आभा को चारों ओर प्रकाशित करके समाज मे शक्ति का ऐसा एक उदाहरण स्थापित करे जो भविष्य में हर नारी के लिए एक प्रेरणास्त्रोत बने और हमारी बेटियाँ हर क्षेत्र में उत्कृष्टता हासिल करें, इस सपने को हमने इस कॉलेज की नींव रख जीवंत किया है और शिक्षा के साथ-साथ संस्कारों को जोड़कर हमने इस कॉलेज को एक ऐसा मंच बनाने का प्रयास किया है जहाँ छात्राएँ अपनी व्यक्तिगत व शैक्षिक क्षमता का सर्वोत्तम प्रदर्शन कर सकें।
+                    </p>
+                    <p v-if="$i18n.locale === 'hi'" class="text-base leading-relaxed font-hindi">
+                      मुझे गर्व है कि श्री गिन्नीदेवी सत्यनारायण सेखसरिया गर्ल्स पी.जी. कॉलेज की छात्राएँ शिक्षा के साथ – साथ खेल, कला, विज्ञान, क्राफ्ट, पेंटिंग, संगीत इत्यादि में भी निपुण होकर समाज उत्थान और विकास की तस्वीर को सजग बनाने के क्षेत्र में नए कीर्तिमान स्थापित कर रही है और पूर्ण विश्वास है कि भविष्य में ओर ऊँची उड़ान भरेंगी। मेरी शुभकामनाएँ हमेशा यहाँ अध्ययन करने वाली प्रत्येक छात्रा के साथ हैं।
+                    </p>
+                    
+                    <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed italic border-l-4 border-primary-500 pl-4 py-2 bg-primary-50">
+                      "Knowledge is the greatest wealth of life. Education is the light that removes society from the darkness of ignorance and leads it on the path of progress. The establishment of Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College aims not only to provide quality education to young women but also to instill confidence, empowerment, and moral values in them."
+                    </p>
+                    <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed">
+                      Our dream was to establish such an institution in Chirawa that would illuminate the radiance of educated women all around, setting an example of strength in society that would become a source of inspiration for every woman in the future, and that our daughters would achieve excellence in every field. We have brought this dream to life by laying the foundation of this college, and by combining education with values, we have endeavored to make this college a platform where students can demonstrate their personal and academic abilities to the fullest.
+                    </p>
+                    <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed">
+                      I am proud that the students of Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College are establishing new milestones not only in education but also in sports, arts, science, crafts, painting, music, and other fields, actively contributing to the upliftment and development of society. I am fully confident that they will soar even higher in the future. My best wishes are always with every student studying here.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div class="relative">
-                  <img 
-                    src="/founder.png" 
-                    alt="Shri Narottam Satyanarayan Sekhsaria Ji" 
-                    class="rounded-2xl shadow-2xl w-full object-cover"
-                  />
-                  <div class="absolute -bottom-6 -right-6 bg-primary-600 text-white px-8 py-4 rounded-xl shadow-lg">
-                    <p class="text-4xl font-bold">1987</p>
-                    <p class="text-sm">{{ $t('home.establishedYear') }}</p>
+                
+                <!-- Right Image Section -->
+                <div class="lg:col-span-2 relative bg-gradient-to-br from-primary-600 to-secondary-600 p-8 lg:p-12 flex items-center justify-center">
+                  <div class="absolute inset-0 bg-pattern opacity-10"></div>
+                  <div class="relative z-10 text-center">
+                    <div class="mb-6">
+                      <img 
+                        src="/founder.png" 
+                        alt="Shri Narottam Satyanarayan Sekhsaria Ji" 
+                        class="rounded-2xl shadow-2xl w-full max-w-sm mx-auto object-cover border-4 border-white"
+                      />
+                    </div>
+                    <div class="bg-white/95 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg">
+                      <p class="text-4xl font-bold text-primary-600">1987</p>
+                      <p class="text-sm text-gray-600 font-semibold">{{ $t('home.establishedYear') }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -377,3 +389,33 @@ onMounted(async () => {
   }
 })
 </script>
+
+<style scoped>
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #9333ea #f3f4f6;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #9333ea;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7e22ce;
+}
+
+.bg-pattern {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+</style>
