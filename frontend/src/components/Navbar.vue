@@ -33,9 +33,11 @@
       <div class="flex justify-between items-center">
         <!-- Logo and college name -->
         <RouterLink to="/" class="flex items-center gap-3">
-          <div class="h-16 w-16 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-            GSS
-          </div>
+          <img 
+            src="/logo.jpg" 
+            alt="GSS College Logo" 
+            class="h-16 w-16 object-contain rounded-lg shadow-lg"
+          />
           <div>
             <h1 class="text-xl font-bold text-gray-900 leading-tight">
               GSS College, Chirawa
