@@ -1,38 +1,80 @@
 <template>
   <div class="home">
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
-      <div class="container-custom">
+    <section class="relative overflow-hidden">
+      <!-- Background with overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600"></div>
+      <div class="absolute inset-0 bg-pattern-dots opacity-20"></div>
+      
+      <div class="relative z-10 container-custom py-20 lg:py-28">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="animate-fadeIn">
-            <div class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm mb-4">
-              ⭐ NAAC Accredited 'B++' Grade
+          <div class="text-white space-y-6 animate-fadeIn">
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
+              <span class="text-yellow-300">⭐</span>
+              <span>NAAC Accredited 'B++' Grade</span>
             </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               {{ $t('college.fullName') }}
             </h1>
-            <p class="text-xl mb-4 text-primary-100">Chirawa, Jhunjhunu, Rajasthan</p>
-            <p class="text-lg mb-8 font-hindi text-yellow-300">
-              {{ $t('nav.motto') }}
-            </p>
-            <p class="text-lg mb-8 leading-relaxed">
+            
+            <div class="flex items-center gap-2 text-xl text-primary-100">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Chirawa, Jhunjhunu, Rajasthan</span>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+              <p class="text-lg font-hindi text-yellow-300 font-semibold">
+                {{ $t('nav.motto') }}
+              </p>
+            </div>
+            
+            <p class="text-lg leading-relaxed text-primary-50">
               {{ $t('home.heroSubtitle') }}
             </p>
-            <div class="flex flex-wrap gap-4">
-              <RouterLink to="/courses" class="btn bg-white text-primary-600 hover:bg-gray-100">
-                {{ $t('home.exploreButton') }}
+            
+            <div class="flex flex-wrap gap-4 pt-4">
+              <RouterLink to="/courses" class="btn bg-white text-primary-600 hover:bg-primary-50 shadow-lg hover:shadow-xl transition-all">
+                <span>{{ $t('home.exploreButton') }}</span>
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
               </RouterLink>
-              <RouterLink to="/contact" class="btn btn-outline border-white text-white hover:bg-white hover:text-primary-600">
+              <RouterLink to="/contact" class="btn btn-outline border-2 border-white text-white hover:bg-white hover:text-primary-600 transition-all">
                 {{ $t('home.contactButton') }}
               </RouterLink>
             </div>
           </div>
+          
           <div class="hidden lg:block">
-            <div class="rounded-2xl shadow-2xl bg-gradient-to-br from-primary-700 to-secondary-600 p-12 text-center">
-              <div class="text-6xl mb-4">🎓</div>
-              <p class="text-2xl font-bold mb-2">GSS College</p>
-              <p class="text-lg opacity-90">Add hero-image.jpg to frontend/public/</p>
-              <p class="text-sm opacity-75 mt-4">Recommended size: 1920x600px</p>
+            <div class="relative">
+              <div class="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl"></div>
+              <div class="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl">
+                    <div class="text-4xl mb-2">📚</div>
+                    <div class="text-3xl font-bold text-primary-600">8+</div>
+                    <div class="text-sm text-gray-600 font-semibold">Programs</div>
+                  </div>
+                  <div class="text-center p-6 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl">
+                    <div class="text-4xl mb-2">👩‍🎓</div>
+                    <div class="text-3xl font-bold text-primary-600">7100+</div>
+                    <div class="text-sm text-gray-600 font-semibold">Alumni</div>
+                  </div>
+                  <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl">
+                    <div class="text-4xl mb-2">🏆</div>
+                    <div class="text-3xl font-bold text-primary-600">37+</div>
+                    <div class="text-sm text-gray-600 font-semibold">Years</div>
+                  </div>
+                  <div class="text-center p-6 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl">
+                    <div class="text-4xl mb-2">⭐</div>
+                    <div class="text-3xl font-bold text-primary-600">B++</div>
+                    <div class="text-sm text-gray-600 font-semibold">NAAC Grade</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -71,7 +113,25 @@
           <div class="lg:col-span-2">
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
               <div class="grid grid-cols-1 lg:grid-cols-5 gap-0">
-                <!-- Left Content -->
+                <!-- Left Image Section -->
+                <div class="lg:col-span-2 relative bg-gradient-to-br from-primary-600 to-secondary-600 p-8 lg:p-12 flex items-center justify-center">
+                  <div class="absolute inset-0 bg-pattern opacity-10"></div>
+                  <div class="relative z-10 text-center">
+                    <div class="mb-6">
+                      <img 
+                        src="/founder.png" 
+                        alt="Shri Narottam Satyanarayan Sekhsaria Ji" 
+                        class="rounded-2xl shadow-2xl w-full max-w-sm mx-auto object-cover border-4 border-white"
+                      />
+                    </div>
+                    <div class="bg-white/95 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg">
+                      <p class="text-4xl font-bold text-primary-600">1987</p>
+                      <p class="text-sm text-gray-600 font-semibold">{{ $t('home.establishedYear') }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Content -->
                 <div class="lg:col-span-3 p-8 lg:p-12">
                   <div class="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
                     {{ $t('home.founderLabel') }}
@@ -101,24 +161,6 @@
                     <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed">
                       I am proud that the students of Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College are establishing new milestones not only in education but also in sports, arts, science, crafts, painting, music, and other fields, actively contributing to the upliftment and development of society. I am fully confident that they will soar even higher in the future. My best wishes are always with every student studying here.
                     </p>
-                  </div>
-                </div>
-                
-                <!-- Right Image Section -->
-                <div class="lg:col-span-2 relative bg-gradient-to-br from-primary-600 to-secondary-600 p-8 lg:p-12 flex items-center justify-center">
-                  <div class="absolute inset-0 bg-pattern opacity-10"></div>
-                  <div class="relative z-10 text-center">
-                    <div class="mb-6">
-                      <img 
-                        src="/founder.png" 
-                        alt="Shri Narottam Satyanarayan Sekhsaria Ji" 
-                        class="rounded-2xl shadow-2xl w-full max-w-sm mx-auto object-cover border-4 border-white"
-                      />
-                    </div>
-                    <div class="bg-white/95 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg">
-                      <p class="text-4xl font-bold text-primary-600">1987</p>
-                      <p class="text-sm text-gray-600 font-semibold">{{ $t('home.establishedYear') }}</p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -417,5 +459,25 @@ onMounted(async () => {
 .bg-pattern {
   background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
   background-size: 32px 32px;
+}
+
+.bg-pattern-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
 }
 </style>
