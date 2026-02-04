@@ -424,13 +424,12 @@ const testimonials = ref([])
 const currentSlide = ref(0)
 let slideInterval = null
 
-// Hero carousel images - add your college images here
+// Hero carousel images
 const heroImages = ref([
-  '/original-images/building-1.jpg',
-  '/original-images/campus-2.jpg',
-  '/original-images/students-3.jpg',
-  '/original-images/lab-4.jpg',
-  '/original-images/library-5.jpg'
+  '/1.png',
+  '/3.png',
+  '/4.png',
+  '/5.png'
 ])
 
 const nextSlide = () => {
