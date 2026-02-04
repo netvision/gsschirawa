@@ -49,10 +49,16 @@
               <p class="text-base leading-relaxed">
                 चिड़ावा में महिला शिक्षा के लिए एक अलग कॉलेज की आवश्यकता महसूस की गई। तत्कालीन विधायक श्री हजारीलाल शर्मा जी ने इस मुद्दे को उठाया और सेखसरिया परिवार से संपर्क किया। श्री सत्यनारायण जी सेखसरिया ने इस प्रयास में सहयोग करने का फैसला किया और 19 नवंबर 1986 को कॉलेज का शिलान्यास हुआ। मात्र नौ महीनों में भवन तैयार हो गया और जुलाई 1987 से शिक्षण कार्य शुरू हो गया।
               </p>
+              <p class="text-base leading-relaxed">
+                श्री सत्यनारायणजी के पुत्र श्री एन.एस. सेखसरिया वर्तमान में गिन्नीदेवी सत्यनारायण सेखसरिया मेमोरियल ट्रस्ट के अध्यक्ष हैं। उनकी वित्तीय उदारता चिड़ावा और आस-पास के क्षेत्रों की सभी लड़कियों को आत्मविश्वासी, शिक्षित, आत्मनिर्भर युवा महिलाओं मे बदलने के उनके सपने से काफी मेल खाती है, जो जीवन की चुनौतियों का सफलतापूर्वक सामना करने के लिए पूरी तरह से तैयार रहने वाले जिम्मेदार व्यक्ति है। शिक्षा उनके दिल के करीब है और वह इस कहावत मे विश्वास करते है कि ''एक लड़के को शिक्षित करें तो एक व्यक्ति शिक्षित होगा, एक लड़की को शिक्षित करें तो एक परिवार शिक्षित होगा।''।
+              </p>
             </div>
             <div v-if="locale === 'en'" class="prose prose-lg text-gray-700 space-y-4 text-justify">
               <p class="text-base leading-relaxed">
-                The need for a separate college for women's education in Chirawa was felt deeply in the community. The then-legislator Shri Hajarilal Sharma Ji raised this issue and contacted the Sekhsaria family. Shri Satyanarayan Ji Sekhsaria decided to support this initiative and the college's foundation stone was laid on November 19, 1986. The building was completed in just nine months and teaching began in July 1987.
+                The need for a separate college for women's education in Chirawa was felt. The then-legislator Shri Hajarilal Sharma Ji raised this issue and contacted the Sekhsaria family. Shri Satyanarayan Ji Sekhsaria decided to support this initiative and the college's foundation stone was laid on November 19, 1986. The building was completed in just nine months and teaching began in July 1987.
+              </p>
+              <p class="text-base leading-relaxed">
+                Shri Satyanarayan Ji's son, Shri N.S. Sekhsaria, currently serves as the Chairman of the Ginnidevi Satyanarayan Sekhsaria Memorial Trust. His financial generosity aligns perfectly with their dream to transform all girls from Chirawa and surrounding areas into confident, educated, self-reliant young women who are responsible individuals, fully prepared to successfully face life's challenges. Education is close to his heart and he believes in the saying "Educate a boy and you educate an individual, educate a girl and you educate a family."
               </p>
             </div>
           </div>
