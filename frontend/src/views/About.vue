@@ -11,34 +11,54 @@
     </section>
 
     <!-- Our Glorious History -->
-    <section class="py-16">
+    <section class="py-16 bg-white">
       <div class="container-custom">
-        <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">{{ $t('about.historyTitle') }}</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
+        <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">{{ $t('about.historyTitle') }}</h2>
+        
+        <!-- Ginnidevi Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="hidden lg:block">
+            <img src="/About-1.webp" alt="Ginnidevi" class="rounded-2xl shadow-2xl w-full h-96 object-cover" />
+          </div>
           <div class="max-w-3xl">
-            <div v-if="locale === 'hi'" class="prose prose-lg text-gray-700 space-y-6 text-justify">
-              <p class="text-lg leading-relaxed">
-                चिड़ावा में महिला शिक्षा के लिए एक अलग कॉलेज की आवश्यकता महसूस की गई। तत्कालीन विधायक श्री हजारीलाल शर्मा जी ने इस मुद्दे को उठाया और सेखसरिया परिवार से संपर्क किया। श्री सत्यनारायण जी सेखसरिया ने इस प्रयास में सहयोग करने का फैसला किया और 19 नवंबर 1986 को कॉलेज का शिलान्यास हुआ। मात्र नौ महीनों में भवन तैयार हो गया और जुलाई 1987 से शिक्षण कार्य शुरू हो गया।
-              </p>
-              <p class="text-lg leading-relaxed">
-                श्री सत्यनारायणजी के पुत्र श्री एन.एस. सेखसरिया वर्तमान में गिन्नीदेवी सत्यनारायण सेखसरिया मेमोरियल ट्रस्ट के अध्यक्ष हैं। उनकी वित्तीय उदारता चिड़ावा और आस-पास के क्षेत्रों की सभी लड़कियों को आत्मविश्वासी, शिक्षित, आत्मनिर्भर युवा महिलाओं में बदलने के उनके सपने से काफी मेलखाती है।
+            <h3 class="text-2xl font-bold text-primary-600 mb-4">
+              <span v-if="locale === 'hi'">गिन्नीदेवी - संस्था का नाम</span>
+              <span v-if="locale === 'en'">Ginnidevi - The Namesake</span>
+            </h3>
+            <div v-if="locale === 'hi'" class="prose prose-lg text-gray-700 space-y-4 text-justify">
+              <p class="text-base leading-relaxed">
+                यह संस्थान श्री सत्यनारायण जी सेखसरिया की पत्नी गिन्नीदेवी को समर्पित है। गिन्नीदेवी एक महान महिला थीं जो महिला शिक्षा में विश्वास रखती थीं और समाज के उत्थान के लिए प्रतिबद्ध थीं। उनके नाम पर इस कॉलेज की स्थापना की गई ताकि आने वाली पीढ़ियां उनके योगदान और विचारों को याद रखें।
               </p>
             </div>
-            <div v-if="locale === 'en'" class="prose prose-lg text-gray-700 space-y-6 text-justify">
-              <p class="text-lg leading-relaxed">
-                The need for a separate college for women's education in Chirawa was felt deeply in the community. The then-legislator Shri Hajarilal Sharma Ji raised this issue and contacted the Sekhsaria family. Shri Satyanarayan Ji Sekhsaria decided to support this initiative and the college's foundation stone was laid on November 19, 1986. The building was completed in just nine months and teaching began in July 1987.
+            <div v-if="locale === 'en'" class="prose prose-lg text-gray-700 space-y-4 text-justify">
+              <p class="text-base leading-relaxed">
+                This institution is dedicated to Ginnidevi, the wife of Shri Satyanarayan Ji Sekhsaria. Ginnidevi was a remarkable woman who believed in women's education and was committed to the upliftment of society. The college is named after her to ensure that future generations remember her contributions and ideals.
               </p>
-              <p class="text-lg leading-relaxed">
-                Shri Satyanarayan Ji's son, Shri N.S. Sekhsaria, currently serves as the Chairman of the Ginnidevi Satyanarayan Sekhsaria Memorial Trust. His financial generosity aligns perfectly with their vision to transform all girls from Chirawa and surrounding areas into confident, educated, and self-reliant young women.
+            </div>
+          </div>
+        </div>
+
+        <!-- Founder Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="max-w-3xl">
+            <h3 class="text-2xl font-bold text-primary-600 mb-4">
+              <span v-if="locale === 'hi'">श्री सत्यनारायण जी सेखसरिया - संस्थापक</span>
+              <span v-if="locale === 'en'">Shri Satyanarayan Ji Sekhsaria - The Founder</span>
+            </h3>
+            <div v-if="locale === 'hi'" class="prose prose-lg text-gray-700 space-y-4 text-justify">
+              <p class="text-base leading-relaxed">
+                चिड़ावा में महिला शिक्षा के लिए एक अलग कॉलेज की आवश्यकता महसूस की गई। तत्कालीन विधायक श्री हजारीलाल शर्मा जी ने इस मुद्दे को उठाया और सेखसरिया परिवार से संपर्क किया। श्री सत्यनारायण जी सेखसरिया ने इस प्रयास में सहयोग करने का फैसला किया और 19 नवंबर 1986 को कॉलेज का शिलान्यास हुआ। मात्र नौ महीनों में भवन तैयार हो गया और जुलाई 1987 से शिक्षण कार्य शुरू हो गया।
+              </p>
+            </div>
+            <div v-if="locale === 'en'" class="prose prose-lg text-gray-700 space-y-4 text-justify">
+              <p class="text-base leading-relaxed">
+                The need for a separate college for women's education in Chirawa was felt deeply in the community. The then-legislator Shri Hajarilal Sharma Ji raised this issue and contacted the Sekhsaria family. Shri Satyanarayan Ji Sekhsaria decided to support this initiative and the college's foundation stone was laid on November 19, 1986. The building was completed in just nine months and teaching began in July 1987.
               </p>
             </div>
           </div>
           <div class="hidden lg:block">
-            <img src="/About-1.webp" alt="College History" class="rounded-xl shadow-2xl w-full h-96 object-cover" />
+            <img src="/About-2.webp" alt="Founder Shri Satyanarayan Ji Sekhsaria" class="rounded-2xl shadow-2xl w-full h-96 object-cover" />
           </div>
-        </div>
-        <div class="hidden lg:block mt-8">
-          <img src="/About-2.webp" alt="College Campus" class="rounded-xl shadow-2xl w-full h-64 object-cover" />
         </div>
       </div>
     </section>

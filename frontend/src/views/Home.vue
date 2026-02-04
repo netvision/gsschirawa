@@ -357,64 +357,77 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+    <section class="py-20 bg-gradient-to-br from-white via-primary-50 to-secondary-50">
       <div class="container-custom">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {{ $t('home.whyChooseTitle') }}
+        <div class="text-center mb-16">
+          <div class="inline-block bg-primary-100 text-primary-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Why Choose Us
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Experience Excellence in Every Way
           </h2>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            {{ $t('home.whyChooseSubtitle') }}
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            We've been shaping young minds and building confident women leaders since 1987
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
-            <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <img src="/original-images/USP.png" alt="Quality Education" class="w-12 h-12 object-contain" />
+          <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl">📚</span>
             </div>
-            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason1Title') }}</h3>
-            <p class="text-gray-600">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $t('home.whyReason1Title') }}</h3>
+            <p class="text-gray-600 leading-relaxed">
               {{ $t('home.whyReason1Text') }}
             </p>
           </div>
 
-          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
-            <div class="text-5xl mb-4">👩‍🏫</div>
-            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason2Title') }}</h3>
-            <p class="text-gray-600">
+          <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl">👩‍🏫</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $t('home.whyReason2Title') }}</h3>
+            <p class="text-gray-600 leading-relaxed">
               {{ $t('home.whyReason2Text') }}
             </p>
           </div>
 
-          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
-            <div class="text-5xl mb-4">🌱</div>
-            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason3Title') }}</h3>
-            <p class="text-gray-600">
+          <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl">🌱</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $t('home.whyReason3Title') }}</h3>
+            <p class="text-gray-600 leading-relaxed">
               {{ $t('home.whyReason3Text') }}
             </p>
           </div>
 
-          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
-            <div class="text-5xl mb-4">🛡️</div>
-            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason4Title') }}</h3>
-            <p class="text-gray-600">
+          <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl">🛡️</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $t('home.whyReason4Title') }}</h3>
+            <p class="text-gray-600 leading-relaxed">
               {{ $t('home.whyReason4Text') }}
             </p>
           </div>
 
-          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
-            <div class="text-5xl mb-4">👩‍🎓</div>
-            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason5Title') }}</h3>
-            <p class="text-gray-600">
+          <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl">👩‍🎓</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $t('home.whyReason5Title') }}</h3>
+            <p class="text-gray-600 leading-relaxed">
               {{ $t('home.whyReason5Text') }}
             </p>
           </div>
 
-          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center">
-            <div class="text-5xl mb-4">🌟</div>
-            <h3 class="text-xl font-semibold mb-3">{{ $t('home.whyReason6Title') }}</h3>
-            <p class="text-gray-600">
+          <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl">🌟</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $t('home.whyReason6Title') }}</h3>
+            <p class="text-gray-600 leading-relaxed">
               {{ $t('home.whyReason6Text') }}
             </p>
           </div>
