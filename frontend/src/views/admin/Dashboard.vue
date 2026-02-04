@@ -129,6 +129,9 @@
               <button @click="activeTab = 'testimonials'" class="btn btn-outline text-sm">
                 ⭐ Manage Testimonials
               </button>
+              <button @click="activeTab = 'alumnae'" class="btn btn-outline text-sm">
+                👩‍🎓 Manage Alumnae
+              </button>
               <button @click="activeTab = 'contacts'" class="btn btn-outline text-sm">
                 ✉️ View All Messages
               </button>
@@ -592,6 +595,11 @@
             </div>
           </div>
 
+          <!-- Alumnae Management -->
+          <div v-else-if="activeTab === 'alumnae'">
+            <AlumnaeManagement />
+          </div>
+
           <!-- Contacts Management -->
           <div v-else-if="activeTab === 'contacts'">
             <h3 class="text-xl font-bold mb-4">All Contact Submissions</h3>
@@ -653,6 +661,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import api, { getAssetUrl } from '../../services/api'
+import AlumnaeManagement from './AlumnaeManagement.vue'
 
 const router = useRouter()
 
@@ -673,6 +682,7 @@ const tabs = [
   { key: 'notices', label: 'Notices' },
   { key: 'gallery', label: 'Gallery' },
   { key: 'testimonials', label: 'Testimonials' },
+  { key: 'alumnae', label: 'Alumnae' },
   { key: 'contacts', label: 'Contacts' }
 ]
 
