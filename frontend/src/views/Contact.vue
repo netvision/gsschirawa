@@ -16,25 +16,25 @@
         ></iframe>
       </div>
       
-      <!-- Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/85 to-primary-700/80"></div>
-      
-      <!-- Content -->
+      <!-- Content with text-only background -->
       <div class="relative z-10 container-custom h-full flex flex-col justify-center items-center text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg">
-          {{ $t('contact.pageTitle') }}
-        </h1>
-        <p class="text-xl md:text-2xl text-white/95 max-w-2xl drop-shadow-md">
-          {{ $t('contact.subtitle') }}
-        </p>
+        <!-- Text Background Box -->
+        <div class="bg-gradient-to-r from-primary-800/70 via-primary-700/65 to-primary-600/70 backdrop-blur-sm px-8 md:px-12 py-8 rounded-2xl max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg">
+            {{ $t('contact.pageTitle') }}
+          </h1>
+          <p class="text-lg md:text-xl text-white/95 drop-shadow-md">
+            {{ $t('contact.subtitle') }}
+          </p>
+        </div>
         
         <!-- Quick Contact Info -->
         <div class="mt-8 flex flex-wrap gap-6 justify-center text-white">
-          <a href="tel:+917878306013" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20 transition-all">
+          <a href="tel:+917878306013" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20 transition-all border border-white/20">
             <span class="text-xl">📞</span>
             <span class="font-semibold">+91 7878306013</span>
           </a>
-          <a href="mailto:gsscollege1987@yahoo.co.in" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20 transition-all">
+          <a href="mailto:gsscollege1987@yahoo.co.in" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20 transition-all border border-white/20">
             <span class="text-xl">✉️</span>
             <span class="font-semibold">gsscollege1987@yahoo.co.in</span>
           </a>
