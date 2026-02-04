@@ -39,6 +39,24 @@ const routes = [
     meta: { title: "Contact Us - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
+    path: '/alumni',
+    name: 'AlumniDirectory',
+    component: () => import('../views/Alumni/Directory.vue'),
+    meta: { title: "Alumni Directory - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
+  },
+  {
+    path: '/alumni/:id',
+    name: 'AlumniProfile',
+    component: () => import('../views/Alumni/Profile.vue'),
+    meta: { title: "Alumni Profile - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
+  },
+  {
+    path: '/alumni/register',
+    name: 'AlumniRegister',
+    component: () => import('../views/Alumni/Register.vue'),
+    meta: { title: "Register as Alumni - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
+  },
+  {
     path: '/admin',
     name: 'Admin',
     component: () => import('../views/admin/Dashboard.vue'),

@@ -563,6 +563,92 @@
       </div>
     </section>
 
+    <!-- Featured Alumni Section -->
+    <section v-if="alumni.length > 0" class="py-20 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12">
+          <div class="inline-block bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Our Pride
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Featured Alumni
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Celebrating the success stories of our exceptional alumni who are making a difference in the world
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div
+            v-for="person in alumni.slice(0, 3)"
+            :key="person._id"
+            class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden border border-gray-100"
+          >
+            <div class="relative h-48 bg-gradient-to-br from-primary-500 to-secondary-500 overflow-hidden">
+              <img
+                v-if="person.profileImage"
+                :src="getAssetUrl(person.profileImage)"
+                :alt="person.firstName + ' ' + person.lastName"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                @error="handleAlumniImageError"
+              />
+              <div v-else class="w-full h-full flex items-center justify-center text-6xl text-white">
+                👩‍🎓
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 class="text-xl font-bold">{{ person.firstName }} {{ person.lastName }}</h3>
+                <p class="text-sm text-white/90">{{ person.batch }}</p>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="mb-4">
+                <p class="text-lg font-semibold text-gray-900">{{ person.currentDesignation }}</p>
+                <p class="text-sm text-gray-600 flex items-center mt-1">
+                  <i class="fas fa-building mr-2 text-primary-600"></i>
+                  {{ person.currentCompany }}
+                </p>
+              </div>
+
+              <div class="space-y-2 mb-4">
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-graduation-cap mr-2 text-secondary-600 w-5"></i>
+                  <span>{{ person.courseName }}</span>
+                </div>
+                <div v-if="person.industry" class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-industry mr-2 text-secondary-600 w-5"></i>
+                  <span>{{ person.industry }}</span>
+                </div>
+              </div>
+
+              <RouterLink 
+                :to="'/alumni/' + person._id"
+                class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-sm group"
+              >
+                <span>View Profile</span>
+                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
+              </RouterLink>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <RouterLink 
+            to="/alumni" 
+            class="btn btn-primary inline-flex items-center"
+          >
+            <span>View All Alumni</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </RouterLink>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="relative py-20 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-600"></div>
@@ -600,6 +686,7 @@ import api, { getAssetUrl } from '../services/api'
 const courses = ref([])
 const notices = ref([])
 const testimonials = ref([])
+const alumni = ref([])
 const currentSlide = ref(0)
 let slideInterval = null
 
@@ -631,16 +718,22 @@ const stopAutoSlide = () => {
   }
 }
 
+const handleAlumniImageError = (event) => {
+  event.target.src = 'https://via.placeholder.com/400x300?text=Alumni'
+}
+
 onMounted(async () => {
   try {
-    const [coursesRes, noticesRes, testimonialsRes] = await Promise.all([
+    const [coursesRes, noticesRes, testimonialsRes, alumniRes] = await Promise.all([
       api.getCourses(),
       api.getNotices(),
-      api.getTestimonials()
+      api.getTestimonials(),
+      api.getFeaturedAlumni(3)
     ])
     courses.value = coursesRes.data.data || []
     notices.value = noticesRes.data.data || []
     testimonials.value = testimonialsRes.data.data || []
+    alumni.value = alumniRes.data || []
     
     // Start carousel auto-play
     startAutoSlide()
