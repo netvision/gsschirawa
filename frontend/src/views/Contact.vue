@@ -16,27 +16,31 @@
         ></iframe>
       </div>
       
-      <!-- Content with text-only background -->
-      <div class="relative z-10 container-custom h-full flex flex-col justify-center items-center text-center">
-        <!-- Text Background Box -->
-        <div class="bg-gradient-to-r from-primary-800/70 via-primary-700/65 to-primary-600/70 backdrop-blur-sm px-8 md:px-12 py-8 rounded-2xl max-w-3xl">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg">
+      <!-- Content positioned left-middle -->
+      <div class="relative z-10 container-custom h-full flex flex-col justify-center items-start pl-8 md:pl-16">
+        <!-- Title with text background only -->
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-white" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5), 0 0 20px rgba(79, 70, 229, 0.6);">
+          <span class="bg-gradient-to-r from-primary-800/60 to-primary-700/50 backdrop-blur px-3 py-1">
             {{ $t('contact.pageTitle') }}
-          </h1>
-          <p class="text-lg md:text-xl text-white/95 drop-shadow-md">
+          </span>
+        </h1>
+        
+        <!-- Subtitle with text background only -->
+        <p class="text-lg md:text-2xl text-white/95 max-w-2xl" style="text-shadow: 0 1px 5px rgba(0,0,0,0.4);">
+          <span class="bg-gradient-to-r from-primary-800/50 to-transparent backdrop-blur px-3 py-1 inline-block">
             {{ $t('contact.subtitle') }}
-          </p>
-        </div>
+          </span>
+        </p>
         
         <!-- Quick Contact Info -->
-        <div class="mt-8 flex flex-wrap gap-6 justify-center text-white">
-          <a href="tel:+917878306013" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20 transition-all border border-white/20">
+        <div class="mt-8 flex flex-wrap gap-4 text-white">
+          <a href="tel:+917878306013" class="flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/25 transition-all border border-white/20">
             <span class="text-xl">📞</span>
-            <span class="font-semibold">+91 7878306013</span>
+            <span class="font-semibold text-sm md:text-base">+91 7878306013</span>
           </a>
-          <a href="mailto:gsscollege1987@yahoo.co.in" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20 transition-all border border-white/20">
+          <a href="mailto:gsscollege1987@yahoo.co.in" class="flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/25 transition-all border border-white/20">
             <span class="text-xl">✉️</span>
-            <span class="font-semibold">gsscollege1987@yahoo.co.in</span>
+            <span class="font-semibold text-sm md:text-base">gsscollege1987@yahoo.co.in</span>
           </a>
         </div>
       </div>
