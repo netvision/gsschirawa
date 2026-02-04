@@ -543,7 +543,13 @@ onUnmounted(() => {
   0% {
     transform: rotateY(0deg);
   }
+  25% {
+    transform: rotateY(0deg);
+  }
   50% {
+    transform: rotateY(180deg);
+  }
+  75% {
     transform: rotateY(180deg);
   }
   100% {
@@ -552,7 +558,7 @@ onUnmounted(() => {
 }
 
 .animate-flip-card {
-  animation: flipCard 6s ease-in-out infinite;
+  animation: flipCard 8s ease-in-out infinite;
   perspective: 1000px;
   width: 200px;
   height: 90px;
