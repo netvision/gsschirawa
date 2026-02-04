@@ -11,7 +11,7 @@
           <div class="text-white space-y-4 animate-fadeIn">
             <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
               <span class="text-yellow-300">👩‍🎓</span>
-              <span>Women's Higher Education Since 1987</span>
+              <span>Imparting Higher Education to Women Since 1987</span>
             </div>
             
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
@@ -88,13 +88,25 @@
                 </div>
               </div>
               
-              <!-- Floating Stats Badge -->
-              <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-2xl p-5 animate-float">
-                <div class="flex items-center gap-3">
-                  <div class="text-4xl">🎓</div>
-                  <div>
-                    <div class="text-2xl font-bold text-primary-600">7100+</div>
-                    <div class="text-xs text-gray-600 font-semibold">Students Educated</div>
+              <!-- Floating Stats Badge with Flip Animation -->
+              <div class="absolute -bottom-6 -left-6 animate-flip-card">
+                <div class="flip-card-inner">
+                  <!-- Front of card -->
+                  <div class="flip-card-front bg-white rounded-xl shadow-2xl p-5">
+                    <div class="flex items-center gap-3">
+                      <div class="text-4xl">🎓</div>
+                      <div>
+                        <div class="text-2xl font-bold text-primary-600">7100+</div>
+                        <div class="text-xs text-gray-600 font-semibold">Students Educated</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Back of card -->
+                  <div class="flip-card-back bg-primary-600 rounded-xl shadow-2xl p-5 text-white flex items-center justify-center">
+                    <div class="text-center">
+                      <div class="text-4xl font-bold">1987</div>
+                      <div class="text-xs font-semibold">Established</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -122,10 +134,6 @@
                         alt="Shri Narottam Satyanarayan Sekhsaria Ji" 
                         class="rounded-2xl shadow-2xl w-full max-w-sm mx-auto object-cover border-4 border-white"
                       />
-                    </div>
-                    <div class="bg-white/95 backdrop-blur-sm px-6 py-4 rounded-xl shadow-lg">
-                      <p class="text-4xl font-bold text-primary-600">1987</p>
-                      <p class="text-sm text-gray-600 font-semibold">{{ $t('home.establishedYear') }}</p>
                     </div>
                   </div>
                 </div>
@@ -529,6 +537,51 @@ onUnmounted(() => {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes flipCard {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-flip-card {
+  animation: flipCard 6s ease-in-out infinite;
+  perspective: 1000px;
+  width: 200px;
+  height: 90px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.animate-flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
 }
 
 .slide-fade-enter-active,
