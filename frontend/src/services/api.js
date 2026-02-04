@@ -101,27 +101,27 @@ export default {
   }),
   deleteTestimonial: (id) => api.delete(`/testimonials/${id}`),
 
-  // Alumni
-  getFeaturedAlumni: (limit = 6) => api.get('/alumni/featured', { params: { limit } }),
-  getAlumni: (params) => api.get('/alumni', { params }),
-  getAlumniById: (id) => api.get(`/alumni/${id}`),
-  checkAlumniEmail: (email) => api.get(`/alumni/check-registration/${email}`),
-  registerAlumni: (data) => api.post('/alumni/register', data, {
+  // Alumnae
+  getFeaturedAlumnae: (limit = 6) => api.get('/alumnae/featured', { params: { limit } }),
+  getAlumnae: (params) => api.get('/alumnae', { params }),
+  getAlumnaById: (id) => api.get(`/alumnae/${id}`),
+  checkAlumnaEmail: (email) => api.get(`/alumnae/check-registration/${email}`),
+  registerAlumna: (data) => api.post('/alumnae/register', data, {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),
-  updateAlumniProfile: (id, data) => api.put(`/alumni/${id}`, data, {
+  updateAlumnaProfile: (id, data) => api.put(`/alumnae/${id}`, data, {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),
   
-  // Alumni Admin
-  getPendingAlumni: () => api.get('/alumni/admin/pending'),
-  addAlumni: (data) => api.post('/alumni/admin/add', data, {
+  // Alumnae Admin
+  getPendingAlumnae: () => api.get('/alumnae/admin/pending'),
+  addAlumna: (data) => api.post('/alumnae/admin/add', data, {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),
-  verifyAlumni: (id, notes) => api.patch(`/alumni/admin/${id}/verify`, { verificationNotes: notes }),
-  rejectAlumni: (id, notes) => api.patch(`/alumni/admin/${id}/reject`, { verificationNotes: notes }),
-  featureAlumni: (id, isFeatured) => api.patch(`/alumni/admin/${id}/feature`, { isFeatured }),
-  deleteAlumni: (id) => api.delete(`/alumni/admin/${id}`),
+  verifyAlumna: (id, notes) => api.patch(`/alumnae/admin/${id}/verify`, { verificationNotes: notes }),
+  rejectAlumna: (id, notes) => api.patch(`/alumnae/admin/${id}/reject`, { verificationNotes: notes }),
+  featureAlumna: (id, isFeatured) => api.patch(`/alumnae/admin/${id}/feature`, { isFeatured }),
+  deleteAlumna: (id) => api.delete(`/alumnae/admin/${id}`),
 
   // Auth
   login: (credentials) => api.post('/auth/login', credentials),

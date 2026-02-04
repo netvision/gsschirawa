@@ -3,8 +3,8 @@
     <div class="max-w-4xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-gray-900 mb-3">Alumni Registration</h1>
-        <p class="text-lg text-gray-600">Join our alumni community and stay connected!</p>
+        <h1 class="text-4xl font-bold text-gray-900 mb-3">Alumna Registration</h1>
+        <p class="text-lg text-gray-600">Join our alumnae community and stay connected!</p>
       </div>
 
       <!-- Progress Indicator -->
@@ -50,7 +50,7 @@
             to="/alumni" 
             class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
           >
-            View Alumni Directory
+            View Alumnae Directory
           </router-link>
           <router-link 
             to="/" 
@@ -482,7 +482,7 @@ const handleFileChange = (event) => {
 const checkEmailExists = async () => {
   if (formData.value.email) {
     try {
-      const response = await api.checkAlumniEmail(formData.value.email);
+      const response = await api.checkAlumnaEmail(formData.value.email);
       emailExists.value = response.data.exists;
     } catch (err) {
       console.error('Error checking email:', err);
@@ -527,7 +527,7 @@ const handleSubmit = async () => {
       }
     });
 
-    await api.registerAlumni(submitData);
+    await api.registerAlumna(submitData);
     submitted.value = true;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } catch (err) {
@@ -543,3 +543,4 @@ const handleSubmit = async () => {
 <style scoped>
 /* Add any additional custom styles here */
 </style>
+

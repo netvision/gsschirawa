@@ -39,22 +39,22 @@ const routes = [
     meta: { title: "Contact Us - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
-    path: '/alumni',
-    name: 'AlumniDirectory',
-    component: () => import('../views/Alumni/Directory.vue'),
-    meta: { title: "Alumni Directory - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
+    path: '/alumnae',
+    name: 'AlumnaeDirectory',
+    component: () => import('../views/Alumnae/Directory.vue'),
+    meta: { title: "Alumnae Directory - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
-    path: '/alumni/:id',
-    name: 'AlumniProfile',
-    component: () => import('../views/Alumni/Profile.vue'),
-    meta: { title: "Alumni Profile - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
+    path: '/alumnae/:id',
+    name: 'AlumnaeProfile',
+    component: () => import('../views/Alumnae/Profile.vue'),
+    meta: { title: "Alumna Profile - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
-    path: '/alumni/register',
-    name: 'AlumniRegister',
-    component: () => import('../views/Alumni/Register.vue'),
-    meta: { title: "Register as Alumni - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
+    path: '/alumnae/register',
+    name: 'AlumnaeRegister',
+    component: () => import('../views/Alumnae/Register.vue'),
+    meta: { title: "Register as Alumna - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
     path: '/admin',

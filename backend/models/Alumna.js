@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const alumniSchema = new mongoose.Schema({
+const alumnaeSchema = new mongoose.Schema({
   // Personal Information
   firstName: {
     type: String,

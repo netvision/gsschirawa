@@ -7,7 +7,7 @@
     <div v-else-if="error" class="max-w-4xl mx-auto px-4 py-16">
       <div class="bg-red-50 border border-red-200 rounded-lg p-8 text-center">
         <i class="fas fa-exclamation-circle text-4xl text-red-500 mb-4"></i>
-        <h2 class="text-2xl font-bold text-gray-900 mb-2">Alumni Not Found</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Alumna Not Found</h2>
         <p class="text-gray-600 mb-6">{{ error }}</p>
         <router-link 
           to="/alumni" 
@@ -216,7 +216,7 @@
           class="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg"
         >
           <i class="fas fa-arrow-left mr-2"></i>
-          Back to Alumni Directory
+          Back to Alumnae Directory
         </router-link>
       </div>
     </div>
@@ -230,7 +230,7 @@ import api from '@/services/api';
 import LoadingSpinner from '@/components/LoadingSpinner.vue';
 
 const route = useRoute();
-const alumni = ref(null);
+const alumna = ref(null);
 const loading = ref(true);
 const error = ref(null);
 
@@ -252,11 +252,11 @@ const fetchAlumniProfile = async () => {
   try {
     loading.value = true;
     error.value = null;
-    const response = await api.getAlumniById(route.params.id);
-    alumni.value = response.data;
+    const response = await api.getAlumnaeById(route.params.id);
+    alumna.value = response.data;
   } catch (err) {
-    console.error('Error fetching alumni profile:', err);
-    error.value = err.response?.data?.message || 'Failed to load alumni profile. Please try again.';
+    console.error('Error fetching alumna profile:', err);
+    error.value = err.response?.data?.message || 'Failed to load alumna profile. Please try again.';
   } finally {
     loading.value = false;
   }
@@ -270,3 +270,4 @@ onMounted(() => {
 <style scoped>
 /* Add any additional custom styles here */
 </style>
+

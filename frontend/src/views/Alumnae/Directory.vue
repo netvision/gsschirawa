@@ -3,7 +3,7 @@
     <!-- Page Header -->
     <section class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-16">
       <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Alumni Directory</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Alumnae Directory</h1>
         <p class="text-xl text-primary-100">
           Meet our successful graduates making a difference worldwide
         </p>
@@ -144,7 +144,7 @@
           Join our alumni network and inspire current students
         </p>
         <RouterLink
-          to="/alumni/register"
+          to="/alumnae/register"
           class="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
           Register as Alumni
@@ -161,7 +161,7 @@ import api, { getAssetUrl } from '../../services/api'
 
 const router = useRouter()
 
-const alumni = ref([])
+const alumnae = ref([])
 const loading = ref(false)
 const searchTerm = ref('')
 const filters = ref({
@@ -216,8 +216,8 @@ const fetchAlumni = async () => {
       ...(filters.value.industry && { industry: filters.value.industry })
     }
     
-    const response = await api.getAlumni(params)
-    alumni.value = response.data.data
+    const response = await api.getAlumnae(params)
+    alumnae.value = response.data.data
     pagination.value = response.data.pagination
   } catch (error) {
     console.error('Error fetching alumni:', error)
@@ -253,10 +253,12 @@ const changePage = (page) => {
 }
 
 const viewProfile = (id) => {
-  router.push(`/alumni/${id}`)
+  router.push(`/alumnae/${id}`)
 }
 
 onMounted(() => {
   fetchAlumni()
 })
 </script>
+
+

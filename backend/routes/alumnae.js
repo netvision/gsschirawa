@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const Alumni = require('../models/Alumni');
+const alumnae = require('../models/Alumna');
 const auth = require('../middleware/auth');
 const upload = require('../middleware/upload');
 
 // Public Routes
 
-// Get featured alumni for home page
+// Get featured alumnae for home page
 router.get('/featured', async (req, res) => {
   try {
     const limit = parseInt(req.query.limit) || 6;
-    const alumni = await Alumni.find({ 
+    const alumnae = await Alumna.find({ 
       status: 'verified', 
       isFeatured: true,
       isActive: true 
@@ -19,13 +19,13 @@ router.get('/featured', async (req, res) => {
     .limit(limit)
     .sort({ verifiedAt: -1 });
     
-    res.json({ success: true, data: alumni });
+    res.json({ success: true, data: alumnae });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 });
 
-// Get all verified alumni with filters
+// Get all verified alumna with filters
 router.get('/', async (req, res) => {
   try {
     const { search, year, industry, company, limit = 20, page = 1 } = req.query;
@@ -54,17 +54,17 @@ router.get('/', async (req, res) => {
     
     const skip = (parseInt(page) - 1) * parseInt(limit);
     
-    const alumni = await Alumni.find(query)
+    const alumnae = await Alumna.find(query)
       .select('-verificationNotes -__v')
       .limit(parseInt(limit))
       .skip(skip)
       .sort({ passoutYear: -1, lastName: 1 });
     
-    const total = await Alumni.countDocuments(query);
+    const total = await Alumna.countDocuments(query);
     
     res.json({
       success: true,
-      data: alumni,
+      data: alumna,
       pagination: {
         total,
         page: parseInt(page),
@@ -76,22 +76,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get single alumni profile
+// Get single alumna profile
 router.get('/:id', async (req, res) => {
   try {
-    const alumni = await Alumni.findById(req.params.id)
+    const alumnae = await Alumna.findById(req.params.id)
       .select('-verificationNotes -__v');
     
-    if (!alumni) {
-      return res.status(404).json({ success: false, message: 'Alumni not found' });
+    if (!alumna) {
+      return res.status(404).json({ success: false, message: 'alumna not found' });
     }
     
     // Only show if verified (unless admin)
-    if (alumni.status !== 'verified' && !req.user?.role === 'admin') {
+    if (Alumna.status !== 'verified' && !req.user?.role === 'admin') {
       return res.status(403).json({ success: false, message: 'Profile not available' });
     }
     
-    res.json({ success: true, data: alumni });
+    res.json({ success: true, data: alumnae });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
@@ -100,13 +100,13 @@ router.get('/:id', async (req, res) => {
 // Check if email is already registered
 router.get('/check-registration/:email', async (req, res) => {
   try {
-    const alumni = await Alumni.findOne({ email: req.params.email.toLowerCase() });
+    const alumnae = await Alumna.findOne({ email: req.params.email.toLowerCase() });
     
-    if (alumni) {
+    if (alumna) {
       return res.json({ 
         success: true, 
         exists: true, 
-        status: alumni.status 
+        status: Alumna.status 
       });
     }
     
@@ -120,7 +120,7 @@ router.get('/check-registration/:email', async (req, res) => {
 router.post('/register', upload.single('profileImage'), async (req, res) => {
   try {
     // Check if email already exists
-    const existing = await Alumni.findOne({ email: req.body.email.toLowerCase() });
+    const existing = await Alumna.findOne({ email: req.body.email.toLowerCase() });
     if (existing) {
       return res.status(400).json({ 
         success: false, 
@@ -135,33 +135,33 @@ router.post('/register', upload.single('profileImage'), async (req, res) => {
       status: 'pending'
     };
     
-    const alumni = new Alumni(alumniData);
-    await alumni.save();
+    const alumnae = new alumna(alumniData);
+    await Alumna.save();
     
     res.status(201).json({
       success: true,
       message: 'Registration submitted successfully. Admin will verify your profile.',
-      data: { alumniId: alumni._id }
+      data: { alumniId: Alumna._id }
     });
   } catch (error) {
     res.status(400).json({ success: false, message: error.message });
   }
 });
 
-// Update own profile (for self-registered alumni)
+// Update own profile (for self-registered alumna)
 router.put('/:id', auth, upload.single('profileImage'), async (req, res) => {
   try {
-    const alumni = await Alumni.findById(req.params.id);
+    const alumnae = await Alumna.findById(req.params.id);
     
-    if (!alumni) {
-      return res.status(404).json({ success: false, message: 'Alumni not found' });
+    if (!alumna) {
+      return res.status(404).json({ success: false, message: 'alumna not found' });
     }
     
-    // Only allow self-registered alumni to update their own profile
-    if (alumni.registrationType !== 'self-registered') {
+    // Only allow self-registered alumna to update their own profile
+    if (Alumna.registrationType !== 'self-registered') {
       return res.status(403).json({ 
         success: false, 
-        message: 'Only self-registered profiles can be updated by alumni' 
+        message: 'Only self-registered profiles can be updated by alumna' 
       });
     }
     
@@ -170,19 +170,19 @@ router.put('/:id', auth, upload.single('profileImage'), async (req, res) => {
       updateData.profileImage = `/uploads/${req.file.filename}`;
     }
     
-    // Remove fields that shouldn't be updated by alumni
+    // Remove fields that shouldn't be updated by alumna
     delete updateData.status;
     delete updateData.isFeatured;
     delete updateData.verificationNotes;
     delete updateData.registrationType;
     
-    Object.assign(alumni, updateData);
-    await alumni.save();
+    Object.assign(alumna, updateData);
+    await Alumna.save();
     
     res.json({
       success: true,
       message: 'Profile updated successfully',
-      data: alumni
+      data: alumna
     });
   } catch (error) {
     res.status(400).json({ success: false, message: error.message });
@@ -198,16 +198,16 @@ router.get('/admin/pending', auth, async (req, res) => {
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumni = await Alumni.find({ status: 'pending' })
+    const alumnae = await Alumna.find({ status: 'pending' })
       .sort({ createdAt: -1 });
     
-    res.json({ success: true, data: alumni });
+    res.json({ success: true, data: alumnae });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 });
 
-// Add alumni manually (admin only)
+// Add alumna manually (admin only)
 router.post('/admin/add', auth, upload.single('profileImage'), async (req, res) => {
   try {
     if (req.user.role !== 'admin') {
@@ -222,27 +222,27 @@ router.post('/admin/add', auth, upload.single('profileImage'), async (req, res) 
       verifiedAt: new Date()
     };
     
-    const alumni = new Alumni(alumniData);
-    await alumni.save();
+    const alumnae = new alumna(alumniData);
+    await Alumna.save();
     
     res.status(201).json({
       success: true,
-      message: 'Alumni added successfully',
-      data: alumni
+      message: 'alumna added successfully',
+      data: alumna
     });
   } catch (error) {
     res.status(400).json({ success: false, message: error.message });
   }
 });
 
-// Verify alumni registration
+// Verify alumna registration
 router.patch('/admin/:id/verify', auth, async (req, res) => {
   try {
     if (req.user.role !== 'admin') {
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumni = await Alumni.findByIdAndUpdate(
+    const alumnae = await Alumna.findByIdAndUpdate(
       req.params.id,
       {
         status: 'verified',
@@ -252,28 +252,28 @@ router.patch('/admin/:id/verify', auth, async (req, res) => {
       { new: true }
     );
     
-    if (!alumni) {
-      return res.status(404).json({ success: false, message: 'Alumni not found' });
+    if (!alumna) {
+      return res.status(404).json({ success: false, message: 'alumna not found' });
     }
     
     res.json({
       success: true,
-      message: 'Alumni verified successfully',
-      data: alumni
+      message: 'alumna verified successfully',
+      data: alumna
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 });
 
-// Reject alumni registration
+// Reject alumna registration
 router.patch('/admin/:id/reject', auth, async (req, res) => {
   try {
     if (req.user.role !== 'admin') {
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumni = await Alumni.findByIdAndUpdate(
+    const alumnae = await Alumna.findByIdAndUpdate(
       req.params.id,
       {
         status: 'rejected',
@@ -282,14 +282,14 @@ router.patch('/admin/:id/reject', auth, async (req, res) => {
       { new: true }
     );
     
-    if (!alumni) {
-      return res.status(404).json({ success: false, message: 'Alumni not found' });
+    if (!alumna) {
+      return res.status(404).json({ success: false, message: 'alumna not found' });
     }
     
     res.json({
       success: true,
-      message: 'Alumni registration rejected',
-      data: alumni
+      message: 'alumna registration rejected',
+      data: alumna
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -303,41 +303,41 @@ router.patch('/admin/:id/feature', auth, async (req, res) => {
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumni = await Alumni.findById(req.params.id);
+    const alumnae = await Alumna.findById(req.params.id);
     
-    if (!alumni) {
-      return res.status(404).json({ success: false, message: 'Alumni not found' });
+    if (!alumna) {
+      return res.status(404).json({ success: false, message: 'alumna not found' });
     }
     
-    alumni.isFeatured = req.body.isFeatured;
-    await alumni.save();
+    Alumna.isFeatured = req.body.isFeatured;
+    await Alumna.save();
     
     res.json({
       success: true,
-      message: `Alumni ${alumni.isFeatured ? 'featured' : 'unfeatured'} successfully`,
-      data: alumni
+      message: `alumna ${Alumna.isFeatured ? 'featured' : 'unfeatured'} successfully`,
+      data: alumna
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 });
 
-// Delete alumni (admin only)
+// Delete alumna (admin only)
 router.delete('/admin/:id', auth, async (req, res) => {
   try {
     if (req.user.role !== 'admin') {
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumni = await Alumni.findByIdAndDelete(req.params.id);
+    const alumnae = await Alumna.findByIdAndDelete(req.params.id);
     
-    if (!alumni) {
-      return res.status(404).json({ success: false, message: 'Alumni not found' });
+    if (!alumna) {
+      return res.status(404).json({ success: false, message: 'alumna not found' });
     }
     
     res.json({
       success: true,
-      message: 'Alumni deleted successfully'
+      message: 'alumna deleted successfully'
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -345,3 +345,5 @@ router.delete('/admin/:id', auth, async (req, res) => {
 });
 
 module.exports = router;
+
+

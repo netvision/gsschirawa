@@ -563,24 +563,24 @@
       </div>
     </section>
 
-    <!-- Featured Alumni Section -->
-    <section v-if="alumni.length > 0" class="py-20 bg-white">
+    <!-- Featured Alumnae Section -->
+    <section v-if="alumnae.length > 0" class="py-20 bg-white">
       <div class="container-custom">
         <div class="text-center mb-12">
           <div class="inline-block bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
             Our Pride
           </div>
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Featured Alumni
+            Featured Alumnae
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Celebrating the success stories of our exceptional alumni who are making a difference in the world
+            Celebrating the success stories of our exceptional alumnae who are making a difference in the world
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div
-            v-for="person in alumni.slice(0, 3)"
+            v-for="person in alumnae.slice(0, 3)"
             :key="person._id"
             class="group bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden border border-gray-100"
           >
@@ -590,7 +590,7 @@
                 :src="getAssetUrl(person.profileImage)"
                 :alt="person.firstName + ' ' + person.lastName"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                @error="handleAlumniImageError"
+                @error="handleAlumnaImageError"
               />
               <div v-else class="w-full h-full flex items-center justify-center text-6xl text-white">
                 👩‍🎓
@@ -623,7 +623,7 @@
               </div>
 
               <RouterLink 
-                :to="'/alumni/' + person._id"
+                :to="'/alumnae/' + person._id"
                 class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-sm group"
               >
                 <span>View Profile</span>
@@ -640,7 +640,7 @@
             to="/alumni" 
             class="btn btn-primary inline-flex items-center"
           >
-            <span>View All Alumni</span>
+            <span>View All Alumnae</span>
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
             </svg>
@@ -686,7 +686,7 @@ import api, { getAssetUrl } from '../services/api'
 const courses = ref([])
 const notices = ref([])
 const testimonials = ref([])
-const alumni = ref([])
+const alumnae = ref([])
 const currentSlide = ref(0)
 let slideInterval = null
 
@@ -718,22 +718,22 @@ const stopAutoSlide = () => {
   }
 }
 
-const handleAlumniImageError = (event) => {
-  event.target.src = 'https://via.placeholder.com/400x300?text=Alumni'
+const handleAlumnaImageError = (event) => {
+  event.target.src = 'https://via.placeholder.com/400x300?text=Alumna'
 }
 
 onMounted(async () => {
   try {
-    const [coursesRes, noticesRes, testimonialsRes, alumniRes] = await Promise.all([
+    const [coursesRes, noticesRes, testimonialsRes, alumnaeRes] = await Promise.all([
       api.getCourses(),
       api.getNotices(),
       api.getTestimonials(),
-      api.getFeaturedAlumni(3)
+      api.getFeaturedAlumnae(3)
     ])
     courses.value = coursesRes.data.data || []
     notices.value = noticesRes.data.data || []
     testimonials.value = testimonialsRes.data.data || []
-    alumni.value = alumniRes.data || []
+    alumnae.value = alumnaeRes.data || []
     
     // Start carousel auto-play
     startAutoSlide()
@@ -851,3 +851,4 @@ onUnmounted(() => {
   transform: translateX(-30px);
 }
 </style>
+
