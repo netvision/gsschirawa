@@ -1,12 +1,44 @@
 <template>
   <div class="contact">
-    <!-- Page Header -->
-    <section class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-16">
-      <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ $t('contact.pageTitle') }}</h1>
-        <p class="text-xl text-primary-100">
+    <!-- Page Header with Map Background -->
+    <section class="relative overflow-hidden h-96">
+      <!-- Map Background -->
+      <div class="absolute inset-0">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4888.073983373554!2d75.646902!3d28.237088000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391321a05db6594b%3A0x88c4330cc8aa6bd4!2sGinnidevi%20Satyanarayan%20Sekhsaria%20Girls&#39;%20(P.G.)%20College%2C%20Chirawa!5e1!3m2!1sen!2sus!4v1769501246775!5m2!1sen!2sus" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full"
+        ></iframe>
+      </div>
+      
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/85 to-primary-700/80"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 container-custom h-full flex flex-col justify-center items-center text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg">
+          {{ $t('contact.pageTitle') }}
+        </h1>
+        <p class="text-xl md:text-2xl text-white/95 max-w-2xl drop-shadow-md">
           {{ $t('contact.subtitle') }}
         </p>
+        
+        <!-- Quick Contact Info -->
+        <div class="mt-8 flex flex-wrap gap-6 justify-center text-white">
+          <a href="tel:+917878306013" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20 transition-all">
+            <span class="text-xl">📞</span>
+            <span class="font-semibold">+91 7878306013</span>
+          </a>
+          <a href="mailto:gsscollege1987@yahoo.co.in" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20 transition-all">
+            <span class="text-xl">✉️</span>
+            <span class="font-semibold">gsscollege1987@yahoo.co.in</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -174,14 +206,6 @@
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Map -->
-            <div class="mt-8">
-              <h3 class="font-semibold text-lg mb-4">Location Map</h3>
-              <div class="rounded-lg overflow-hidden shadow-lg">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4888.073983373554!2d75.646902!3d28.237088000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391321a05db6594b%3A0x88c4330cc8aa6bd4!2sGinnidevi%20Satyanarayan%20Sekhsaria%20Girls&#39;%20(P.G.)%20College%2C%20Chirawa!5e1!3m2!1sen!2sus!4v1769501246775!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
           </div>
