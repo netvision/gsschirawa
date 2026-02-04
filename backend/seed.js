@@ -24,7 +24,7 @@ const seedData = async () => {
 
     // Create admin user
     const admin = new User({
-      email: process.env.ADMIN_EMAIL || 'admin@gsscollege.edu.in',
+      email: process.env.ADMIN_EMAIL || 'admin@gsschirawa.in',
       password: process.env.ADMIN_PASSWORD || 'admin123',
       role: 'admin'
     });

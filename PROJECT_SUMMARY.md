@@ -273,7 +273,7 @@ npm run dev
 ## 📝 Pre-Seeded Data
 
 ### Admin User
-- Email: admin@gsscollege.edu.in
+- Email: admin@gsschirawa.in
 - Password: admin123 (⚠️ CHANGE THIS!)
 
 ### Courses (8)

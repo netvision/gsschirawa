@@ -55,7 +55,7 @@ notepad backend\.env
 ```
 
 In the file, you can keep the defaults or update:
-- Change `admin@gsscollege.edu.in` to your email
+- Change `admin@gsschirawa.in` to your email
 - Change `admin123` to a strong password
 - Keep other settings as-is for now
 
@@ -123,7 +123,7 @@ Open your web browser and go to:
 
 ### Login
 1. Go to http://localhost:5173/admin/login
-2. Enter email: `admin@gsscollege.edu.in`
+2. Enter email: `admin@gsschirawa.in`
 3. Enter password: `admin123` (or what you set in .env)
 4. Click "Sign In"
 

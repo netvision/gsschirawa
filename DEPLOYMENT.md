@@ -203,7 +203,7 @@ heroku addons:create mongolab:sandbox
 # Set environment variables
 heroku config:set NODE_ENV=production
 heroku config:set JWT_SECRET=your_secret_here
-heroku config:set ADMIN_EMAIL=admin@gsscollege.edu.in
+heroku config:set ADMIN_EMAIL=admin@gsschirawa.in
 heroku config:set ADMIN_PASSWORD=strong_password_here
 heroku config:set FRONTEND_URL=https://your-frontend-url.netlify.app
 

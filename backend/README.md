@@ -27,7 +27,7 @@ PORT=5000
 NODE_ENV=development
 MONGODB_URI=mongodb://localhost:27017/gsscollege
 JWT_SECRET=your_secret_key_change_this
-ADMIN_EMAIL=admin@gsscollege.edu.in
+ADMIN_EMAIL=admin@gsschirawa.in
 ADMIN_PASSWORD=admin123
 FRONTEND_URL=http://localhost:5173
 ```

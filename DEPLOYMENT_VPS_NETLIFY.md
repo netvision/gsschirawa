@@ -72,7 +72,7 @@ MONGODB_URI=mongodb://localhost:27017/gsscollege
 # MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/gsscollege?retryWrites=true&w=majority
 
 JWT_SECRET=YOUR_STRONG_RANDOM_SECRET_HERE
-ADMIN_EMAIL=admin@gsscollege.edu.in
+ADMIN_EMAIL=admin@gsschirawa.in
 ADMIN_PASSWORD=YOUR_STRONG_PASSWORD_HERE
 
 CORS_ORIGIN=https://gsscollege.netlify.app,https://www.gsscollege.edu.in

@@ -67,7 +67,7 @@ NODE_ENV=production
 PORT=5000
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/gsscollege?retryWrites=true&w=majority
 JWT_SECRET=<generate-strong-random-secret>
-ADMIN_EMAIL=admin@gsscollege.edu.in
+ADMIN_EMAIL=admin@gsschirawa.in
 ADMIN_PASSWORD=<strong-production-password>
 CORS_ORIGIN=https://gsscollege.edu.in,https://www.gsscollege.edu.in
 ```
@@ -145,7 +145,7 @@ railway link
    PORT=5000
    MONGODB_URI=<your-mongodb-atlas-uri>
    JWT_SECRET=<your-secret>
-   ADMIN_EMAIL=admin@gsscollege.edu.in
+   ADMIN_EMAIL=admin@gsschirawa.in
    ADMIN_PASSWORD=<strong-password>
    CORS_ORIGIN=https://gsscollege.vercel.app
    ```

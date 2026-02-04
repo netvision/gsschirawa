@@ -171,7 +171,7 @@ gsscollege/
 ### Accessing Admin Panel
 ```
 URL: http://localhost:5173/admin/login
-Default Email: admin@gsscollege.edu.in
+Default Email: admin@gsschirawa.in
 Default Password: admin123
 ```
 
