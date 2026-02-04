@@ -15,27 +15,9 @@
       <div class="container-custom">
         <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">{{ $t('about.historyTitle') }}</h2>
         
-        <!-- Ginnidevi Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div class="hidden lg:block">
-            <img src="/About-1.webp" alt="Ginnidevi" class="rounded-2xl shadow-2xl w-full h-96 object-cover" />
-          </div>
-          <div class="max-w-3xl">
-            <h3 class="text-2xl font-bold text-primary-600 mb-4">
-              <span v-if="locale === 'hi'">गिन्नीदेवी - संस्था का नाम</span>
-              <span v-if="locale === 'en'">Ginnidevi - The Namesake</span>
-            </h3>
-            <div v-if="locale === 'hi'" class="prose prose-lg text-gray-700 space-y-4 text-justify">
-              <p class="text-base leading-relaxed">
-                यह संस्थान श्री सत्यनारायण जी सेखसरिया की पत्नी गिन्नीदेवी को समर्पित है। गिन्नीदेवी एक महान महिला थीं जो महिला शिक्षा में विश्वास रखती थीं और समाज के उत्थान के लिए प्रतिबद्ध थीं। उनके नाम पर इस कॉलेज की स्थापना की गई ताकि आने वाली पीढ़ियां उनके योगदान और विचारों को याद रखें।
-              </p>
-            </div>
-            <div v-if="locale === 'en'" class="prose prose-lg text-gray-700 space-y-4 text-justify">
-              <p class="text-base leading-relaxed">
-                This institution is dedicated to Ginnidevi, the wife of Shri Satyanarayan Ji Sekhsaria. Ginnidevi was a remarkable woman who believed in women's education and was committed to the upliftment of society. The college is named after her to ensure that future generations remember her contributions and ideals.
-              </p>
-            </div>
-          </div>
+        <!-- Ginnidevi Image -->
+        <div class="mb-16">
+          <img src="/About-1.webp" alt="Ginnidevi" class="rounded-2xl shadow-2xl w-full h-96 object-cover" />
         </div>
 
         <!-- Founder Section -->
