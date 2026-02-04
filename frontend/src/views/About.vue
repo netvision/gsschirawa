@@ -177,62 +177,6 @@
       </div>
     </section>
 
-    <!-- Principal's Message -->
-    <section class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
-      <div class="container-custom">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-          <div class="lg:col-span-2">
-            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-              <h2 class="text-3xl font-bold text-gray-900 mb-2">
-                <span v-if="locale === 'hi'">प्राचार्या का संदेश</span>
-                <span v-if="locale === 'en'">Principal's Message</span>
-              </h2>
-              <p class="text-primary-600 font-semibold mb-6">
-                <span v-if="locale === 'hi'">डॉ. सपना अग्रवाल</span>
-                <span v-if="locale === 'en'">Dr. Sapna Agarwal</span>
-              </p>
-
-              <div v-if="locale === 'hi'" class="prose prose-lg text-gray-700 space-y-4 text-justify max-h-96 overflow-y-auto pr-4 custom-scrollbar">
-                <p class="text-base leading-relaxed">
-                  प्रिय छात्राओं, मैं अत्यन्त विनम्रता और सौभाग्य के साथ इस प्रतिष्ठित संस्था के नवनियुक्त प्राचार्या के रूप में महाविद्यालय के हितधारकों को सम्बोधित कर रही हूॅ।
-                </p>
-                <p class="text-base leading-relaxed">
-                  जी.एस.एस. गर्ल्स पी.जी. महाविद्यालय सक्षम शिक्षकों, अत्याधुनिक बुनियादी ढाॅचे, सुरक्षित और सहयोगी वातावरण का एक समामेलन है और शैक्षणिक, खेल, कलात्मक और सामाजिक अवसरों का एक आदर्श सन्तुलन प्रदान करता है।
-                </p>
-                <p class="text-base leading-relaxed">
-                  हमारे यहां पाठयक्रम और प्रथाओं का निरन्तर मूल्यांकन और अध्यापन किया जाता है ताकि वे सर्वोत्तम हो और हमारे छात्राओं के भविष्य की आवश्यकताओं को पूरा कर सके। यह हमारी जिम्मेदारी है कि हम शिक्षा की विरासत को अपनी भावी छात्राओं तक पहुचाएं और उन्हें व्यक्तिगत, व्यवसायिक और सामाजिक रूप से विकसित होने में मदद करें।
-                </p>
-                <p class="text-base leading-relaxed">
-                  हम अपनी छात्राओं के साथ सीखने में भागीदार हैं और उनके ज्ञान को गहरा करने, समृद्ध और नवीन शिक्षण अनुभव प्रदान करने का प्रयास करते हैं, साथ ही हम अपनी छात्राओं से नई चुनौतियों का सामना करने के लिए अपने आरामक्षेत्र से बाहर आने का आग्रह भी करते हैं।
-                </p>
-                <p class="text-base leading-relaxed">
-                  हम उच्च मानकों को बनाए रखने में दृढ विश्वास रखते हैं और शैक्षणिक प्रक्रिया को समझने और बेहतर बनाने के लिए प्रतिबद्ध हैं। टीम रणनीतियों का उपयोग करते हुए और पूरी तरह से छात्राओं की उपलब्धि पर ध्यान केन्द्रित करते हैं।
-                </p>
-              </div>
-
-              <div v-if="locale === 'en'" class="prose prose-lg text-gray-700 space-y-4 text-justify max-h-96 overflow-y-auto pr-4 custom-scrollbar">
-                <p class="text-base leading-relaxed">
-                  Dear students, with utmost humility and honor, I address you as the newly appointed Principal of this esteemed institution. The GSS Girls' (PG) College is a combination of capable teachers, state-of-the-art infrastructure, a safe and collaborative environment, and provides an ideal balance of academic, sports, artistic, and social opportunities.
-                </p>
-                <p class="text-base leading-relaxed">
-                  Here, we continuously evaluate and teach curriculum and practices so that they are best and meet the future needs of our students. It is our responsibility to pass on the legacy of education to our future students and help them develop personally, professionally, and socially.
-                </p>
-                <p class="text-base leading-relaxed">
-                  We are partners with our students in learning and strive to deepen their knowledge, provide rich and novel teaching experiences. We also encourage our students to step out of their comfort zones to face new challenges.
-                </p>
-                <p class="text-base leading-relaxed">
-                  We firmly believe in maintaining high standards and are committed to understanding and improving the educational process. Using team strategies and focusing entirely on student achievement, we work towards excellence in all aspects.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="hidden lg:block">
-            <img src="/pricipal.webp" alt="Principal Dr. Sapna Agarwal" class="rounded-xl shadow-lg w-full object-cover" />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact Section -->
     <section class="py-16 bg-primary-50">
       <div class="container-custom">

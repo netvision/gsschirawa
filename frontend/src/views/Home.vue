@@ -224,6 +224,71 @@
       </div>
     </section>
 
+    <!-- Principal's Message Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-5xl mx-auto">
+          <!-- Header with decorative background -->
+          <div class="relative bg-gradient-to-r from-secondary-600 via-secondary-700 to-primary-600 px-8 py-8 text-center">
+            <div class="absolute inset-0 bg-pattern-dots opacity-10"></div>
+            <div class="relative z-10">
+              <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-white text-xs font-semibold mb-3">
+                <span v-if="$i18n.locale === 'hi'">प्राचार्या का संदेश</span>
+                <span v-if="$i18n.locale === 'en'">Principal's Message</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white">
+                <span v-if="$i18n.locale === 'hi'">डॉ. सपना अग्रवाल</span>
+                <span v-if="$i18n.locale === 'en'">Dr. Sapna Agarwal</span>
+              </h2>
+            </div>
+          </div>
+
+          <!-- Image and Content -->
+          <div class="p-8 lg:p-10">
+            <!-- Centered Image with decorative elements -->
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <div class="absolute -inset-4 bg-gradient-to-r from-secondary-200 to-primary-200 rounded-full blur-xl opacity-50"></div>
+                <img 
+                  src="/pricipal.webp" 
+                  alt="Principal Dr. Sapna Agarwal" 
+                  class="relative w-48 h-48 lg:w-56 lg:h-56 rounded-full object-cover border-4 border-white shadow-2xl ring-4 ring-secondary-100"
+                />
+                <div class="absolute -bottom-2 -right-2 bg-gradient-to-br from-secondary-600 to-primary-600 text-white rounded-full p-3 shadow-lg">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message Content -->
+            <div class="prose prose-lg text-gray-700 space-y-4 max-h-80 overflow-y-auto pr-2 custom-scrollbar">
+              <p v-if="$i18n.locale === 'hi'" class="text-base leading-relaxed font-hindi italic border-l-4 border-secondary-400 pl-4 py-3 bg-gradient-to-r from-secondary-50 to-transparent rounded-r">
+                प्रिय छात्राओं, मैं अत्यन्त विनम्रता और सौभाग्य के साथ इस प्रतिष्ठित संस्था के नवनियुक्त प्राचार्या के रूप में महाविद्यालय के हितधारकों को सम्बोधित कर रही हूॅ।
+              </p>
+              <p v-if="$i18n.locale === 'hi'" class="text-base leading-relaxed font-hindi text-gray-600">
+                जी.एस.एस. गर्ल्स पी.जी. महाविद्यालय सक्षम शिक्षकों, अत्याधुनिक बुनियादी ढाॅचे, सुरक्षित और सहयोगी वातावरण का एक समामेलन है और शैक्षणिक, खेल, कलात्मक और सामाजिक अवसरों का एक आदर्श सन्तुलन प्रदान करता है।
+              </p>
+              <p v-if="$i18n.locale === 'hi'" class="text-base leading-relaxed font-hindi text-gray-600">
+                हमारे यहां पाठयक्रम और प्रथाओं का निरन्तर मूल्यांकन और अध्यापन किया जाता है ताकि वे सर्वोत्तम हो और हमारे छात्राओं के भविष्य की आवश्यकताओं को पूरा कर सके। हम अपनी छात्राओं के साथ सीखने में भागीदार हैं और उनके ज्ञान को गहरा करने का प्रयास करते हैं।
+              </p>
+              
+              <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed italic border-l-4 border-secondary-400 pl-4 py-3 bg-gradient-to-r from-secondary-50 to-transparent rounded-r">
+                Dear students, with utmost humility and honor, I address you as the newly appointed Principal of this esteemed institution.
+              </p>
+              <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed text-gray-600">
+                The GSS Girls' (PG) College is a combination of capable teachers, state-of-the-art infrastructure, a safe and collaborative environment, and provides an ideal balance of academic, sports, artistic, and social opportunities.
+              </p>
+              <p v-if="$i18n.locale === 'en'" class="text-base leading-relaxed text-gray-600">
+                We continuously evaluate and teach curriculum and practices to meet the future needs of our students. We are partners with our students in learning and strive to deepen their knowledge and provide rich teaching experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Why Choose Us -->
     <section class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
       <div class="container-custom">
