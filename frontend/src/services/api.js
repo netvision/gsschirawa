@@ -101,6 +101,28 @@ export default {
   }),
   deleteTestimonial: (id) => api.delete(`/testimonials/${id}`),
 
+  // Alumni
+  getFeaturedAlumni: (limit = 6) => api.get('/alumni/featured', { params: { limit } }),
+  getAlumni: (params) => api.get('/alumni', { params }),
+  getAlumniById: (id) => api.get(`/alumni/${id}`),
+  checkAlumniEmail: (email) => api.get(`/alumni/check-registration/${email}`),
+  registerAlumni: (data) => api.post('/alumni/register', data, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  updateAlumniProfile: (id, data) => api.put(`/alumni/${id}`, data, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  
+  // Alumni Admin
+  getPendingAlumni: () => api.get('/alumni/admin/pending'),
+  addAlumni: (data) => api.post('/alumni/admin/add', data, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  verifyAlumni: (id, notes) => api.patch(`/alumni/admin/${id}/verify`, { verificationNotes: notes }),
+  rejectAlumni: (id, notes) => api.patch(`/alumni/admin/${id}/reject`, { verificationNotes: notes }),
+  featureAlumni: (id, isFeatured) => api.patch(`/alumni/admin/${id}/feature`, { isFeatured }),
+  deleteAlumni: (id) => api.delete(`/alumni/admin/${id}`),
+
   // Auth
   login: (credentials) => api.post('/auth/login', credentials),
   getCurrentUser: () => api.get('/auth/me'),
