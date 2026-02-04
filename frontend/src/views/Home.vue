@@ -88,25 +88,24 @@
                 </div>
               </div>
               
-              <!-- Floating Stats Badge with Flip Animation -->
-              <div class="absolute -bottom-6 -left-6 animate-flip-card">
-                <div class="flip-card-inner">
-                  <!-- Front of card -->
-                  <div class="flip-card-front bg-white rounded-xl shadow-2xl p-5">
-                    <div class="flex items-center gap-3">
-                      <div class="text-4xl">🎓</div>
-                      <div>
-                        <div class="text-2xl font-bold text-primary-600">7100+</div>
-                        <div class="text-xs text-gray-600 font-semibold">Students Educated</div>
-                      </div>
+              <!-- Floating Stats Badge with Toggle Animation -->
+              <div class="absolute -bottom-6 -left-6 w-52 h-24">
+                <!-- Front of card -->
+                <div class="flip-card-front absolute inset-0 bg-white rounded-xl shadow-2xl p-5 flex items-center justify-center">
+                  <div class="flex items-center gap-3">
+                    <div class="text-4xl">🎓</div>
+                    <div>
+                      <div class="text-2xl font-bold text-primary-600">7100+</div>
+                      <div class="text-xs text-gray-600 font-semibold">Students Educated</div>
                     </div>
                   </div>
-                  <!-- Back of card -->
-                  <div class="flip-card-back bg-primary-600 rounded-xl shadow-2xl p-5 text-white flex items-center justify-center">
-                    <div class="text-center">
-                      <div class="text-4xl font-bold">1987</div>
-                      <div class="text-xs font-semibold">Established</div>
-                    </div>
+                </div>
+                <!-- Back of card -->
+                <div class="flip-card-back absolute inset-0 bg-primary-600 rounded-xl shadow-2xl p-5 text-white flex items-center justify-center">
+                  <div class="text-center">
+                    <div class="text-4xl font-bold">📅</div>
+                    <div class="text-2xl font-bold mt-2">1987</div>
+                    <div class="text-xs font-semibold">Established</div>
                   </div>
                 </div>
               </div>
@@ -539,55 +538,31 @@ onUnmounted(() => {
   animation: float 3s ease-in-out infinite;
 }
 
-@keyframes flipCard {
+@keyframes toggleCard {
   0% {
-    transform: rotateY(0deg);
+    opacity: 1;
   }
-  25% {
-    transform: rotateY(0deg);
+  40% {
+    opacity: 1;
   }
   50% {
-    transform: rotateY(180deg);
+    opacity: 0;
   }
-  75% {
-    transform: rotateY(180deg);
+  60% {
+    opacity: 0;
   }
   100% {
-    transform: rotateY(360deg);
+    opacity: 1;
   }
 }
 
-.animate-flip-card {
-  animation: flipCard 8s ease-in-out infinite;
-  perspective: 1000px;
-  width: 200px;
-  height: 90px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.animate-flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.flip-card-front {
+  animation: toggleCard 8s ease-in-out infinite;
 }
 
 .flip-card-back {
-  transform: rotateY(180deg);
+  animation: toggleCard 8s ease-in-out infinite;
+  animation-direction: reverse;
 }
 
 .slide-fade-enter-active,
