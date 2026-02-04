@@ -115,6 +115,30 @@
       </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-b">
+      <div class="container-custom">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-white rounded-xl shadow-md hover:shadow-lg transition">
+            <div class="text-4xl font-bold text-primary-600 mb-2">37+</div>
+            <div class="text-gray-600 text-sm font-semibold">Years of Excellence</div>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-secondary-50 to-white rounded-xl shadow-md hover:shadow-lg transition">
+            <div class="text-4xl font-bold text-secondary-600 mb-2">7100+</div>
+            <div class="text-gray-600 text-sm font-semibold">Students Educated</div>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-white rounded-xl shadow-md hover:shadow-lg transition">
+            <div class="text-4xl font-bold text-primary-600 mb-2">15+</div>
+            <div class="text-gray-600 text-sm font-semibold">Programs Offered</div>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-secondary-50 to-white rounded-xl shadow-md hover:shadow-lg transition">
+            <div class="text-4xl font-bold text-secondary-600 mb-2">100%</div>
+            <div class="text-gray-600 text-sm font-semibold">Empowerment</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Founder's Message Section (Full Width) -->
     <section class="py-16 bg-gradient-to-br from-gray-50 to-primary-50">
       <div class="container-custom">
@@ -289,6 +313,49 @@
       </div>
     </section>
 
+    <!-- Quick Links Section -->
+    <section class="py-12 bg-gradient-to-r from-primary-600 to-secondary-600">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <RouterLink to="/courses" class="group bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-xl p-8 text-center hover:bg-white/20 transition-all hover:scale-105">
+            <div class="text-5xl mb-4">📚</div>
+            <h3 class="text-xl font-bold text-white mb-2">{{ $t('home.coursesTitle') }}</h3>
+            <p class="text-white/80 text-sm">Explore our diverse academic programs</p>
+            <div class="mt-4 flex items-center justify-center text-white font-semibold">
+              <span>View Courses</span>
+              <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </div>
+          </RouterLink>
+
+          <RouterLink to="/gallery" class="group bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-xl p-8 text-center hover:bg-white/20 transition-all hover:scale-105">
+            <div class="text-5xl mb-4">🖼️</div>
+            <h3 class="text-xl font-bold text-white mb-2">Gallery</h3>
+            <p class="text-white/80 text-sm">View moments from campus life</p>
+            <div class="mt-4 flex items-center justify-center text-white font-semibold">
+              <span>Browse Gallery</span>
+              <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </div>
+          </RouterLink>
+
+          <RouterLink to="/contact" class="group bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-xl p-8 text-center hover:bg-white/20 transition-all hover:scale-105">
+            <div class="text-5xl mb-4">💬</div>
+            <h3 class="text-xl font-bold text-white mb-2">{{ $t('home.contactButton') }}</h3>
+            <p class="text-white/80 text-sm">Get in touch with us today</p>
+            <div class="mt-4 flex items-center justify-center text-white font-semibold">
+              <span>Contact Us</span>
+              <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </div>
+          </RouterLink>
+        </div>
+      </div>
+    </section>
+
     <!-- Why Choose Us -->
     <section class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
       <div class="container-custom">
@@ -356,9 +423,12 @@
     </section>
 
     <!-- Courses Highlight -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-white">
       <div class="container-custom">
         <div class="text-center mb-12">
+          <div class="inline-block bg-primary-100 text-primary-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Academic Programs
+          </div>
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {{ $t('home.coursesTitle') }}
           </h2>
@@ -367,61 +437,74 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <!-- Undergraduate -->
-          <div class="card">
-            <h3 class="text-2xl font-bold text-primary-600 mb-4">
-              Undergraduate Programs
-            </h3>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-2">
-                <span class="text-primary-600 mt-1">✓</span>
-                <div>
-                  <strong>B.A. (Bachelor of Arts)</strong>
-                  <p class="text-sm text-gray-600">Multiple specialization options available</p>
-                </div>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-primary-600 mt-1">✓</span>
-                <div>
-                  <strong>B.Com (Bachelor of Commerce)</strong>
-                  <p class="text-sm text-gray-600">Comprehensive commerce education</p>
-                </div>
-              </li>
-            </ul>
-            <RouterLink to="/courses" class="btn btn-primary mt-6 w-full">
-              View All UG Courses
-            </RouterLink>
+          <div class="relative overflow-hidden rounded-2xl shadow-xl">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700"></div>
+            <div class="absolute inset-0 bg-pattern-dots opacity-10"></div>
+            <div class="relative p-8 text-white">
+              <div class="text-5xl mb-4">🎓</div>
+              <h3 class="text-2xl font-bold mb-4">
+                Undergraduate Programs
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                  <span class="mt-1">✓</span>
+                  <div>
+                    <strong>B.A. (Bachelor of Arts)</strong>
+                    <p class="text-sm text-primary-100">Multiple specialization options</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1">✓</span>
+                  <div>
+                    <strong>B.Com (Bachelor of Commerce)</strong>
+                    <p class="text-sm text-primary-100">Comprehensive commerce education</p>
+                  </div>
+                </li>
+              </ul>
+              <RouterLink to="/courses" class="inline-block mt-6 bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition">
+                View All UG Courses →
+              </RouterLink>
+            </div>
           </div>
 
           <!-- Postgraduate -->
-          <div class="card">
-            <h3 class="text-2xl font-bold text-secondary-600 mb-4">
-              Postgraduate Programs
-            </h3>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-2">
-                <span class="text-secondary-600 mt-1">✓</span>
-                <strong>M.A. Hindi, English, Economics, Political Science, History</strong>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-secondary-600 mt-1">✓</span>
-                <strong>M.A./M.Sc. Geography</strong>
-              </li>
-            </ul>
-            <RouterLink to="/courses" class="btn btn-secondary mt-6 w-full">
-              View All PG Courses
-            </RouterLink>
+          <div class="relative overflow-hidden rounded-2xl shadow-xl">
+            <div class="absolute inset-0 bg-gradient-to-br from-secondary-500 to-secondary-700"></div>
+            <div class="absolute inset-0 bg-pattern-dots opacity-10"></div>
+            <div class="relative p-8 text-white">
+              <div class="text-5xl mb-4">🎖️</div>
+              <h3 class="text-2xl font-bold mb-4">
+                Postgraduate Programs
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                  <span class="mt-1">✓</span>
+                  <strong>M.A. Hindi, English, Economics, Political Science, History</strong>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1">✓</span>
+                  <strong>M.A./M.Sc. Geography</strong>
+                </li>
+              </ul>
+              <RouterLink to="/courses" class="inline-block mt-6 bg-white text-secondary-600 px-6 py-3 rounded-lg font-semibold hover:bg-secondary-50 transition">
+                View All PG Courses →
+              </RouterLink>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials Preview -->
-    <section v-if="testimonials.length > 0" class="py-16 bg-white">
+    <section v-if="testimonials.length > 0" class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
       <div class="container-custom">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div class="inline-block bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Success Stories
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
             {{ $t('home.testimonialsTitle') }}
           </h2>
           <p class="text-xl text-gray-600 font-hindi">
@@ -429,57 +512,68 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
             v-for="testimonial in testimonials.slice(0, 3)"
             :key="testimonial._id"
-            class="bg-gradient-to-br from-primary-50 to-white rounded-xl p-8 shadow-lg hover:shadow-xl transition"
+            class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2"
           >
             <div class="flex flex-col items-center text-center mb-4">
               <img
                 v-if="testimonial.image"
                 :src="getAssetUrl(testimonial.image)"
                 :alt="testimonial.name"
-                class="w-24 h-24 rounded-full object-cover mb-4 border-4 border-white shadow-lg"
+                class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-primary-100 shadow-md"
               />
-              <div v-else class="w-24 h-24 rounded-full bg-primary-100 flex items-center justify-center text-4xl mb-4 border-4 border-white shadow-lg">
+              <div v-else class="w-20 h-20 rounded-full bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center text-3xl mb-4 border-4 border-white shadow-md">
                 👩‍🎓
               </div>
-              <h4 class="font-semibold text-lg">{{ testimonial.name }}</h4>
-              <p class="text-sm text-primary-600 font-medium">{{ testimonial.course }}</p>
+              <h4 class="font-bold text-lg text-gray-900">{{ testimonial.name }}</h4>
+              <p class="text-sm text-primary-600 font-semibold">{{ testimonial.course }}</p>
               <p class="text-xs text-gray-500">Batch: {{ testimonial.batch }}</p>
             </div>
-            <p class="text-gray-600 italic text-center">"{{ testimonial.message }}"</p>
-            <div class="flex gap-1 mt-4 justify-center">
-              <span v-for="i in testimonial.rating" :key="i" class="text-yellow-500 text-xl">⭐</span>
+            <div class="flex gap-1 mb-3 justify-center">
+              <span v-for="i in testimonial.rating" :key="i" class="text-yellow-500 text-lg">⭐</span>
             </div>
+            <p class="text-gray-600 text-sm text-center leading-relaxed">"{{ testimonial.message }}"</p>
           </div>
         </div>
 
-        <div class="text-center mt-8">
-          <RouterLink to="/testimonials" class="btn btn-primary">
-            Read More Testimonials
+        <div class="text-center mt-10">
+          <RouterLink to="/testimonials" class="btn btn-primary inline-flex items-center">
+            <span>Read More Testimonials</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
           </RouterLink>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-primary-600 text-white py-16">
-      <div class="container-custom text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          Ready to Begin Your Journey?
-        </h2>
-        <p class="text-xl mb-8 text-primary-100">
-          Join us in the pursuit of knowledge and excellence
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <RouterLink to="/contact" class="btn bg-white text-primary-600 hover:bg-gray-100">
-            Apply for Admission
-          </RouterLink>
-          <RouterLink to="/about" class="btn btn-outline border-white text-white hover:bg-white hover:text-primary-600">
-            Learn More About Us
-          </RouterLink>
+    <section class="relative py-20 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-600"></div>
+      <div class="absolute inset-0 bg-pattern-dots opacity-20"></div>
+      <div class="relative container-custom text-center text-white">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-5xl mb-6">🎓</div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Begin Your Journey?
+          </h2>
+          <p class="text-xl mb-8 text-white/90 leading-relaxed">
+            Join us in the pursuit of knowledge and excellence. Transform yourself into a confident, educated, and self-reliant young woman.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <RouterLink to="/contact" class="btn bg-white text-primary-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all inline-flex items-center">
+              <span>Apply for Admission</span>
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </RouterLink>
+            <RouterLink to="/about" class="btn border-2 border-white text-white hover:bg-white hover:text-primary-600 transition-all">
+              Learn More About Us
+            </RouterLink>
+          </div>
         </div>
       </div>
     </section>

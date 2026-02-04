@@ -14,7 +14,7 @@
     <section class="py-16">
       <div class="container-custom">
         <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">{{ $t('about.historyTitle') }}</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
           <div class="max-w-3xl">
             <div v-if="locale === 'hi'" class="prose prose-lg text-gray-700 space-y-6 text-justify">
               <p class="text-lg leading-relaxed">
@@ -34,8 +34,11 @@
             </div>
           </div>
           <div class="hidden lg:block">
-            <img src="/About-1.webp" alt="College History" class="rounded-xl shadow-2xl w-full object-cover" />
+            <img src="/About-1.webp" alt="College History" class="rounded-xl shadow-2xl w-full h-96 object-cover" />
           </div>
+        </div>
+        <div class="hidden lg:block mt-8">
+          <img src="/About-2.webp" alt="College Campus" class="rounded-xl shadow-2xl w-full h-64 object-cover" />
         </div>
       </div>
     </section>
@@ -43,17 +46,9 @@
     <!-- Our Objectives -->
     <section class="py-16 bg-gray-50">
       <div class="container-custom">
-        <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">{{ $t('about.objectivesTitle') }}</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <img src="/About-2.webp" alt="Quality Education" class="w-full h-64 object-cover" />
-          </div>
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <img src="/About-3.webp" alt="Student Development" class="w-full h-64 object-cover" />
-          </div>
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <img src="/About-1.webp" alt="Campus Life" class="w-full h-64 object-cover" />
-          </div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">{{ $t('about.objectivesTitle') }}</h2>
+        <div class="mb-12">
+          <img src="/About-3.webp" alt="Student Development" class="w-full h-80 object-cover rounded-xl shadow-2xl" />
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div class="card border-l-4 border-primary-600">
@@ -172,59 +167,6 @@
             <p v-if="locale === 'en'" class="text-gray-600 text-sm">
               Moral values & honesty
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="py-16 bg-primary-50">
-      <div class="container-custom">
-        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
-            {{ $t('about.contactTitle') }}
-          </h2>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="text-4xl mb-4">📍</div>
-              <h3 class="font-semibold text-lg mb-2">{{ $t('about.address') }}</h3>
-              <p class="text-gray-600">
-                Ginnidevi Satyanarayan Sekhsaria<br />
-                Girls' (PG) College<br />
-                Chirawa, Jhunjhunu<br />
-                Rajasthan – 333026
-              </p>
-            </div>
-
-            <div class="text-center">
-              <div class="text-4xl mb-4">📞</div>
-              <h3 class="font-semibold text-lg mb-2">{{ $t('about.phone') }}</h3>
-              <p class="text-gray-600">
-                <a href="tel:+917878306013" class="hover:text-primary-600 block">
-                  +91 7878306013
-                </a>
-                <a href="tel:+911596220289" class="hover:text-primary-600 block">
-                  +91 01596-220289
-                </a>
-              </p>
-            </div>
-
-            <div class="text-center">
-              <div class="text-4xl mb-4">✉️</div>
-              <h3 class="font-semibold text-lg mb-2">{{ $t('about.email') }}</h3>
-              <p class="text-gray-600">
-                <a href="mailto:gsscollege1987@yahoo.co.in" class="hover:text-primary-600">
-                  gsscollege1987@yahoo.co.in
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <div class="text-center mt-8">
-            <RouterLink to="/contact" class="btn btn-primary">
-              {{ $t('about.contactButton') }}
-            </RouterLink>
           </div>
         </div>
       </div>
