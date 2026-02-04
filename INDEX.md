@@ -70,6 +70,22 @@ Welcome to the complete documentation for the GSS College Portal project!
 
 ---
 
+### 🎓 Feature Planning
+
+8. **[ALUMNI_FEATURE_PLAN.md](ALUMNI_FEATURE_PLAN.md)**
+   - Alumni management system design
+   - Database schema for alumni
+   - Complete API endpoints documentation
+   - Frontend components structure
+   - Registration & verification flow
+   - Admin panel features
+   - Email notifications
+   - Implementation phases
+   - Future enhancements
+   - Deployment checklist
+
+---
+
 ### 🚀 Deployment
 
 7. **[DEPLOYMENT.md](DEPLOYMENT.md)**
