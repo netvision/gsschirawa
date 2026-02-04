@@ -2,6 +2,12 @@
 
 Modern, responsive college website for **Ginni Devi Satyanarayan Sekhsaria Girls P.G. College, Chirawa**
 
+## 🖥️ Live Server
+
+**Production Deployment**
+- **Server IP**: 172.104.207.144 (Linode Instance)
+- **SSH Access**: `ssh root@172.104.207.144`
+
 ## 🎓 Features
 
 - **Responsive Design**: Mobile-first approach with TailwindCSS

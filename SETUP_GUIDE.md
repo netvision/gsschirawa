@@ -1,5 +1,13 @@
 # GSS College Portal - Setup Guide
 
+## 🖥️ Server Information
+
+**Production Environment**
+- **Live Server**: Linode Instance at 172.104.207.144
+- **SSH Access**: `ssh root@172.104.207.144`
+
+---
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:

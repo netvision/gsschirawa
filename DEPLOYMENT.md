@@ -1,6 +1,15 @@
 # Deployment Guide - GSS College Portal
 
-## 📋 Pre-Deployment Checklist
+## �️ Server Information
+
+**Live Server (Linode Instance)**
+- **IP Address**: 172.104.207.144
+- **OS**: Ubuntu/Linux
+- **Backend URL**: (configure after setup)
+
+---
+
+## �📋 Pre-Deployment Checklist
 
 - [ ] Change admin password to a strong password
 - [ ] Update JWT_SECRET with a random, complex string

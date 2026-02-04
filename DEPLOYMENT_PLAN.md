@@ -5,7 +5,21 @@ This plan outlines the deployment strategy and continuous development workflow f
 
 ---
 
-## 📍 Architecture Overview
+## �️ Current Deployment Configuration
+
+**Live Server (Linode)**
+- **IP Address**: 172.104.207.144
+- **Hostname**: (to be configured)
+- **SSH Access**: Use your SSH key to connect
+
+**Connection Command**:
+```bash
+ssh root@172.104.207.144
+```
+
+---
+
+## �📍 Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

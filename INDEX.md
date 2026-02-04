@@ -4,7 +4,17 @@ Welcome to the complete documentation for the GSS College Portal project!
 
 ---
 
-## 🗂️ Documentation Structure
+## �️ Production Server
+
+**Live Deployment**
+- **Server IP**: 172.104.207.144 (Linode Instance)
+- **SSH Command**: `ssh root@172.104.207.144`
+- **Frontend**: Deployed on Netlify
+- **Backend**: Running on Linode at 172.104.207.144
+
+---
+
+## �🗂️ Documentation Structure
 
 ### 📖 Getting Started
 
