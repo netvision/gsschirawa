@@ -15,7 +15,7 @@
       <div class="container-custom">
         <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">{{ $t('about.historyTitle') }}</h2>
         <div class="max-w-3xl mx-auto">
-          <div v-if="i18n.locale === 'hi'" class="prose prose-lg text-gray-700 space-y-6 text-justify">
+          <div v-if="locale === 'hi'" class="prose prose-lg text-gray-700 space-y-6 text-justify">
             <p class="text-lg leading-relaxed">
               चिड़ावा में महिला शिक्षा के लिए एक अलग कॉलेज की आवश्यकता महसूस की गई। तत्कालीन विधायक श्री हजारीलाल शर्मा जी ने इस मुद्दे को उठाया और सेखसरिया परिवार से संपर्क किया। श्री सत्यनारायण जी सेखसरिया ने इस प्रयास में सहयोग करने का फैसला किया और 19 नवंबर 1986 को कॉलेज का शिलान्यास हुआ। मात्र नौ महीनों में भवन तैयार हो गया और जुलाई 1987 से शिक्षण कार्य शुरू हो गया।
             </p>
@@ -23,7 +23,7 @@
               श्री सत्यनारायणजी के पुत्र श्री एन.एस. सेखसरिया वर्तमान में गिन्नीदेवी सत्यनारायण सेखसरिया मेमोरियल ट्रस्ट के अध्यक्ष हैं। उनकी वित्तीय उदारता चिड़ावा और आस-पास के क्षेत्रों की सभी लड़कियों को आत्मविश्वासी, शिक्षित, आत्मनिर्भर युवा महिलाओं में बदलने के उनके सपने से काफी मेलखाती है।
             </p>
           </div>
-          <div v-if="i18n.locale === 'en'" class="prose prose-lg text-gray-700 space-y-6 text-justify">
+          <div v-if="locale === 'en'" class="prose prose-lg text-gray-700 space-y-6 text-justify">
             <p class="text-lg leading-relaxed">
               The need for a separate college for women's education in Chirawa was felt deeply in the community. The then-legislator Shri Hajarilal Sharma Ji raised this issue and contacted the Sekhsaria family. Shri Satyanarayan Ji Sekhsaria decided to support this initiative and the college's foundation stone was laid on November 19, 1986. The building was completed in just nine months and teaching began in July 1987.
             </p>
@@ -42,40 +42,40 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div class="card border-l-4 border-primary-600">
             <div class="text-3xl mb-4">📚</div>
-            <p v-if="i18n.locale === 'hi'" class="text-gray-700 leading-relaxed">
+            <p v-if="locale === 'hi'" class="text-gray-700 leading-relaxed">
               छात्राओं को आवश्यकता-आधारित शिक्षा प्रदान करना और उन्हें स्वरोजगार एवं स्वावलंबन के लिए प्रशिक्षित करना।
             </p>
-            <p v-if="i18n.locale === 'en'" class="text-gray-700 leading-relaxed">
+            <p v-if="locale === 'en'" class="text-gray-700 leading-relaxed">
               Provide need-based education to students and train them for self-employment and self-reliance.
             </p>
           </div>
 
           <div class="card border-l-4 border-primary-600">
             <div class="text-3xl mb-4">🎯</div>
-            <p v-if="i18n.locale === 'hi'" class="text-gray-700 leading-relaxed">
+            <p v-if="locale === 'hi'" class="text-gray-700 leading-relaxed">
               विविध क्षेत्रों में छात्राओं के बौद्धिक स्तर को बढ़ावा देने के लिए प्रशिक्षण कार्यक्रम आयोजित करना।
             </p>
-            <p v-if="i18n.locale === 'en'" class="text-gray-700 leading-relaxed">
+            <p v-if="locale === 'en'" class="text-gray-700 leading-relaxed">
               Organize training programs to enhance students' intellectual level in diverse fields.
             </p>
           </div>
 
           <div class="card border-l-4 border-primary-600">
             <div class="text-3xl mb-4">🌟</div>
-            <p v-if="i18n.locale === 'hi'" class="text-gray-700 leading-relaxed">
+            <p v-if="locale === 'hi'" class="text-gray-700 leading-relaxed">
               छात्राओं के सर्वांगीण विकास के लिए उपयुक्त वातावरण और प्रशिक्षण प्रदान करना।
             </p>
-            <p v-if="i18n.locale === 'en'" class="text-gray-700 leading-relaxed">
+            <p v-if="locale === 'en'" class="text-gray-700 leading-relaxed">
               Provide suitable environment and training for holistic development of students.
             </p>
           </div>
 
           <div class="card border-l-4 border-primary-600">
             <div class="text-3xl mb-4">🏫</div>
-            <p v-if="i18n.locale === 'hi'" class="text-gray-700 leading-relaxed">
+            <p v-if="locale === 'hi'" class="text-gray-700 leading-relaxed">
               चिड़ावा व आस-पास के क्षेत्रों की ग्रामीण छात्राओं को उच्च शिक्षा प्रदान करना और उन्हें रोजगार योग्य बनाना।
             </p>
-            <p v-if="i18n.locale === 'en'" class="text-gray-700 leading-relaxed">
+            <p v-if="locale === 'en'" class="text-gray-700 leading-relaxed">
               Provide higher education to rural girls from Chirawa and surrounding areas and make them employment-ready.
             </p>
           </div>
@@ -91,13 +91,13 @@
           <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-all">
             <div class="text-4xl mb-3">🎓</div>
             <h3 class="font-bold text-lg mb-2">
-              <span v-if="i18n.locale === 'hi'">शिक्षा की गुणवत्ता</span>
-              <span v-if="i18n.locale === 'en'">Quality of Education</span>
+              <span v-if="locale === 'hi'">शिक्षा की गुणवत्ता</span>
+              <span v-if="locale === 'en'">Quality of Education</span>
             </h3>
-            <p v-if="i18n.locale === 'hi'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'hi'" class="text-gray-600 text-sm">
               उच्चतम शिक्षा मानकों को बनाए रखना
             </p>
-            <p v-if="i18n.locale === 'en'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'en'" class="text-gray-600 text-sm">
               Maintain highest educational standards
             </p>
           </div>
@@ -105,13 +105,13 @@
           <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-all">
             <div class="text-4xl mb-3">🤝</div>
             <h3 class="font-bold text-lg mb-2">
-              <span v-if="i18n.locale === 'hi'">सहयोग और समावेशिता</span>
-              <span v-if="i18n.locale === 'en'">Collaboration & Inclusivity</span>
+              <span v-if="locale === 'hi'">सहयोग और समावेशिता</span>
+              <span v-if="locale === 'en'">Collaboration & Inclusivity</span>
             </h3>
-            <p v-if="i18n.locale === 'hi'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'hi'" class="text-gray-600 text-sm">
               सभी को स्वागत और समर्थन करना
             </p>
-            <p v-if="i18n.locale === 'en'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'en'" class="text-gray-600 text-sm">
               Welcome and support all students
             </p>
           </div>
@@ -119,13 +119,13 @@
           <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-all">
             <div class="text-4xl mb-3">🌍</div>
             <h3 class="font-bold text-lg mb-2">
-              <span v-if="i18n.locale === 'hi'">सामाजिक जिम्मेदारी</span>
-              <span v-if="i18n.locale === 'en'">Social Responsibility</span>
+              <span v-if="locale === 'hi'">सामाजिक जिम्मेदारी</span>
+              <span v-if="locale === 'en'">Social Responsibility</span>
             </h3>
-            <p v-if="i18n.locale === 'hi'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'hi'" class="text-gray-600 text-sm">
               समाज के प्रति जिम्मेदारी
             </p>
-            <p v-if="i18n.locale === 'en'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'en'" class="text-gray-600 text-sm">
               Responsibility towards society
             </p>
           </div>
@@ -133,13 +133,13 @@
           <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-all">
             <div class="text-4xl mb-3">👤</div>
             <h3 class="font-bold text-lg mb-2">
-              <span v-if="i18n.locale === 'hi'">व्यक्तिगत विकास</span>
-              <span v-if="i18n.locale === 'en'">Personal Growth</span>
+              <span v-if="locale === 'hi'">व्यक्तिगत विकास</span>
+              <span v-if="locale === 'en'">Personal Growth</span>
             </h3>
-            <p v-if="i18n.locale === 'hi'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'hi'" class="text-gray-600 text-sm">
               प्रत्येक छात्रा का विकास
             </p>
-            <p v-if="i18n.locale === 'en'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'en'" class="text-gray-600 text-sm">
               Development of every student
             </p>
           </div>
@@ -147,13 +147,13 @@
           <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-all">
             <div class="text-4xl mb-3">💎</div>
             <h3 class="font-bold text-lg mb-2">
-              <span v-if="i18n.locale === 'hi'">ईमानदारी और विनम्रता</span>
-              <span v-if="i18n.locale === 'en'">Integrity & Humility</span>
+              <span v-if="locale === 'hi'">ईमानदारी और विनम्रता</span>
+              <span v-if="locale === 'en'">Integrity & Humility</span>
             </h3>
-            <p v-if="i18n.locale === 'hi'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'hi'" class="text-gray-600 text-sm">
               नैतिक मूल्य और सत्यनिष्ठा
             </p>
-            <p v-if="i18n.locale === 'en'" class="text-gray-600 text-sm">
+            <p v-if="locale === 'en'" class="text-gray-600 text-sm">
               Moral values & honesty
             </p>
           </div>
@@ -167,15 +167,15 @@
         <div class="max-w-3xl mx-auto">
           <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">
-              <span v-if="i18n.locale === 'hi'">प्राचार्या का संदेश</span>
-              <span v-if="i18n.locale === 'en'">Principal's Message</span>
+              <span v-if="locale === 'hi'">प्राचार्या का संदेश</span>
+              <span v-if="locale === 'en'">Principal's Message</span>
             </h2>
             <p class="text-primary-600 font-semibold mb-6">
-              <span v-if="i18n.locale === 'hi'">डॉ. सपना अग्रवाल</span>
-              <span v-if="i18n.locale === 'en'">Dr. Sapna Agarwal</span>
+              <span v-if="locale === 'hi'">डॉ. सपना अग्रवाल</span>
+              <span v-if="locale === 'en'">Dr. Sapna Agarwal</span>
             </p>
 
-            <div v-if="i18n.locale === 'hi'" class="prose prose-lg text-gray-700 space-y-4 text-justify max-h-96 overflow-y-auto pr-4 custom-scrollbar">
+            <div v-if="locale === 'hi'" class="prose prose-lg text-gray-700 space-y-4 text-justify max-h-96 overflow-y-auto pr-4 custom-scrollbar">
               <p class="text-base leading-relaxed">
                 प्रिय छात्राओं, मैं अत्यन्त विनम्रता और सौभाग्य के साथ इस प्रतिष्ठित संस्था के नवनियुक्त प्राचार्या के रूप में महाविद्यालय के हितधारकों को सम्बोधित कर रही हूॅ।
               </p>
@@ -193,7 +193,7 @@
               </p>
             </div>
 
-            <div v-if="i18n.locale === 'en'" class="prose prose-lg text-gray-700 space-y-4 text-justify max-h-96 overflow-y-auto pr-4 custom-scrollbar">
+            <div v-if="locale === 'en'" class="prose prose-lg text-gray-700 space-y-4 text-justify max-h-96 overflow-y-auto pr-4 custom-scrollbar">
               <p class="text-base leading-relaxed">
                 Dear students, with utmost humility and honor, I address you as the newly appointed Principal of this esteemed institution. The GSS Girls' (PG) College is a combination of capable teachers, state-of-the-art infrastructure, a safe and collaborative environment, and provides an ideal balance of academic, sports, artistic, and social opportunities.
               </p>
@@ -269,5 +269,5 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-const i18n = useI18n()
+const { locale } = useI18n()
 </script>
