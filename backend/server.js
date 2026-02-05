@@ -15,6 +15,7 @@ const noticeRoutes = require('./routes/notices');
 const galleryRoutes = require('./routes/gallery');
 const testimonialRoutes = require('./routes/testimonials');
 const alumnaeRoutes = require('./routes/alumnae');
+const facultyRoutes = require('./routes/faculty');
 
 const app = express();
 
@@ -74,6 +75,7 @@ app.use('/api/notices', noticeRoutes);
 app.use('/api/gallery', galleryRoutes);
 app.use('/api/testimonials', testimonialRoutes);
 app.use('/api/alumnae', alumnaeRoutes);
+app.use('/api/faculty', facultyRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

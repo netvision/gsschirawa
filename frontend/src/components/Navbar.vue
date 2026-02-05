@@ -132,6 +132,7 @@ const navLinks = [
   { i18nKey: 'nav.home', path: '/' },
   { i18nKey: 'nav.about', path: '/about' },
   { i18nKey: 'nav.courses', path: '/courses' },
+  { i18nKey: 'nav.faculty', path: '/faculty' },
   { i18nKey: 'nav.alumnae', path: '/alumnae' },
   { i18nKey: 'nav.gallery', path: '/gallery' },
   { i18nKey: 'nav.testimonials', path: '/testimonials' },

@@ -124,6 +124,18 @@ export default {
   featureAlumna: (id, isFeatured) => api.patch(`/alumnae/admin/${id}/feature`, { isFeatured }),
   deleteAlumna: (id) => api.delete(`/alumnae/admin/${id}`),
 
+  // Faculty
+  getFaculty: (params) => api.get('/faculty', { params }),
+  getFacultyById: (id) => api.get(`/faculty/${id}`),
+  getAllFacultyAdmin: () => api.get('/faculty/admin/all'),
+  addFaculty: (data) => api.post('/faculty/admin/add', data, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  updateFaculty: (id, data) => api.put(`/faculty/admin/${id}`, data, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  deleteFaculty: (id) => api.delete(`/faculty/admin/${id}`),
+
   // Auth
   login: (credentials) => api.post('/auth/login', credentials),
   getCurrentUser: () => api.get('/auth/me'),

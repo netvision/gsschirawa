@@ -129,6 +129,9 @@
               <button @click="activeTab = 'testimonials'" class="btn btn-outline text-sm">
                 ⭐ Manage Testimonials
               </button>
+              <button @click="activeTab = 'faculty'" class="btn btn-outline text-sm">
+                👩‍🏫 Manage Faculty
+              </button>
               <button @click="activeTab = 'alumnae'" class="btn btn-outline text-sm">
                 👩‍🎓 Manage Alumnae
               </button>
@@ -595,6 +598,13 @@
             </div>
           </div>
 
+          <!-- Faculty Management -->
+          <div v-else-if="activeTab === 'faculty'">
+            <div class="mb-6">
+              <p class="text-gray-600">Faculty management coming soon. For now, use seed script to populate faculty data.</p>
+            </div>
+          </div>
+
           <!-- Alumnae Management -->
           <div v-else-if="activeTab === 'alumnae'">
             <AlumnaeManagement />
@@ -682,6 +692,7 @@ const tabs = [
   { key: 'notices', label: 'Notices' },
   { key: 'gallery', label: 'Gallery' },
   { key: 'testimonials', label: 'Testimonials' },
+  { key: 'faculty', label: 'Faculty' },
   { key: 'alumnae', label: 'Alumnae' },
   { key: 'contacts', label: 'Contacts' }
 ]
