@@ -79,7 +79,7 @@ router.get('/', async (req, res) => {
 // Get single alumna profile
 router.get('/:id', async (req, res) => {
   try {
-    const alumnae = await Alumna.findById(req.params.id)
+    const alumna = await Alumna.findById(req.params.id)
       .select('-verificationNotes -__v');
     
     if (!alumna) {
@@ -87,11 +87,11 @@ router.get('/:id', async (req, res) => {
     }
     
     // Only show if verified (unless admin)
-    if (Alumna.status !== 'verified' && !req.user?.role === 'admin') {
+    if (alumna.status !== 'verified' && !req.user?.role === 'admin') {
       return res.status(403).json({ success: false, message: 'Profile not available' });
     }
     
-    res.json({ success: true, data: alumnae });
+    res.json({ success: true, data: alumna });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
@@ -151,14 +151,14 @@ router.post('/register', upload.single('profileImage'), async (req, res) => {
 // Update own profile (for self-registered alumna)
 router.put('/:id', auth, upload.single('profileImage'), async (req, res) => {
   try {
-    const alumnae = await Alumna.findById(req.params.id);
+    const alumna = await Alumna.findById(req.params.id);
     
     if (!alumna) {
       return res.status(404).json({ success: false, message: 'alumna not found' });
     }
     
     // Only allow self-registered alumna to update their own profile
-    if (Alumna.registrationType !== 'self-registered') {
+    if (alumna.registrationType !== 'self-registered') {
       return res.status(403).json({ 
         success: false, 
         message: 'Only self-registered profiles can be updated by alumna' 
@@ -177,7 +177,7 @@ router.put('/:id', auth, upload.single('profileImage'), async (req, res) => {
     delete updateData.registrationType;
     
     Object.assign(alumna, updateData);
-    await Alumna.save();
+    await alumna.save();
     
     res.json({
       success: true,
