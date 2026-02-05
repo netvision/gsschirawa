@@ -600,9 +600,7 @@
 
           <!-- Faculty Management -->
           <div v-else-if="activeTab === 'faculty'">
-            <div class="mb-6">
-              <p class="text-gray-600">Faculty management coming soon. For now, use seed script to populate faculty data.</p>
-            </div>
+            <FacultyManagement />
           </div>
 
           <!-- Alumnae Management -->
@@ -672,6 +670,7 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import api, { getAssetUrl } from '../../services/api'
 import AlumnaeManagement from './AlumnaeManagement.vue'
+import FacultyManagement from './FacultyManagement.vue'
 
 const router = useRouter()
 
