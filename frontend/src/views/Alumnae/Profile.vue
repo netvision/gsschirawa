@@ -10,7 +10,7 @@
         <h2 class="text-2xl font-bold text-gray-900 mb-2">Alumna Not Found</h2>
         <p class="text-gray-600 mb-6">{{ error }}</p>
         <router-link 
-          to="/alumni" 
+          to="/alumnae" 
           class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
         >
           <i class="fas fa-arrow-left mr-2"></i>
@@ -20,7 +20,7 @@
     </div>
 
     <!-- Profile Content -->
-    <div v-else-if="alumni" class="max-w-6xl mx-auto px-4 py-12">
+    <div v-else-if="alumna" class="max-w-6xl mx-auto px-4 py-12">
       <!-- Header Section -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
         <div class="bg-gradient-to-r from-blue-600 to-purple-600 h-32"></div>
@@ -29,8 +29,8 @@
             <!-- Profile Image -->
             <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
               <img 
-                :src="getImageUrl(alumni.profileImage)" 
-                :alt="alumni.firstName + ' ' + alumni.lastName"
+                :src="getImageUrl(alumna.profileImage)" 
+                :alt="alumna.firstName + ' ' + alumna.lastName"
                 class="w-32 h-32 rounded-full border-4 border-white shadow-xl object-cover"
                 @error="handleImageError"
               />
@@ -39,19 +39,19 @@
             <!-- Name and Title -->
             <div class="flex-1">
               <h1 class="text-3xl font-bold text-gray-900 mb-2">
-                {{ alumni.firstName }} {{ alumni.lastName }}
+                {{ alumna.firstName }} {{ alumna.lastName }}
               </h1>
               <p class="text-xl text-gray-700 mb-2">
-                {{ alumni.currentDesignation }}
+                {{ alumna.currentDesignation }}
               </p>
               <p class="text-lg text-gray-600 flex items-center">
                 <i class="fas fa-building mr-2"></i>
-                {{ alumni.currentCompany }}
+                {{ alumna.currentCompany }}
               </p>
             </div>
 
             <!-- Featured Badge -->
-            <div v-if="alumni.isFeatured" class="flex-shrink-0">
+            <div v-if="alumna.isFeatured" class="flex-shrink-0">
               <span class="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold">
                 <i class="fas fa-star mr-2"></i>
                 Featured Alumni
@@ -65,21 +65,21 @@
               <i class="fas fa-graduation-cap text-blue-600 mr-3 text-xl"></i>
               <div>
                 <p class="text-sm text-gray-500">Course</p>
-                <p class="font-semibold">{{ alumni.courseName }}</p>
+                <p class="font-semibold">{{ alumna.courseName }}</p>
               </div>
             </div>
             <div class="flex items-center text-gray-700">
               <i class="fas fa-calendar text-blue-600 mr-3 text-xl"></i>
               <div>
                 <p class="text-sm text-gray-500">Batch</p>
-                <p class="font-semibold">{{ alumni.batch }} ({{ alumni.passoutYear }})</p>
+                <p class="font-semibold">{{ alumna.batch }} ({{ alumna.passoutYear }})</p>
               </div>
             </div>
             <div class="flex items-center text-gray-700">
               <i class="fas fa-industry text-blue-600 mr-3 text-xl"></i>
               <div>
                 <p class="text-sm text-gray-500">Industry</p>
-                <p class="font-semibold">{{ alumni.industry || 'Not specified' }}</p>
+                <p class="font-semibold">{{ alumna.industry || 'Not specified' }}</p>
               </div>
             </div>
           </div>
@@ -91,23 +91,23 @@
         <!-- Left Column - Main Content -->
         <div class="lg:col-span-2 space-y-8">
           <!-- Success Story -->
-          <div v-if="alumni.story" class="bg-white rounded-2xl shadow-lg p-8">
+          <div v-if="alumna.story" class="bg-white rounded-2xl shadow-lg p-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
               <i class="fas fa-book-open text-blue-600 mr-3"></i>
               Success Story
             </h2>
-            <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">{{ alumni.story }}</p>
+            <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">{{ alumna.story }}</p>
           </div>
 
           <!-- Achievements -->
-          <div v-if="alumni.achievements && alumni.achievements.length > 0" class="bg-white rounded-2xl shadow-lg p-8">
+          <div v-if="alumna.achievements && alumna.achievements.length > 0" class="bg-white rounded-2xl shadow-lg p-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
               <i class="fas fa-trophy text-yellow-600 mr-3"></i>
               Achievements
             </h2>
             <ul class="space-y-3">
               <li 
-                v-for="(achievement, index) in alumni.achievements" 
+                v-for="(achievement, index) in alumna.achievements" 
                 :key="index"
                 class="flex items-start text-gray-700"
               >
@@ -118,12 +118,12 @@
           </div>
 
           <!-- Success Tips -->
-          <div v-if="alumni.successTips" class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-lg p-8">
+          <div v-if="alumna.successTips" class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-lg p-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
               <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
               Advice for Students
             </h2>
-            <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">{{ alumni.successTips }}</p>
+            <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">{{ alumna.successTips }}</p>
           </div>
         </div>
 
@@ -134,24 +134,24 @@
             <h3 class="text-xl font-bold text-gray-900 mb-4">Contact Information</h3>
             <div class="space-y-3">
               <a 
-                v-if="alumni.email" 
-                :href="'mailto:' + alumni.email"
+                v-if="alumna.email" 
+                :href="'mailto:' + alumna.email"
                 class="flex items-center text-gray-700 hover:text-blue-600 transition"
               >
                 <i class="fas fa-envelope text-blue-600 mr-3 w-5"></i>
-                <span class="text-sm">{{ alumni.email }}</span>
+                <span class="text-sm">{{ alumna.email }}</span>
               </a>
               <a 
-                v-if="alumni.phone" 
-                :href="'tel:' + alumni.phone"
+                v-if="alumna.phone" 
+                :href="'tel:' + alumna.phone"
                 class="flex items-center text-gray-700 hover:text-blue-600 transition"
               >
                 <i class="fas fa-phone text-blue-600 mr-3 w-5"></i>
-                <span class="text-sm">{{ alumni.phone }}</span>
+                <span class="text-sm">{{ alumna.phone }}</span>
               </a>
               <a 
-                v-if="alumni.linkedinProfile" 
-                :href="alumni.linkedinProfile"
+                v-if="alumna.linkedinProfile" 
+                :href="alumna.linkedinProfile"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center text-gray-700 hover:text-blue-600 transition"
@@ -166,19 +166,19 @@
           <div class="bg-white rounded-2xl shadow-lg p-6">
             <h3 class="text-xl font-bold text-gray-900 mb-4">Professional Details</h3>
             <div class="space-y-4">
-              <div v-if="alumni.yearsOfExperience">
+              <div v-if="alumna.yearsOfExperience">
                 <p class="text-sm text-gray-500 mb-1">Experience</p>
-                <p class="font-semibold text-gray-900">{{ alumni.yearsOfExperience }} years</p>
+                <p class="font-semibold text-gray-900">{{ alumna.yearsOfExperience }} years</p>
               </div>
-              <div v-if="alumni.specialization">
+              <div v-if="alumna.specialization">
                 <p class="text-sm text-gray-500 mb-1">Specialization</p>
-                <p class="font-semibold text-gray-900">{{ alumni.specialization }}</p>
+                <p class="font-semibold text-gray-900">{{ alumna.specialization }}</p>
               </div>
-              <div v-if="alumni.currentLocation">
+              <div v-if="alumna.currentLocation">
                 <p class="text-sm text-gray-500 mb-1">Location</p>
                 <p class="font-semibold text-gray-900 flex items-center">
                   <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
-                  {{ alumni.currentLocation }}
+                  {{ alumna.currentLocation }}
                 </p>
               </div>
             </div>
@@ -190,19 +190,19 @@
             <div class="space-y-4">
               <div>
                 <p class="text-sm text-gray-500 mb-1">Course</p>
-                <p class="font-semibold text-gray-900">{{ alumni.courseName }}</p>
+                <p class="font-semibold text-gray-900">{{ alumna.courseName }}</p>
               </div>
-              <div v-if="alumni.specialization">
+              <div v-if="alumna.specialization">
                 <p class="text-sm text-gray-500 mb-1">Specialization</p>
-                <p class="font-semibold text-gray-900">{{ alumni.specialization }}</p>
+                <p class="font-semibold text-gray-900">{{ alumna.specialization }}</p>
               </div>
               <div>
                 <p class="text-sm text-gray-500 mb-1">Passout Year</p>
-                <p class="font-semibold text-gray-900">{{ alumni.passoutYear }}</p>
+                <p class="font-semibold text-gray-900">{{ alumna.passoutYear }}</p>
               </div>
               <div>
                 <p class="text-sm text-gray-500 mb-1">Batch</p>
-                <p class="font-semibold text-gray-900">{{ alumni.batch }}</p>
+                <p class="font-semibold text-gray-900">{{ alumna.batch }}</p>
               </div>
             </div>
           </div>
@@ -212,7 +212,7 @@
       <!-- Back to Directory -->
       <div class="mt-12 text-center">
         <router-link 
-          to="/alumni" 
+          to="/alumnae" 
           class="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg"
         >
           <i class="fas fa-arrow-left mr-2"></i>
@@ -248,12 +248,12 @@ const handleImageError = (event) => {
   event.target.src = 'https://via.placeholder.com/150?text=No+Image';
 };
 
-const fetchAlumniProfile = async () => {
+const fetchAlumnaProfile = async () => {
   try {
     loading.value = true;
     error.value = null;
-    const response = await api.getAlumnaeById(route.params.id);
-    alumna.value = response.data;
+    const response = await api.getAlumnaById(route.params.id);
+    alumna.value = response.data.data;
   } catch (err) {
     console.error('Error fetching alumna profile:', err);
     error.value = err.response?.data?.message || 'Failed to load alumna profile. Please try again.';
@@ -263,7 +263,7 @@ const fetchAlumniProfile = async () => {
 };
 
 onMounted(() => {
-  fetchAlumniProfile();
+  fetchAlumnaProfile();
 });
 </script>
 
