@@ -140,16 +140,16 @@ const alumnaeSchema = new mongoose.Schema({
 });
 
 // Index for search
-alumniSchema.index({ firstName: 'text', lastName: 'text', currentCompany: 'text' });
+alumnaeSchema.index({ firstName: 'text', lastName: 'text', currentCompany: 'text' });
 
 // Virtual for full name
-alumniSchema.virtual('fullName').get(function() {
+alumnaeSchema.virtual('fullName').get(function() {
   return `${this.firstName} ${this.lastName}`;
 });
 
-// Method to check if alumni can be publicly displayed
-alumniSchema.methods.isPublic = function() {
+// Method to check if alumna can be publicly displayed
+alumnaeSchema.methods.isPublic = function() {
   return this.status === 'verified' && this.isActive;
 };
 
-module.exports = mongoose.model('Alumni', alumniSchema);
+module.exports = mongoose.model('Alumna', alumnaeSchema);
