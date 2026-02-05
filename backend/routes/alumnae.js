@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Alumna = require('../models/Alumna');
-const auth = require('../middleware/auth');
+const { auth, adminOnly } = require('../middleware/auth');
 const upload = require('../middleware/upload');
 
 // Public Routes
