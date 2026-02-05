@@ -64,7 +64,7 @@ router.get('/', async (req, res) => {
     
     res.json({
       success: true,
-      data: alumna,
+      data: alumnae,
       pagination: {
         total,
         page: parseInt(page),
@@ -100,13 +100,13 @@ router.get('/:id', async (req, res) => {
 // Check if email is already registered
 router.get('/check-registration/:email', async (req, res) => {
   try {
-    const alumnae = await Alumna.findOne({ email: req.params.email.toLowerCase() });
+    const alumna = await Alumna.findOne({ email: req.params.email.toLowerCase() });
     
     if (alumna) {
       return res.json({ 
         success: true, 
         exists: true, 
-        status: Alumna.status 
+        status: alumna.status 
       });
     }
     

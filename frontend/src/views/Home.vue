@@ -635,14 +635,23 @@
           </div>
         </div>
 
-        <div class="text-center">
+        <div class="text-center flex flex-col sm:flex-row items-center justify-center gap-4">
           <RouterLink 
-            to="/alumni" 
+            to="/alumnae" 
             class="btn btn-primary inline-flex items-center"
           >
             <span>View All Alumnae</span>
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </RouterLink>
+          <RouterLink
+            to="/alumnae/register"
+            class="btn btn-outline inline-flex items-center"
+          >
+            <span>Register as Alumna</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
             </svg>
           </RouterLink>
         </div>
@@ -733,7 +742,7 @@ onMounted(async () => {
     courses.value = coursesRes.data.data || []
     notices.value = noticesRes.data.data || []
     testimonials.value = testimonialsRes.data.data || []
-    alumnae.value = alumnaeRes.data || []
+    alumnae.value = alumnaeRes.data.data || []
     
     // Start carousel auto-play
     startAutoSlide()

@@ -59,25 +59,25 @@
       <div class="container-custom">
         <div v-if="loading" class="text-center py-12">
           <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-          <p class="mt-4 text-gray-600">Loading alumni...</p>
+          <p class="mt-4 text-gray-600">Loading alumnae...</p>
         </div>
 
-        <div v-else-if="alumni.length === 0" class="text-center py-12">
-          <p class="text-gray-600 text-lg">No alumni found.</p>
+        <div v-else-if="alumnae.length === 0" class="text-center py-12">
+          <p class="text-gray-600 text-lg">No alumnae found.</p>
         </div>
 
         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            v-for="alumnus in alumni"
-            :key="alumnus._id"
+            v-for="alumna in alumnae"
+            :key="alumna._id"
             class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-            @click="viewProfile(alumnus._id)"
+            @click="viewProfile(alumna._id)"
           >
             <div class="relative h-64 bg-gradient-to-br from-primary-100 to-secondary-100">
               <img
-                v-if="alumnus.profileImage"
-                :src="getAssetUrl(alumnus.profileImage)"
-                :alt="alumnus.firstName + ' ' + alumnus.lastName"
+                v-if="alumna.profileImage"
+                :src="getAssetUrl(alumna.profileImage)"
+                :alt="alumna.firstName + ' ' + alumna.lastName"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div v-else class="flex items-center justify-center h-full text-6xl">
@@ -86,17 +86,17 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-1">
-                {{ alumnus.firstName }} {{ alumnus.lastName }}
+                {{ alumna.firstName }} {{ alumna.lastName }}
               </h3>
-              <p class="text-primary-600 font-semibold mb-2">{{ alumnus.currentDesignation }}</p>
-              <p class="text-gray-600 mb-3">{{ alumnus.currentCompany }}</p>
+              <p class="text-primary-600 font-semibold mb-2">{{ alumna.currentDesignation }}</p>
+              <p class="text-gray-600 mb-3">{{ alumna.currentCompany }}</p>
               <div class="flex items-center justify-between text-sm text-gray-500">
-                <span>{{ alumnus.courseName }}</span>
-                <span>{{ alumnus.passoutYear }}</span>
+                <span>{{ alumna.courseName }}</span>
+                <span>{{ alumna.passoutYear }}</span>
               </div>
-              <div v-if="alumnus.industry" class="mt-3">
+              <div v-if="alumna.industry" class="mt-3">
                 <span class="inline-block bg-primary-100 text-primary-600 px-3 py-1 rounded-full text-xs font-semibold">
-                  {{ alumnus.industry }}
+                  {{ alumna.industry }}
                 </span>
               </div>
             </div>
@@ -147,7 +147,7 @@
           to="/alumnae/register"
           class="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
-          Register as Alumni
+          Register as Alumna
         </RouterLink>
       </div>
     </section>
@@ -220,7 +220,9 @@ const fetchAlumni = async () => {
     alumnae.value = response.data.data
     pagination.value = response.data.pagination
   } catch (error) {
-    console.error('Error fetching alumni:', error)
+    console.error('Error fetching alumnae:', error)
+    alumnae.value = []
+    pagination.value = { page: 1, pages: 1, total: 0 }
   } finally {
     loading.value = false
   }
