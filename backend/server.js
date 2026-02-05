@@ -18,6 +18,9 @@ const alumnaeRoutes = require('./routes/alumnae');
 
 const app = express();
 
+// Trust proxy - needed when behind a reverse proxy (like nginx)
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet());
 app.use(cors({
@@ -28,7 +31,9 @@ app.use(cors({
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
+  max: 100, // limit each IP to 100 requests per windowMs
+  trustProxy: true,
+  skip: (req, res) => process.env.NODE_ENV !== 'production'
 });
 app.use('/api/', limiter);
 
