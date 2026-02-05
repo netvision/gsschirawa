@@ -128,20 +128,20 @@ router.post('/register', upload.single('profileImage'), async (req, res) => {
       });
     }
     
-    const alumniData = {
+    const alumnaData = {
       ...req.body,
       profileImage: req.file ? `/uploads/${req.file.filename}` : '',
       registrationType: 'self-registered',
       status: 'pending'
     };
     
-    const alumnae = new alumna(alumniData);
-    await Alumna.save();
+    const alumna = new Alumna(alumnaData);
+    await alumna.save();
     
     res.status(201).json({
       success: true,
       message: 'Registration submitted successfully. Admin will verify your profile.',
-      data: { alumniId: Alumna._id }
+      data: { alumnaId: alumna._id }
     });
   } catch (error) {
     res.status(400).json({ success: false, message: error.message });
@@ -214,7 +214,7 @@ router.post('/admin/add', auth, upload.single('profileImage'), async (req, res) 
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumniData = {
+    const alumnaData = {
       ...req.body,
       profileImage: req.file ? `/uploads/${req.file.filename}` : '',
       registrationType: 'admin-added',
@@ -222,8 +222,8 @@ router.post('/admin/add', auth, upload.single('profileImage'), async (req, res) 
       verifiedAt: new Date()
     };
     
-    const alumnae = new alumna(alumniData);
-    await Alumna.save();
+    const alumna = new Alumna(alumnaData);
+    await alumna.save();
     
     res.status(201).json({
       success: true,
@@ -242,7 +242,7 @@ router.patch('/admin/:id/verify', auth, async (req, res) => {
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumnae = await Alumna.findByIdAndUpdate(
+    const alumna = await Alumna.findByIdAndUpdate(
       req.params.id,
       {
         status: 'verified',
@@ -273,7 +273,7 @@ router.patch('/admin/:id/reject', auth, async (req, res) => {
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumnae = await Alumna.findByIdAndUpdate(
+    const alumna = await Alumna.findByIdAndUpdate(
       req.params.id,
       {
         status: 'rejected',
@@ -303,18 +303,18 @@ router.patch('/admin/:id/feature', auth, async (req, res) => {
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumnae = await Alumna.findById(req.params.id);
+    const alumna = await Alumna.findById(req.params.id);
     
     if (!alumna) {
       return res.status(404).json({ success: false, message: 'alumna not found' });
     }
     
-    Alumna.isFeatured = req.body.isFeatured;
-    await Alumna.save();
+    alumna.isFeatured = req.body.isFeatured;
+    await alumna.save();
     
     res.json({
       success: true,
-      message: `alumna ${Alumna.isFeatured ? 'featured' : 'unfeatured'} successfully`,
+      message: `alumna ${alumna.isFeatured ? 'featured' : 'unfeatured'} successfully`,
       data: alumna
     });
   } catch (error) {
@@ -329,7 +329,7 @@ router.delete('/admin/:id', auth, async (req, res) => {
       return res.status(403).json({ success: false, message: 'Access denied' });
     }
     
-    const alumnae = await Alumna.findByIdAndDelete(req.params.id);
+    const alumna = await Alumna.findByIdAndDelete(req.params.id);
     
     if (!alumna) {
       return res.status(404).json({ success: false, message: 'alumna not found' });
