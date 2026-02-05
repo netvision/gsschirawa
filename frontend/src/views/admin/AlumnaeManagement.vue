@@ -615,7 +615,7 @@ const submitAddForm = async () => {
 const fetchAlumnae = async () => {
   try {
     loading.value = true
-    const response = await api.getAlumnae({ limit: 1000 })
+    const response = await api.getAllAlumnaeAdmin()
     alumnae.value = response.data.data || []
   } catch (error) {
     console.error('Error fetching alumnae:', error)

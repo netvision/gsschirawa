@@ -114,6 +114,7 @@ export default {
   }),
   
   // Alumnae Admin
+  getAllAlumnaeAdmin: () => api.get('/alumnae/admin/all'),
   getPendingAlumnae: () => api.get('/alumnae/admin/pending'),
   addAlumna: (data) => api.post('/alumnae/admin/add', data, {
     headers: { 'Content-Type': 'multipart/form-data' }

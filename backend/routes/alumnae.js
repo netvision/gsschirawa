@@ -191,6 +191,22 @@ router.put('/:id', auth, upload.single('profileImage'), async (req, res) => {
 
 // Admin Routes (Protected)
 
+// Get all registrations (admin only)
+router.get('/admin/all', auth, async (req, res) => {
+  try {
+    if (req.user.role !== 'admin') {
+      return res.status(403).json({ success: false, message: 'Access denied' });
+    }
+    
+    const alumnae = await Alumna.find({})
+      .sort({ createdAt: -1 });
+    
+    res.json({ success: true, data: alumnae });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 // Get all pending registrations
 router.get('/admin/pending', auth, async (req, res) => {
   try {
