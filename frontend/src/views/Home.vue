@@ -563,6 +563,56 @@
       </div>
     </section>
 
+    <!-- Latest YouTube Video -->
+    <section class="py-16 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-10">
+          <div class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Latest From YouTube
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            Campus Updates & Events
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Watch the newest uploads from our official channel.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+          <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border border-gray-100">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">GSS College YouTube</h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Subscribe for campus activities, guest lectures, and student achievements.
+            </p>
+            <a
+              href="https://www.youtube.com/@gsschirawa7456"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-red-600 font-semibold hover:text-red-700"
+            >
+              <span>Visit Channel</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div class="aspect-video">
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/videoseries?list=UUAmHw8hOqzBScXh6UpDnFVQ"
+                title="Latest uploads from GSS College"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Featured Alumnae Section -->
     <section v-if="alumnae.length > 0" class="py-20 bg-white">
       <div class="container-custom">
