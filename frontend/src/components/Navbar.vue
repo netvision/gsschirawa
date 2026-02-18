@@ -177,6 +177,7 @@ const currentLocale = computed(() => locale.value)
 const navLinks = [
   { i18nKey: 'nav.home', path: '/' },
   { i18nKey: 'nav.about', path: '/about' },
+  { i18nKey: 'nav.facilities', path: '/facilities' },
   { i18nKey: 'nav.courses', path: '/courses' },
   { i18nKey: 'nav.faculty', path: '/faculty' },
   { i18nKey: 'nav.alumnae', path: '/alumnae' },
