@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" fill="none" role="img" aria-label="Classic frame ornament">
+  <g stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 110C15 58.1 58.1 15 110 15" />
+    <path d="M205 110C205 58.1 161.9 15 110 15" />
+    <path d="M15 110C15 161.9 58.1 205 110 205" />
+    <path d="M205 110C205 161.9 161.9 205 110 205" />
+
+    <path d="M36 110C36 69.1 69.1 36 110 36" />
+    <path d="M184 110C184 69.1 150.9 36 110 36" />
+
+    <circle cx="110" cy="110" r="8" />
+    <path d="M110 58v22M110 140v22M58 110h22M140 110h22" />
+    <path d="M78 78l16 16M142 78l-16 16M78 142l16-16M142 142l-16-16" />
+  </g>
+</svg>
