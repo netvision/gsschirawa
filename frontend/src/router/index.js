@@ -39,6 +39,12 @@ const routes = [
     meta: { title: "Contact Us - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
+    path: '/notices/:id',
+    name: 'NoticeDetail',
+    component: () => import('../views/NoticeDetail.vue'),
+    meta: { title: "Notice - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
+  },
+  {
     path: '/faculty',
     name: 'Faculty',
     component: () => import('../views/Faculty.vue'),

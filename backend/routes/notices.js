@@ -49,6 +49,39 @@ router.get('/all', auth, async (req, res) => {
   }
 });
 
+// Get a single active notice (public)
+router.get('/:id', async (req, res) => {
+  try {
+    const notice = await Notice.findOne({
+      _id: req.params.id,
+      isActive: true,
+      $or: [
+        { expiryDate: { $exists: false } },
+        { expiryDate: null },
+        { expiryDate: { $gte: new Date() } }
+      ]
+    });
+
+    if (!notice) {
+      return res.status(404).json({
+        success: false,
+        message: 'Notice not found'
+      });
+    }
+
+    res.json({
+      success: true,
+      data: notice
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Error fetching notice',
+      error: error.message
+    });
+  }
+});
+
 // Create notice (admin only)
 router.post('/', auth, upload.single('file'), async (req, res) => {
   try {

@@ -21,7 +21,7 @@
                 class="w-10 h-10 rounded-full flex items-center justify-center font-semibold transition"
                 :class="currentStep > index ? 'bg-green-500 text-white' : currentStep === index ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-600'"
               >
-                <i v-if="currentStep > index" class="fas fa-check"></i>
+                <PurchasedIcon v-if="currentStep > index" name="check" />
                 <span v-else>{{ index + 1 }}</span>
               </div>
               <span class="text-xs mt-2 font-medium" :class="currentStep >= index ? 'text-blue-600' : 'text-gray-500'">
@@ -39,7 +39,7 @@
 
       <!-- Success Message -->
       <div v-if="submitted" class="bg-white rounded-lg shadow-lg p-8 text-center">
-        <i class="fas fa-check-circle text-6xl text-green-500 mb-4"></i>
+        <PurchasedIcon name="check-circle" class="text-6xl text-green-500 mb-4" />
         <h2 class="text-2xl font-bold text-gray-900 mb-3">Registration Submitted Successfully!</h2>
         <p class="text-gray-600 mb-6">
           Thank you for registering. Your profile is under review and will be published once verified by the admin.
@@ -339,7 +339,7 @@
                     @click="removeAchievement(index)"
                     class="p-3 text-red-500 hover:bg-red-50 rounded-lg transition"
                   >
-                    <i class="fas fa-times"></i>
+                    <PurchasedIcon name="times" />
                   </button>
                 </div>
                 <button 
@@ -347,7 +347,7 @@
                   @click="addAchievement"
                   class="flex items-center text-blue-600 hover:text-blue-700 font-medium"
                 >
-                  <i class="fas fa-plus mr-2"></i>
+                  <PurchasedIcon name="plus" class="mr-2" />
                   Add Another Achievement
                 </button>
               </div>
@@ -380,7 +380,7 @@
             @click="currentStep--"
             class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition"
           >
-            <i class="fas fa-arrow-left mr-2"></i>
+            <PurchasedIcon name="arrow-up" class="mr-2 -rotate-90" />
             Previous
           </button>
           <div v-else></div>
@@ -393,7 +393,7 @@
             class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
             Next
-            <i class="fas fa-arrow-right ml-2"></i>
+            <PurchasedIcon name="arrow-up" class="ml-2 rotate-90" />
           </button>
 
           <button 
@@ -402,7 +402,7 @@
             :disabled="submitting || !canProceed"
             class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center"
           >
-            <i class="fas fa-check mr-2"></i>
+            <PurchasedIcon name="check" class="mr-2" />
             {{ submitting ? 'Submitting...' : 'Submit Registration' }}
           </button>
         </div>
@@ -414,6 +414,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import api from '@/services/api';
+import PurchasedIcon from '@/components/PurchasedIcon.vue';
 
 const steps = ['Personal', 'Academic', 'Professional', 'Additional'];
 const currentStep = ref(0);

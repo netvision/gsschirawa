@@ -73,6 +73,7 @@ export default {
 
   // Notices
   getNotices: () => api.get('/notices'),
+  getNotice: (id) => api.get(`/notices/${id}`),
   getAllNotices: () => api.get('/notices/all'),
   createNotice: (data) => api.post('/notices', data, {
     headers: { 'Content-Type': 'multipart/form-data' }

@@ -6,10 +6,10 @@
         <div class="flex flex-wrap justify-between items-center text-sm">
           <div class="flex flex-wrap gap-4">
             <a href="tel:+917878306013" class="hover:text-primary-100">
-              📞 +91 7878306013
+              <PurchasedIcon name="phone" class="mr-1" /> +91 7878306013
             </a>
             <a href="mailto:gsscollege1987@yahoo.co.in" class="hover:text-primary-100">
-              ✉️ gsscollege1987@yahoo.co.in
+              <PurchasedIcon name="envelope" class="mr-1" /> gsscollege1987@yahoo.co.in
             </a>
           </div>
           <div class="hidden md:block">
@@ -168,6 +168,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import PurchasedIcon from '@/components/PurchasedIcon.vue'
 
 const { locale } = useI18n()
 const mobileMenuOpen = ref(false)

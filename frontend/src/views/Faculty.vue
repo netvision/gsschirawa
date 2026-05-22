@@ -75,7 +75,7 @@
               <p class="text-primary-600 font-semibold text-sm mb-2">{{ member.designation }}</p>
               <p class="text-gray-600 text-sm mb-3">{{ member.department }}</p>
               <p v-if="member.experience" class="text-gray-500 text-xs mb-3">
-                <i class="fas fa-briefcase mr-1"></i>{{ member.experience }}
+                <PurchasedIcon name="briefcase" class="mr-1" />{{ member.experience }}
               </p>
               <p v-if="member.description" class="text-gray-700 text-sm line-clamp-3">
                 {{ member.description }}
@@ -91,6 +91,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import api, { getAssetUrl } from '../services/api'
+import PurchasedIcon from '@/components/PurchasedIcon.vue'
 
 const faculty = ref([])
 const loading = ref(false)

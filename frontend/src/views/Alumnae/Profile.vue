@@ -6,14 +6,14 @@
     <!-- Error State -->
     <div v-else-if="error" class="max-w-4xl mx-auto px-4 py-16">
       <div class="bg-red-50 border border-red-200 rounded-lg p-8 text-center">
-        <i class="fas fa-exclamation-circle text-4xl text-red-500 mb-4"></i>
+        <PurchasedIcon name="exclamation-circle" class="text-4xl text-red-500 mb-4" />
         <h2 class="text-2xl font-bold text-gray-900 mb-2">Alumna Not Found</h2>
         <p class="text-gray-600 mb-6">{{ error }}</p>
         <router-link 
           to="/alumnae" 
           class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
         >
-          <i class="fas fa-arrow-left mr-2"></i>
+          <PurchasedIcon name="arrow-up" class="mr-2 -rotate-90" />
           Back to Directory
         </router-link>
       </div>
@@ -45,7 +45,7 @@
                 {{ alumna.currentDesignation }}
               </p>
               <p class="text-lg text-gray-600 flex items-center">
-                <i class="fas fa-building mr-2"></i>
+                <PurchasedIcon name="inbox" class="mr-2" />
                 {{ alumna.currentCompany }}
               </p>
             </div>
@@ -53,7 +53,7 @@
             <!-- Featured Badge -->
             <div v-if="alumna.isFeatured" class="flex-shrink-0">
               <span class="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold">
-                <i class="fas fa-star mr-2"></i>
+                <PurchasedIcon name="star" class="mr-2" />
                 Featured Alumni
               </span>
             </div>
@@ -62,21 +62,21 @@
           <!-- Quick Info -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="flex items-center text-gray-700">
-              <i class="fas fa-graduation-cap text-blue-600 mr-3 text-xl"></i>
+              <PurchasedIcon name="graduation-cap" class="text-blue-600 mr-3 text-xl" />
               <div>
                 <p class="text-sm text-gray-500">Course</p>
                 <p class="font-semibold">{{ alumna.courseName }}</p>
               </div>
             </div>
             <div class="flex items-center text-gray-700">
-              <i class="fas fa-calendar text-blue-600 mr-3 text-xl"></i>
+              <PurchasedIcon name="calendar" class="text-blue-600 mr-3 text-xl" />
               <div>
                 <p class="text-sm text-gray-500">Batch</p>
                 <p class="font-semibold">{{ alumna.batch }} ({{ alumna.passoutYear }})</p>
               </div>
             </div>
             <div class="flex items-center text-gray-700">
-              <i class="fas fa-industry text-blue-600 mr-3 text-xl"></i>
+              <PurchasedIcon name="industry" class="text-blue-600 mr-3 text-xl" />
               <div>
                 <p class="text-sm text-gray-500">Industry</p>
                 <p class="font-semibold">{{ alumna.industry || 'Not specified' }}</p>
@@ -93,7 +93,7 @@
           <!-- Success Story -->
           <div v-if="alumna.story" class="bg-white rounded-2xl shadow-lg p-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-              <i class="fas fa-book-open text-blue-600 mr-3"></i>
+              <PurchasedIcon name="book-open" class="text-blue-600 mr-3" />
               Success Story
             </h2>
             <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">{{ alumna.story }}</p>
@@ -102,7 +102,7 @@
           <!-- Achievements -->
           <div v-if="alumna.achievements && alumna.achievements.length > 0" class="bg-white rounded-2xl shadow-lg p-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-              <i class="fas fa-trophy text-yellow-600 mr-3"></i>
+              <PurchasedIcon name="trophy" class="text-yellow-600 mr-3" />
               Achievements
             </h2>
             <ul class="space-y-3">
@@ -111,7 +111,7 @@
                 :key="index"
                 class="flex items-start text-gray-700"
               >
-                <i class="fas fa-check-circle text-green-600 mr-3 mt-1 flex-shrink-0"></i>
+                <PurchasedIcon name="check-circle" class="text-green-600 mr-3 mt-1 flex-shrink-0" />
                 <span>{{ achievement }}</span>
               </li>
             </ul>
@@ -120,7 +120,7 @@
           <!-- Success Tips -->
           <div v-if="alumna.successTips" class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-lg p-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-              <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+              <PurchasedIcon name="lightbulb" class="text-yellow-500 mr-3" />
               Advice for Students
             </h2>
             <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">{{ alumna.successTips }}</p>
@@ -138,7 +138,7 @@
                 :href="'mailto:' + alumna.email"
                 class="flex items-center text-gray-700 hover:text-blue-600 transition"
               >
-                <i class="fas fa-envelope text-blue-600 mr-3 w-5"></i>
+                <PurchasedIcon name="envelope" class="text-blue-600 mr-3 w-5" />
                 <span class="text-sm">{{ alumna.email }}</span>
               </a>
               <a 
@@ -146,7 +146,7 @@
                 :href="'tel:' + alumna.phone"
                 class="flex items-center text-gray-700 hover:text-blue-600 transition"
               >
-                <i class="fas fa-phone text-blue-600 mr-3 w-5"></i>
+                <PurchasedIcon name="phone" class="text-blue-600 mr-3 w-5" />
                 <span class="text-sm">{{ alumna.phone }}</span>
               </a>
               <a 
@@ -156,7 +156,7 @@
                 rel="noopener noreferrer"
                 class="flex items-center text-gray-700 hover:text-blue-600 transition"
               >
-                <i class="fab fa-linkedin text-blue-600 mr-3 w-5"></i>
+                <PurchasedIcon name="linkedin" class="text-blue-600 mr-3 w-5" />
                 <span class="text-sm">LinkedIn Profile</span>
               </a>
             </div>
@@ -177,7 +177,7 @@
               <div v-if="alumna.currentLocation">
                 <p class="text-sm text-gray-500 mb-1">Location</p>
                 <p class="font-semibold text-gray-900 flex items-center">
-                  <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+                  <PurchasedIcon name="map-marker" class="text-red-500 mr-2" />
                   {{ alumna.currentLocation }}
                 </p>
               </div>
@@ -215,7 +215,7 @@
           to="/alumnae" 
           class="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg"
         >
-          <i class="fas fa-arrow-left mr-2"></i>
+          <PurchasedIcon name="arrow-up" class="mr-2 -rotate-90" />
           Back to Alumnae Directory
         </router-link>
       </div>
@@ -228,6 +228,7 @@ import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import api from '@/services/api';
 import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import PurchasedIcon from '@/components/PurchasedIcon.vue';
 
 const route = useRoute();
 const alumna = ref(null);

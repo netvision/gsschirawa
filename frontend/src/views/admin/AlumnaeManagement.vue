@@ -14,7 +14,7 @@
             <p class="text-2xl font-bold text-yellow-600">{{ stats.pending }}</p>
           </div>
           <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-            <i class="fas fa-clock text-yellow-600 text-xl"></i>
+            <PurchasedIcon name="clock" class="text-yellow-600 text-xl" />
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@
             <p class="text-2xl font-bold text-green-600">{{ stats.verified }}</p>
           </div>
           <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-            <i class="fas fa-check-circle text-green-600 text-xl"></i>
+            <PurchasedIcon name="check-circle" class="text-green-600 text-xl" />
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
             <p class="text-2xl font-bold text-blue-600">{{ stats.featured }}</p>
           </div>
           <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-            <i class="fas fa-star text-blue-600 text-xl"></i>
+            <PurchasedIcon name="star" class="text-blue-600 text-xl" />
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@
             <p class="text-2xl font-bold text-gray-900">{{ stats.total }}</p>
           </div>
           <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-            <i class="fas fa-users text-gray-600 text-xl"></i>
+            <PurchasedIcon name="users" class="text-gray-600 text-xl" />
           </div>
         </div>
       </div>
@@ -96,14 +96,14 @@
               to="/alumnae/register"
               class="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition flex items-center justify-center"
             >
-              <i class="fas fa-link mr-2"></i>
+              <PurchasedIcon name="link" class="mr-2" />
               Public Registration Link
             </RouterLink>
             <button
               @click="openAddModal"
               class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center justify-center"
             >
-              <i class="fas fa-plus mr-2"></i>
+              <PurchasedIcon name="plus" class="mr-2" />
               Add Alumna
             </button>
           </div>
@@ -112,7 +112,7 @@
 
       <!-- Loading State -->
       <div v-if="loading" class="p-12 text-center">
-        <i class="fas fa-spinner fa-spin text-4xl text-blue-600 mb-4"></i>
+        <PurchasedIcon name="gear" class="animate-spin text-4xl text-blue-600 mb-4" />
         <p class="text-gray-600">Loading alumnae...</p>
       </div>
 
@@ -157,25 +157,25 @@
                     v-if="alumna.isFeatured"
                     class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800"
                   >
-                    <i class="fas fa-star mr-1"></i>Featured
+                    <PurchasedIcon name="star" class="mr-1" />Featured
                   </span>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600 mb-3">
                   <div class="flex items-center">
-                    <i class="fas fa-briefcase mr-2 text-gray-400 w-4"></i>
+                    <PurchasedIcon name="briefcase" class="mr-2 text-gray-400 w-4" />
                     {{ alumna.currentDesignation }} at {{ alumna.currentCompany }}
                   </div>
                   <div class="flex items-center">
-                    <i class="fas fa-graduation-cap mr-2 text-gray-400 w-4"></i>
+                    <PurchasedIcon name="graduation-cap" class="mr-2 text-gray-400 w-4" />
                     {{ alumna.courseName }} ({{ alumna.passoutYear }})
                   </div>
                   <div class="flex items-center">
-                    <i class="fas fa-envelope mr-2 text-gray-400 w-4"></i>
+                    <PurchasedIcon name="envelope" class="mr-2 text-gray-400 w-4" />
                     {{ alumna.email }}
                   </div>
                   <div class="flex items-center">
-                    <i class="fas fa-phone mr-2 text-gray-400 w-4"></i>
+                    <PurchasedIcon name="phone" class="mr-2 text-gray-400 w-4" />
                     {{ alumna.phone }}
                   </div>
                 </div>
@@ -193,7 +193,7 @@
                 class="p-2 text-blue-600 hover:bg-blue-50 rounded transition"
                 title="View Details"
               >
-                <i class="fas fa-eye"></i>
+                <PurchasedIcon name="eye" />
               </button>
 
               <button
@@ -202,7 +202,7 @@
                 class="p-2 text-green-600 hover:bg-green-50 rounded transition"
                 title="Verify"
               >
-                <i class="fas fa-check"></i>
+                <PurchasedIcon name="check" />
               </button>
 
               <button
@@ -211,7 +211,7 @@
                 class="p-2 text-red-600 hover:bg-red-50 rounded transition"
                 title="Reject"
               >
-                <i class="fas fa-times"></i>
+                <PurchasedIcon name="times" />
               </button>
 
               <button
@@ -221,7 +221,7 @@
                 :class="alumna.isFeatured ? 'text-yellow-600' : 'text-gray-400'"
                 :title="alumna.isFeatured ? 'Remove from Featured' : 'Add to Featured'"
               >
-                <i class="fas fa-star"></i>
+                <PurchasedIcon name="star" />
               </button>
 
               <button
@@ -229,7 +229,7 @@
                 class="p-2 text-red-600 hover:bg-red-50 rounded transition"
                 title="Delete"
               >
-                <i class="fas fa-trash"></i>
+                <PurchasedIcon name="trash" />
               </button>
             </div>
           </div>
@@ -238,7 +238,7 @@
 
       <!-- Empty State -->
       <div v-else class="p-12 text-center">
-        <i class="fas fa-inbox text-6xl text-gray-300 mb-4"></i>
+        <PurchasedIcon name="inbox" class="text-6xl text-gray-300 mb-4" />
         <p class="text-gray-600">No alumnae found</p>
       </div>
     </div>
@@ -253,7 +253,7 @@
         <div class="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between">
           <h2 class="text-2xl font-bold">Alumna Details</h2>
           <button @click="showDetailsModal = false" class="text-gray-500 hover:text-gray-700">
-            <i class="fas fa-times text-xl"></i>
+            <PurchasedIcon name="times" class="text-xl" />
           </button>
         </div>
 
@@ -304,7 +304,7 @@
               @click="verifyAlumna(selectedAlumna)"
               class="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
             >
-              <i class="fas fa-check mr-2"></i>
+              <PurchasedIcon name="check" class="mr-2" />
               Verify
             </button>
             <button
@@ -312,7 +312,7 @@
               @click="rejectAlumna(selectedAlumna)"
               class="flex-1 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
             >
-              <i class="fas fa-times mr-2"></i>
+              <PurchasedIcon name="times" class="mr-2" />
               Reject
             </button>
           </div>
@@ -330,7 +330,7 @@
         <div class="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between">
           <h2 class="text-2xl font-bold">Add New Alumna</h2>
           <button @click="closeAddModal" class="text-gray-500 hover:text-gray-700">
-            <i class="fas fa-times text-xl"></i>
+            <PurchasedIcon name="times" class="text-xl" />
           </button>
         </div>
         <form @submit.prevent="submitAddForm" class="p-6 space-y-6">
@@ -475,6 +475,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import api from '@/services/api'
+import PurchasedIcon from '@/components/PurchasedIcon.vue'
 
 const loading = ref(false)
 const alumnae = ref([])

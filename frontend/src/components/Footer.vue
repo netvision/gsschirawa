@@ -96,18 +96,18 @@
           <h3 class="text-white text-lg font-semibold mb-4">{{ $t('footer.contactInfo') }}</h3>
           <ul class="space-y-3 text-sm">
             <li class="flex items-start gap-2">
-              <span>📍</span>
+              <PurchasedIcon name="map-marker" class="mt-0.5" />
               <span>Chirawa, Jhunjhunu<br />Rajasthan – 333026</span>
             </li>
             <li class="flex items-start gap-2">
-              <span>📞</span>
+              <PurchasedIcon name="phone" class="mt-0.5" />
               <div>
                 <a href="tel:+917878306013" class="hover:text-white block">+91 7878306013</a>
                 <a href="tel:+911596220289" class="hover:text-white block">+91 01596-220289</a>
               </div>
             </li>
             <li class="flex items-start gap-2">
-              <span>✉️</span>
+              <PurchasedIcon name="envelope" class="mt-0.5" />
               <a href="mailto:gsscollege1987@yahoo.co.in" class="hover:text-white">
                 gsscollege1987@yahoo.co.in
               </a>
@@ -134,5 +134,5 @@
 </template>
 
 <script setup>
-// Footer component
+import PurchasedIcon from '@/components/PurchasedIcon.vue'
 </script>

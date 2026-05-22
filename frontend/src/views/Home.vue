@@ -276,10 +276,11 @@
                 <h2 class="text-2xl font-bold text-gray-900">📢 {{ $t('home.noticesTitle') }}</h2>
               </div>
               <div class="space-y-4">
-                <div
+                <RouterLink
                   v-for="notice in notices.slice(0, 5)"
                   :key="notice._id"
-                  class="bg-white p-4 rounded-lg shadow-md border-l-4"
+                  :to="`/notices/${notice._id}`"
+                  class="block bg-white p-4 rounded-lg shadow-md border-l-4 transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                   :class="{
                     'border-red-500': notice.priority === 'Urgent',
                     'border-orange-500': notice.priority === 'High',
@@ -305,7 +306,7 @@
                   <div class="text-xs text-gray-500">
                     {{ new Date(notice.createdAt).toLocaleDateString() }}
                   </div>
-                </div>
+                </RouterLink>
               </div>
             </div>
           </div>
@@ -656,18 +657,18 @@
               <div class="mb-4">
                 <p class="text-lg font-semibold text-gray-900">{{ person.currentDesignation }}</p>
                 <p class="text-sm text-gray-600 flex items-center mt-1">
-                  <i class="fas fa-building mr-2 text-primary-600"></i>
+                  <PurchasedIcon name="inbox" class="mr-2 text-primary-600" />
                   {{ person.currentCompany }}
                 </p>
               </div>
 
               <div class="space-y-2 mb-4">
                 <div class="flex items-center text-sm text-gray-600">
-                  <i class="fas fa-graduation-cap mr-2 text-secondary-600 w-5"></i>
+                  <PurchasedIcon name="graduation-cap" class="mr-2 text-secondary-600 w-5" />
                   <span>{{ person.courseName }}</span>
                 </div>
                 <div v-if="person.industry" class="flex items-center text-sm text-gray-600">
-                  <i class="fas fa-industry mr-2 text-secondary-600 w-5"></i>
+                  <PurchasedIcon name="industry" class="mr-2 text-secondary-600 w-5" />
                   <span>{{ person.industry }}</span>
                 </div>
               </div>
@@ -741,6 +742,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import api, { getAssetUrl } from '../services/api'
+import PurchasedIcon from '@/components/PurchasedIcon.vue'
 
 const courses = ref([])
 const notices = ref([])
