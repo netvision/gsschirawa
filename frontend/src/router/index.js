@@ -57,6 +57,12 @@ const routes = [
     meta: { title: "Facilities and Infrastructure - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
   },
   {
+    path: '/mandatory-documents',
+    name: 'MandatoryDocuments',
+    component: () => import('../views/MandatoryDocuments.vue'),
+    meta: { title: "Mandatory Documents - Ginnidevi Satyanarayan Sekhsaria Girls' (PG) College" }
+  },
+  {
     path: '/alumnae',
     name: 'AlumnaeDirectory',
     component: () => import('../views/Alumnae/Directory.vue'),

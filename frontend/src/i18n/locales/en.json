@@ -128,6 +128,14 @@
     "copyright": "© 2025 GSS College, Chirawa. All rights reserved.",
     "poweredBy": "Powered by"
   },
+  "documents": {
+    "title": "Mandatory Documents",
+    "intro": "Download the college's mandatory documents below.",
+    "buildingSafety": "Building Safety Certificate",
+    "noc": "No Objection Certificate (NOC)",
+    "pdf": "PDF document",
+    "download": "Download PDF"
+  },
   "admin": {
     "dashboard": "Admin Dashboard",
     "logout": "Logout",

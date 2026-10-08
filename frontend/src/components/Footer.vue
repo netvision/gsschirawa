@@ -76,6 +76,9 @@
             <li>
               <RouterLink to="/contact" class="hover:text-white transition-colors">{{ $t('nav.contact') }}</RouterLink>
             </li>
+            <li>
+              <RouterLink to="/mandatory-documents" class="hover:text-white transition-colors">{{ $t('documents.title') }}</RouterLink>
+            </li>
           </ul>
         </div>
 
